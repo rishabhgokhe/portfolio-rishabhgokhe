@@ -1,0 +1,43 @@
+.gradient-background {
+    background: linear-gradient(300deg, #FFC5C5, #FFEBD8, #C7DCA7, #89B9AD);
+    background-size: 180% 180%;
+    animation: gradient-animation 9s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+.logo {
+    height: 30px;
+}
+
+.person_vcard {
+    margin-right: 7px;
+}
+
+.profile_photo {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    transform: perspective(1000px) rotateX(20deg) rotateY(10deg);
+}
+
+.feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(52, 58, 64);
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
