@@ -65,3 +65,14 @@ body {
     border-width: 2px;
     color: white;
 }
+
+@media (max-width: 700px) {
+    .contact-div {
+        width: 100%;
+        left: 0;
+    }
+    .heading p {
+        width: 75%;
+        left: 15%;
+    }
+}
