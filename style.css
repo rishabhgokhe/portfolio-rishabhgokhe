@@ -15,6 +15,26 @@
       background-position: 0% 50%;
     }
 }
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(247, 245, 245, 0.284); /* Adjust the opacity for the glassmorphic effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    backdrop-filter: blur(10px); /* Apply a blur effect to create the glassmorphic effect */
+    padding: 10px 20px;
+    z-index: 100; /* Ensure the navbar appears above other content */
+}
+
+.Together {
+    color: #7962bd;
+    font-family: "Poppins";
+}
+
+.create {
+    font-family: "Pacifico";
+    color: #ff5300;
+}
 .logo {
     height: 30px;
 }
