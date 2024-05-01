@@ -1,0 +1,112 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+ 
+---------------------------------------------------------------------------
+.gradient-background {
+  background: linear-gradient(300deg, #FFC5C5, #FFEBD8, #C7DCA7, #89B9AD);
+  background-size: 180% 180%;
+  animation: gradient-animation 9s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#nav-bar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(247, 245, 245, 0.284); /* Adjust the opacity for the glassmorphic effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  backdrop-filter: blur(10px); /* Apply a blur effect to create the glassmorphic effect */
+  padding: 10px 20px;
+  z-index: 100; /* Ensure the navbar appears above other content */
+}
+
+.Together {
+  color: #7962bd;
+  font-family: "Poppins";
+}
+
+.create {
+  font-family: "Pacifico";
+  color: #ff5300;
+}
+.logo {
+  height: 30px;
+}
+
+.person_vcard {
+  margin-right: 7px;
+}
+
+.profile_photo {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  transform: perspective(1000px) rotateX(20deg) rotateY(10deg);
+}
+
+.feature-icon-small {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(52, 58, 64);
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+#Features {
+  background: black;
+}
