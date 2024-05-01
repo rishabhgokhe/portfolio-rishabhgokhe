@@ -3,5 +3,5 @@ function aboutMePage() {
 }
 
 function myProjectPage() {
-  window.location.href = './my_project.html'
+  window.location.href = './index_copy.html'
 }
