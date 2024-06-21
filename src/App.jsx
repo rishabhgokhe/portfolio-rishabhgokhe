@@ -2,7 +2,7 @@ import "./index.scss"
 import NavBar from './components/Layout/NavBar'
 import IntroSec from './components/IntroSec'
 import Footer from './components/Layout/Footer'
-import Features from './components/Features'
+import Features from './components/Features/Features'
 
 function App() {
   return (

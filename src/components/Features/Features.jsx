@@ -1,11 +1,11 @@
 import React from "react";
 
 // Icon Imports
-import AppleReminderIcon from "../assets/svg/icons/AppleReminderIcon";
-import PythonSvg from "../assets/svg/icons/python.svg"
-import XcodeSvg from "../assets/svg/icons/swift.svg"
-import CodeSvg from "../assets/svg/icons/code.svg"
-import BlenderSvg from "../assets/svg/icons/blender.svg"
+import AppleReminderIcon from "../../assets/svg/icons/AppleReminderIcon";
+import PythonSvg from "../../assets/svg/icons/python.svg"
+import XcodeSvg from "../../assets/svg/icons/swift.svg"
+import CodeSvg from "../../assets/svg/icons/code.svg"
+import BlenderSvg from "../../assets/svg/icons/blender.svg"
 
 
 function Features() {
@@ -76,4 +76,4 @@ function Features() {
     )
 };
 
-export default Features
+export default Features;
