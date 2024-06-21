@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
 .gradient-background {
   background: linear-gradient(300deg, #FFC5C5, #FFEBD8, #C7DCA7, #89B9AD);
   background-size: 180% 180%;
@@ -26,22 +29,31 @@
   z-index: 100; /* Ensure the navbar appears above other content */
 }
 
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
 .Together {
   color: #7962bd;
   font-family: "Poppins";
 }
 
-.create {
-  font-family: "Pacifico";
-  color: #ff5300;
-}
 .logo {
   height: 30px;
 }
 
+.create {
+  font-family: "Pacifico";
+  color: #7962bd;
+}
+
 .person_vcard {
   margin-right: 7px;
-  color: black;
 }
 
 .profile_photo {

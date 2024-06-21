@@ -1,11 +1,9 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-import NavBar from './components/nav-bar'
-import IntroSec from './components/intro-sec'
-import Features from './components/features'
-import Footer from './components/footer'
+import "./index.scss"
+import NavBar from './components/Layout/NavBar'
+import IntroSec from './components/IntroSec'
+import Features from './components/Features'
+import Footer from './components/Layout/Footer'
 
 
 function App() {
@@ -13,6 +11,7 @@ function App() {
 
   return (
     <div>
+      <div style={{textAlign: "center", background: "#DC143C", color: "white", padding: "2px"}} ><p>New Project Section Comming Soon !!! (React Version under development)</p></div>
       <NavBar />
       <IntroSec />
       <Features />
@@ -21,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

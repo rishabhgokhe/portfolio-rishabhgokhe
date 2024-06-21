@@ -1,7 +1,12 @@
 import React from "react";
 
-//Header Imports
-import card from '../assets/svg/person_vcard.svg'
+// Icon Imports
+import GithubIcon from "../../assets/svg/icons/GithubIcon.jsx"
+import UserAccountIcon from "../../assets/svg/icons/UserAccountIcon.jsx";
+import InstagramIcon from "../../assets/svg/icons/InstagramIcon.jsx";
+import RedditIcon from "../../assets/svg/icons/RedditIcon.jsx";
+import Linkedin01Icon from "../../assets/svg/icons/Linkedin01Icon.jsx";
+import NewTwitterRectangleIcon from "../../assets/svg/icons/NewTwitterRectangleIcon.jsx";
 
 function NavBar() {
     return (
@@ -12,41 +17,35 @@ function NavBar() {
                 href="./index.html"
                 className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
               >
-                <img
-                  src={card}
-                  className="logo person_vcard"
-                  alt="github"
-                />
-                <span className="fs-4">Rishabh Gokhe</span>
+                <UserAccountIcon />
+                <span style={{marginLeft: "5px"}} className="fs-4 inter">Rishabh Gokhe</span>
               </a>
 
               <ul className="nav nav-pills">
                 <li className="nav-item">
                   <a href="https://github.com/rishabhgokhe" className="nav-link">
-                    <img src="./all_svg/github.svg" className="logo github" alt="github" />
+                    <GithubIcon />
                   </a>
                 </li>
                 <li className="nav-item">
                   <a
-                    href="https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"
-                    className="nav-link"
-                  >
-                    <img className="logo instagram" src="./all_svg/instagram.svg" alt="instagram" />
+                    href="https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="nav-link" >
+                    <InstagramIcon />
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF" className="nav-link">
-                    <img className="logo reddit" src="./all_svg/reddit.svg" alt="reddit" />
+                    <RedditIcon />
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="https://www.linkedin.com/in/rishabh-gokhe-22168b287" className="nav-link">
-                    <img className="logo linkedin" src="./all_svg/linkedin.svg" alt="linkedin" />
+                    <Linkedin01Icon />
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg" className="nav-link">
-                    <img className="logo twitter" src="./all_svg/twitter.svg" alt="twitter" />
+                    <NewTwitterRectangleIcon />
                   </a>
                 </li>
               </ul>
