@@ -31,7 +31,7 @@ function Features() {
                 <div className="row row-cols-1 row-cols-sm-2 g-4">
                   <div className="col d-flex flex-column gap-2">
                     <div className="icon icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <img className="logo python" src={PythonSvg} alt="python" />
+                      <img className="feature-icon python" src={PythonSvg} alt="python" />
                     </div>
                     <h4 className="fw-semibold mb-0 text-light">Python</h4>
                     <p className="text-light">
@@ -41,7 +41,7 @@ function Features() {
 
                   <div className="col d-flex flex-column gap-2">
                     <div className="icon icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <img className="logo Xcode" src={XcodeSvg} alt="Xcode" />
+                      <img className="feature-icon Xcode" src={XcodeSvg} alt="Xcode" />
                     </div>
                     <h4 className="fw-semibold mb-0 text-light">Xcode</h4>
                     <p className="text-light">
@@ -51,7 +51,7 @@ function Features() {
 
                   <div className="col d-flex flex-column gap-2">
                     <div className="icon icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <img className="logo html_tags" src={CodeSvg} alt="html tags" />
+                      <img className="feature-icon html_tags" src={CodeSvg} alt="html tags" />
                     </div>
                     <h4 className="fw-semibold mb-0 text-light">Web Development</h4>
                     <p className="text-light">
@@ -61,7 +61,7 @@ function Features() {
 
                   <div className="col d-flex flex-column gap-2">
                     <div className="icon icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                      <img className="logo blender" src={BlenderSvg} alt="blender" />
+                      <img className="feature-icon blender" src={BlenderSvg} alt="blender" />
                     </div>
                     <h4 className="fw-semibold mb-0 text-light">Blender</h4>
                     <p className="text-light">

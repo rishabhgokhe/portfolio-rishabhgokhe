@@ -8,9 +8,14 @@ import RedditIcon from "../../assets/svg/icons/RedditIcon.jsx";
 import Linkedin01Icon from "../../assets/svg/icons/Linkedin01Icon.jsx";
 import NewTwitterRectangleIcon from "../../assets/svg/icons/NewTwitterRectangleIcon.jsx";
 
+const date = new Date().toString().split(" ");
+const day = date[0];
+const month = date[1];
+const currentDate = date[2];
+
 function NavBar() {
     return (
-        <section id="nav-bar" className="gradient-backgroun">
+        <section id="nav-bar" className="gradient-backgroun border-bottom">
           <div className="container">
             <header className="d-flex flex-wrap justify-content-center py-3">
               <a
@@ -18,7 +23,7 @@ function NavBar() {
                 className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
               >
                 <UserAccountIcon />
-                <span style={{marginLeft: "5px"}} className="fs-4 inter">Rishabh Gokhe</span>
+                <span style={{marginLeft: "5px", color: "#4a4a4a", fontWeight: "bold"}} className="fs-4">Portfolio</span>
               </a>
 
               <ul className="nav nav-pills">
@@ -49,6 +54,10 @@ function NavBar() {
                   </a>
                 </li>
               </ul>
+
+              <div className="date-block">
+              <p className="date">{`${day} ${month} ${currentDate}`}</p>
+              </div>
             </header>
           </div>
         </section>

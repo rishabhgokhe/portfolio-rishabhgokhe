@@ -1,7 +1,7 @@
 import React from "react";
-import profile from "../assets/img/profile_photo.jpeg"
-import InformationDiamondIcon from "../assets/svg/icons/InformationDiamondIcon";
-import SearchAreaIcon from "../assets/svg/icons/SearchAreaIcon";
+import profile from "../../assets/img/profile_photo.jpeg"
+import InformationDiamondIcon from "../../assets/svg/icons/InformationDiamondIcon";
+import SearchAreaIcon from "../../assets/svg/icons/SearchAreaIcon";
 
 function IntroSec() {
     return (
@@ -11,7 +11,7 @@ function IntroSec() {
               <div className="col-10 col-sm-8 col-lg-6">
                 <img
                   className="profile_photo d-block mx-lg-auto img-fluid"
-                  style={{ height: '350px', width: '350px' }}
+                  style={{ minHeight: '350px', minWidth: '350px' }}
                   src={profile}
                   alt="Rishabh Profile Photo"
                   width="700"
@@ -21,8 +21,7 @@ function IntroSec() {
               </div>
               <div className="col-lg-6">
                 <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-                  <span className="create">Welcome</span>
-                  <span className="Together"></span>...
+                  <span style={{fontFamily: "Pacifico",color: "#7962bd"}}>Welcome</span>...
                 </h1>
                 <p className="lead">
                 Hello! <span style={{fontWeight: "bold"}}>I'm Rishabh Gokhe</span>, a passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together.                </p>

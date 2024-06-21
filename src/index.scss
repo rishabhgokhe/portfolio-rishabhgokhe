@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 .gradient-background {
@@ -19,43 +20,54 @@
   }
 }
 
+// Navigation bar Styling
 #nav-bar {
   position: sticky;
   top: 0;
-  background-color: rgba(247, 245, 245, 0.284); /* Adjust the opacity for the glassmorphic effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  backdrop-filter: blur(10px); /* Apply a blur effect to create the glassmorphic effect */
+  background-color: rgba(0, 0, 0, 0.400);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 10px 20px;
-  z-index: 100; /* Ensure the navbar appears above other content */
+  z-index: 100;
+}
+.date {
+  margin: 0;
+  color: white;
+  font-size: medium;
+  font-weight: 500;
+}
+.date-block {
+  padding-top: 10px;
 }
 
+// font classes
 .inter {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: bold;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
 }
-
-.Together {
-  color: #7962bd;
-  font-family: "Poppins";
+.libre-franklin {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.logo {
+// Features Styling
+#Features {
+  background: black;
+}
+.feature-icon {
   height: 30px;
 }
-
-.create {
-  font-family: "Pacifico";
-  color: #7962bd;
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
 }
 
-.person_vcard {
-  margin-right: 7px;
-}
-
+// IntroSec Styling
 .profile_photo {
   height: 400px;
   width: 400px;
@@ -63,18 +75,10 @@
   transform: perspective(1000px) rotateX(20deg) rotateY(10deg);
 }
 
-.feature-icon-small {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgb(52, 58, 64);
-}
-
-.icon-square {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-}
-
-#Features {
-  background: black;
+// Projects Styling
+.projects-background {
+  background-image: url('../src/assets/img/projects-background.png');
+  min-height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
