@@ -1,8 +1,8 @@
 "use client"
 import { useRouter } from 'next/navigation';
-import NavBar from '../Components/Layout/NavBar.jsx'
-import Footer from "../Components/Layout/Footer.jsx"
-import LandingPage from "../Components/Home/Home.jsx"
+import NavBar from '../Components/Layout/NavBar'
+import Footer from "../Components/Layout/Footer"
+import LandingPage from "../Components/Home/Home"
 
 export default function Home() {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Project() {
+const Project: React.FC = () => {
   return (
     <div className='projects-background'>
       <div>
@@ -14,3 +14,5 @@ export default function Project() {
     </div>
   );
 }
+
+export default Project;

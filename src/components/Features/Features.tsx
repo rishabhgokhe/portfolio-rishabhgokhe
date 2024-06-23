@@ -1,13 +1,13 @@
 import React from "react";
 
 // Icon Imports
-import AppleReminderIcon from "../../assets/svg/icons/AppleReminderIcon.jsx";
-import PythonIcon from "../../assets/svg/icons/PythonIcon.jsx";
-import SwiftIcon from "../../assets/svg/icons/SwiftIcon.jsx";
-import CodeIcon from "../../assets/svg/icons/CodeIcon.jsx";
-import BlenderIcon from "../../assets/svg/icons/BlenderIcon.jsx";
+import AppleReminderIcon from "../../assets/svg/icons/AppleReminderIcon";
+import PythonIcon from "../../assets/svg/icons/PythonIcon";
+import SwiftIcon from "../../assets/svg/icons/SwiftIcon";
+import CodeIcon from "../../assets/svg/icons/CodeIcon";
+import BlenderIcon from "../../assets/svg/icons/BlenderIcon";
 
-function Features() {
+const Features: React.FC = () => {
   return (
     <section id="Features">
       <div className="container mx-auto px-4 py-5">

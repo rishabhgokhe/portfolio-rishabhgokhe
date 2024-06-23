@@ -1,8 +1,9 @@
+import React from "react";
 import UserCircleIcon from "../../assets/svg/icons/UserCircleIcon";
 import MailUpload01Icon from "../../assets/svg/icons/MailUpload01Icon";
 import MailOpenIcon from "../../assets/svg/icons/MailOpenIcon";
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <section id="Footer" className="py-4 border-t">
       <div className="container mx-auto">

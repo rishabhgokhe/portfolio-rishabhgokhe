@@ -1,11 +1,10 @@
-"use client"
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Lottie from 'lottie-react';
-import InformationDiamondIcon from "../../assets/svg/icons/InformationDiamondIcon";
-import SearchAreaIcon from "../../assets/svg/icons/SearchAreaIcon";
-import hoverAnimationData from "../../assets/svg/animated/scroll-down-circle.json";
+import InformationDiamondIcon from '../../assets/svg/icons/InformationDiamondIcon';
+import SearchAreaIcon from '../../assets/svg/icons/SearchAreaIcon';
+import hoverAnimationData from '../../assets/svg/animated/scroll-down-circle.json';
 
-function IntroSec() {
+const IntroSec: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -24,28 +23,39 @@ function IntroSec() {
               loading="lazy"
             />
             {isHovered && (
-              <div className="hover_photo"><Lottie 
-                animationData={hoverAnimationData} 
-                className={`hover_photo ${isHovered ? 'rotate-in' : 'rotate-out'}`} 
-                loop={true}
-                autoplay={true}
-              /></div>
+              <div className="hover_photo">
+                <Lottie
+                  animationData={hoverAnimationData}
+                  className={`hover_photo ${isHovered ? 'rotate-in' : 'rotate-out'}`}
+                  loop={true}
+                  autoplay={true}
+                />
+              </div>
             )}
           </div>
           <div className="lg:w-1/2" style={{ minWidth: '300px' }}>
             <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-3">
-              <span className="text-purple-600" style={{ fontFamily: "Pacifico" }}>Welcome</span>...
+              <span className="text-purple-600" style={{ fontFamily: 'Pacifico' }}>
+                Welcome
+              </span>
+              ...
             </h1>
             <p className="text-lg">
               <span>Hello! I'm</span> <br />
-              <span className="font-bold text-6xl" style={{ fontFamily: "Playwrite NG Modern" }}>Rishabh Gokhe</span><br />
-              A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together.
+              <span className="font-bold text-6xl" style={{ fontFamily: 'Playwrite NG Modern' }}>
+                Rishabh Gokhe
+              </span>
+              <br />
+              A passionate full stack developer, 3D modeling, and UI design. This website is a
+              showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager
+              to explore new opportunities and collaborations. Feel free to browse through my work
+              and get in touch to discuss how we can create something amazing together.
             </p>
             <div className="grid gap-2 md:flex md:justify-start mt-4">
               <button
                 type="button"
                 className="rounded-full border-2 ease-in duration-300 border-rose-500 flex items-center px-2 py-2 hover:bg-neutral-400"
-                onClick={() => aboutMePage()}
+                // onClick={() => aboutMePage()}
               >
                 <InformationDiamondIcon className="mt-1" />
                 <span className="px-1">About Me</span>
@@ -53,7 +63,7 @@ function IntroSec() {
               <button
                 type="button"
                 className="btn btn-outline-dark btn-lg px-4 flex items-center"
-                onClick={() => myProjectPage()}
+                // onClick={() => myProjectPage()}
               >
                 <SearchAreaIcon className="mt-1" />
                 <span className="px-2">Explore</span>
@@ -64,6 +74,6 @@ function IntroSec() {
       </div>
     </section>
   );
-}
+};
 
 export default IntroSec;

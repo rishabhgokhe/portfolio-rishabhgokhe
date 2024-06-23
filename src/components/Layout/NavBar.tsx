@@ -1,21 +1,21 @@
 import React from "react";
 
 // Icon Imports
-import GithubIcon from "../../assets/svg/icons/GithubIcon.jsx";
-import UserAccountIcon from "../../assets/svg/icons/UserAccountIcon.jsx";
-import InstagramIcon from "../../assets/svg/icons/InstagramIcon.jsx";
-import RedditIcon from "../../assets/svg/icons/RedditIcon.jsx";
-import Linkedin01Icon from "../../assets/svg/icons/Linkedin01Icon.jsx";
-import NewTwitterRectangleIcon from "../../assets/svg/icons/NewTwitterRectangleIcon.jsx";
+import GithubIcon from "../../assets/svg/icons/GithubIcon";
+import UserAccountIcon from "../../assets/svg/icons/UserAccountIcon";
+import InstagramIcon from "../../assets/svg/icons/InstagramIcon";
+import RedditIcon from "../../assets/svg/icons/RedditIcon";
+import Linkedin01Icon from "../../assets/svg/icons/Linkedin01Icon";
+import NewTwitterRectangleIcon from "../../assets/svg/icons/NewTwitterRectangleIcon";
 
 const date = new Date().toString().split(" ");
 const day = date[0];
 const month = date[1];
 const currentDate = date[2];
 
-function NavBar() {
+const NavBar: React.FC = () => {
   return (
-    <section id="nav-bar" className="">
+    <section id="nav-bar">
       <div className="container mx-auto">
         <header className="flex flex-wrap justify-center py-3">
           <a
@@ -78,6 +78,6 @@ function NavBar() {
       </div>
     </section>
   );
-}
+};
 
 export default NavBar;
