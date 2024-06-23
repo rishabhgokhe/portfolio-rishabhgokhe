@@ -1,26 +1,50 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
+import Lottie from 'lottie-react';
 import InformationDiamondIcon from "../../assets/svg/icons/InformationDiamondIcon";
 import SearchAreaIcon from "../../assets/svg/icons/SearchAreaIcon";
-import Image from "next/image";
+import hoverAnimationData from "../../assets/svg/animated/scroll-down-circle.json";
+import Profile from "../../assets/img/profile_photo.jpeg"
 
 function IntroSec() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
+
+    if (typeof document !== "undefined") {
+      document.addEventListener("mouseenter", handleMouseEnter);
+      document.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    return () => {
+      if (typeof document !== "undefined") {
+        document.removeEventListener("mouseenter", handleMouseEnter);
+        document.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+  }, []);
 
   return (
     <section id="Introduction" className="gradient-background min-h-screen">
       <div className="container mx-auto px-4 py-5">
         <div className="flex justify-center flex-col lg:flex-row-reverse items-center gap-5 py-5">
-          <div
-            className="lg:w-1/2 flex justify-center profile_photo_container"
-          >
-            <Image
-              className={"profile_photo img-fluid"}
-              src="/images/profile_photo.jpeg"
+          <div className="lg:w-1/2 flex justify-center profile_photo_container">
+            <img
+              className={`profile_photo img-fluid ${isHovered ? 'rotate-out' : 'rotate-in'}`}
+              src={Profile}
               alt="Rishabh Profile Photo"
-              width={400}
-              height={400}
-              loading="lazy"
             />
+            {isHovered && (
+              <div className="hover_photo">
+                <Lottie 
+                  animationData={hoverAnimationData} 
+                  className={`hover_photo ${isHovered ? 'rotate-in' : 'rotate-out'}`} 
+                  loop={true}
+                  autoplay={true}
+                />
+              </div>
+            )}
           </div>
           <div className="lg:w-1/2" style={{ minWidth: '300px' }}>
             <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-3">

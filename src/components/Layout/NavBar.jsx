@@ -13,7 +13,7 @@ const day = date[0];
 const month = date[1];
 const currentDate = date[2];
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
   return (
     <section id="nav-bar">
       <div className="container mx-auto">

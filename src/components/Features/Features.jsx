@@ -7,7 +7,7 @@ import SwiftIcon from "../../assets/svg/icons/SwiftIcon";
 import CodeIcon from "../../assets/svg/icons/CodeIcon";
 import BlenderIcon from "../../assets/svg/icons/BlenderIcon";
 
-const Features: React.FC = () => {
+const Features = () => {
   return (
     <section id="Features">
       <div className="container mx-auto px-4 py-5">
@@ -60,7 +60,7 @@ const Features: React.FC = () => {
 
               <div className="flex flex-col gap-2">
                 <div className="icon icon-square text-body-emphasis bg-body-secondary flex items-center justify-center">
-                <BlenderIcon />
+                  <BlenderIcon />
                 </div>
                 <h4 className="font-semibold mb-0 text-light">Blender</h4>
                 <p className="text-light">
