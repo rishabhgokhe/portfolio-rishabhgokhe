@@ -22,7 +22,7 @@ const Features: React.FC = () => {
               Embark on a transformative journey with me, where skills are the only luggage we carry. In the vast terrain of life's travels, my diverse skill set serves as the compass, guiding and lightening the path. From beginner to extreme, these proficiencies are the wings that empower exploration and fuel innovation. Join me in the adventure of skillful living, where every capability acquired becomes a ticket to new horizons and endless possibilities.
             </p>
             <a href="./my_project.html" className="btn btn-outline-light btn-lg flex items-center">
-              Discover More
+              <AppleReminderIcon /> Discover More
             </a>
           </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import IntroSec from './IntroSec';
-import Features from '../Features/Features';
-import Project from '../Projects/Project';
+import IntroSec from './IntroSec.tsx';
+import Features from '../Features/Features.tsx';
+import Project from '../Projects/Project.tsx';
 
 const LandingPage: React.FC = () => {
   return (

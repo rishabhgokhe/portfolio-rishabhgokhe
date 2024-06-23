@@ -1,12 +1,8 @@
-"use client"
-import { useRouter } from 'next/navigation';
-import NavBar from '../Components/Layout/NavBar'
-import Footer from "../Components/Layout/Footer"
-import LandingPage from "../Components/Home/Home"
+import NavBar from '../Components/Layout/NavBar.tsx';
+import Footer from '../Components/Layout/Footer.tsx';
+import LandingPage from '../Components/Home/Home.tsx';
 
 export default function Home() {
-
-  const router = useRouter();
 
   return (
     <>
@@ -14,7 +10,6 @@ export default function Home() {
     <NavBar/>
     <LandingPage />
     <Footer />
-    
     </>
   );
 }

@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useState, useEffect } from "react";
 import Lottie from 'lottie-react';
-import InformationDiamondIcon from '../../assets/svg/icons/InformationDiamondIcon';
-import SearchAreaIcon from '../../assets/svg/icons/SearchAreaIcon';
-import hoverAnimationData from '../../assets/svg/animated/scroll-down-circle.json';
+import InformationDiamondIcon from "../../assets/svg/icons/InformationDiamondIcon";
+import SearchAreaIcon from "../../assets/svg/icons/SearchAreaIcon";
+import hoverAnimationData from "../../assets/svg/animated/scroll-down-circle.json";
 
-const IntroSec: React.FC = () => {
+function IntroSec() {
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
+    
+    if (typeof window !== "undefined") {
+      document.addEventListener("mouseenter", handleMouseEnter);
+      document.addEventListener("mouseleave", handleMouseLeave);
+    }
+    
+    return () => {
+      if (typeof window !== "undefined") {
+        document.removeEventListener("mouseenter", handleMouseEnter);
+        document.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+  }, []);
 
   return (
     <section id="Introduction" className="gradient-background min-h-screen">
@@ -13,8 +31,6 @@ const IntroSec: React.FC = () => {
         <div className="flex justify-center flex-col lg:flex-row-reverse items-center gap-5 py-5">
           <div
             className="lg:w-1/2 flex justify-center profile_photo_container"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
           >
             <img
               className={`profile_photo img-fluid ${isHovered ? 'rotate-out' : 'rotate-in'}`}
@@ -23,33 +39,22 @@ const IntroSec: React.FC = () => {
               loading="lazy"
             />
             {isHovered && (
-              <div className="hover_photo">
-                <Lottie
-                  animationData={hoverAnimationData}
-                  className={`hover_photo ${isHovered ? 'rotate-in' : 'rotate-out'}`}
-                  loop={true}
-                  autoplay={true}
-                />
-              </div>
+              <div className="hover_photo"><Lottie 
+                animationData={hoverAnimationData} 
+                className={`hover_photo ${isHovered ? 'rotate-in' : 'rotate-out'}`} 
+                loop={true}
+                autoplay={true}
+              /></div>
             )}
           </div>
           <div className="lg:w-1/2" style={{ minWidth: '300px' }}>
             <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-3">
-              <span className="text-purple-600" style={{ fontFamily: 'Pacifico' }}>
-                Welcome
-              </span>
-              ...
+              <span className="text-purple-600" style={{ fontFamily: "Pacifico" }}>Welcome</span>...
             </h1>
             <p className="text-lg">
               <span>Hello! I'm</span> <br />
-              <span className="font-bold text-6xl" style={{ fontFamily: 'Playwrite NG Modern' }}>
-                Rishabh Gokhe
-              </span>
-              <br />
-              A passionate full stack developer, 3D modeling, and UI design. This website is a
-              showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager
-              to explore new opportunities and collaborations. Feel free to browse through my work
-              and get in touch to discuss how we can create something amazing together.
+              <span className="font-bold text-6xl" style={{ fontFamily: "Playwrite NG Modern" }}>Rishabh Gokhe</span><br />
+              A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together.
             </p>
             <div className="grid gap-2 md:flex md:justify-start mt-4">
               <button
@@ -74,6 +79,6 @@ const IntroSec: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default IntroSec;
