@@ -1,7 +1,7 @@
 import React from "react";
 
 // Icon Imports
-import GithubIcon from "../../assets/svg/icons/GithubIcon.jsx"
+import GithubIcon from "../../assets/svg/icons/GithubIcon.jsx";
 import UserAccountIcon from "../../assets/svg/icons/UserAccountIcon.jsx";
 import InstagramIcon from "../../assets/svg/icons/InstagramIcon.jsx";
 import RedditIcon from "../../assets/svg/icons/RedditIcon.jsx";
@@ -14,54 +14,70 @@ const month = date[1];
 const currentDate = date[2];
 
 function NavBar() {
-    return (
-        <section id="nav-bar" className="gradient-backgroun border-bottom">
-          <div className="container">
-            <header className="d-flex flex-wrap justify-content-center py-3">
+  return (
+    <section id="nav-bar" className="">
+      <div className="container mx-auto">
+        <header className="flex flex-wrap justify-center py-3">
+          <a
+            href="./index.html"
+            className="flex items-center mb-3 mb-md-0 me-md-auto text-gray-700 no-underline"
+          >
+            <UserAccountIcon />
+            <span className="ml-2 text-gray-700 font-bold text-xl">
+              Portfolio
+            </span>
+          </a>
+
+          <ul className="flex ml-auto space-x-6">
+            <li>
               <a
-                href="./index.html"
-                className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+                href="https://github.com/rishabhgokhe"
+                className="text-gray-700 hover:text-gray-900"
               >
-                <UserAccountIcon />
-                <span style={{marginLeft: "5px", color: "#4a4a4a", fontWeight: "bold"}} className="fs-4">Portfolio</span>
+                <GithubIcon />
               </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                <InstagramIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                <RedditIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/rishabh-gokhe-22168b287"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                <Linkedin01Icon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                <NewTwitterRectangleIcon />
+              </a>
+            </li>
+          </ul>
 
-              <ul className="nav nav-pills">
-                <li className="nav-item">
-                  <a href="https://github.com/rishabhgokhe" className="nav-link">
-                    <GithubIcon />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="https://instagram.com/rishabh_gokhe?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="nav-link" >
-                    <InstagramIcon />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="https://www.reddit.com/u/DiscoversOther9152/s/kS20bBPbSF" className="nav-link">
-                    <RedditIcon />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="https://www.linkedin.com/in/rishabh-gokhe-22168b287" className="nav-link">
-                    <Linkedin01Icon />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg" className="nav-link">
-                    <NewTwitterRectangleIcon />
-                  </a>
-                </li>
-              </ul>
-
-              <div className="date-block">
-              <p className="date">{`${day} ${month} ${currentDate}`}</p>
-              </div>
-            </header>
+          <div className="ml-auto">
+            <p className="text-white font-bold text-2xl">{`${day} ${month} ${currentDate}`}</p>
           </div>
-        </section>
-    )
+        </header>
+      </div>
+    </section>
+  );
 }
 
 export default NavBar;
