@@ -31,7 +31,7 @@ const NavBar = () => {
             >
               <a
                 href={item.link}
-                className="text-white hover:text-gray-300 transition-colors duration-300 py-1 px-3 rounded-md"
+                className="text-white hover:text-yellow-300 transition-colors duration-300 py-1 px-3 rounded-md"
               >
                 {item.name}
               </a>

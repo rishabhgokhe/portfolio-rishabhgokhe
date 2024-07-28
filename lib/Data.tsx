@@ -1,3 +1,4 @@
+// Navigation bar
 import GithubIcon from "@/public/svg/icons/GithubIcon";
 import InstagramIcon from "@/public/svg/icons/InstagramIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
@@ -14,11 +15,11 @@ export const navLinks = [
   },
   {
     name: "About",
-    link: "#projects",
+    link: "#about",
   },
   {
     name: "Contact",
-    link: "#projects",
+    link: "#contact",
   },
 ];
 
@@ -45,6 +46,7 @@ export const navIcons = [
   },
 ];
 
+// Features Section
 // -------------------------------------------------------------------------------------------
 import ReactIcon from "@/public/svg/icons/Tools/ReactIcon";
 import Typescript01Icon from "@/public/svg/icons/Tools/Typescript01Icon";
@@ -177,16 +179,31 @@ export const FeaturesData = [
   },
 ];
 
+// Project Section
 // -------------------------------------------------------------------------------------------
 import TaskFlow1 from "@/public/images/Screenshots/TaskFlow-1.png";
 import TaskFlow2 from "@/public/images/Screenshots/TaskFlow-2.png";
 import TaskFlow3 from "@/public/images/Screenshots/TaskFlow-3.png";
+import TaskFlow4 from "@/public/images/Screenshots/TaskFlow-4.png";
 import SkillWave1 from "@/public/images/Screenshots/SkillWave-1.png";
 import SkillWave2 from "@/public/images/Screenshots/SkillWave-2.png";
 import SkillWave3 from "@/public/images/Screenshots/SkillWave-3.png";
+import SkillWave4 from "@/public/images/Screenshots/SkillWave-4.png";
 
 import Number1Icon from "@/public/svg/icons/Number1Icon";
 import Number2Icon from "@/public/svg/icons/Number2Icon";
+
+import LaptopPhoneSyncIcon from "@/public/svg/icons/Features/LaptopPhoneSyncIcon";
+import UserSharingIcon from "@/public/svg/icons/Features/UserSharingIcon";
+import ArtificialIntelligence04Icon from "@/public/svg/icons/Features/ArtificialIntelligence04Icon";
+import DarkModeIcon from "@/public/svg/icons/Features/DarkModeIcon";
+import TagsIcon from "@/public/svg/icons/Features/TagsIcon";
+import TimeScheduleIcon from "@/public/svg/icons/Features/TimeScheduleIcon";
+import Mortarboard02Icon from "@/public/svg/icons/Features/Mortarboard02Icon";
+import SaveMoneyDollarIcon from "@/public/svg/icons/Features/SaveMoneyDollarIcon";
+import Quiz05Icon from "@/public/svg/icons/Features/Quiz05Icon";
+import AiGenerativeIcon from "@/public/svg/icons/Features/AiGenerativeIcon";
+import ChartBarLineIcon from "@/public/svg/icons/Features/ChartBarLineIcon";
 
 export const projectData = [
   {
@@ -196,6 +213,32 @@ export const projectData = [
     link: "https://github.com/rishabhgokhe/SkillWave#readme",
     preview: "https://taskflow20.vercel.app/",
     numberIcon: <Number1Icon />,
+    features: [
+      {
+        title: "Responsive UI",
+        icon: <LaptopPhoneSyncIcon />,
+      },
+      {
+        title: "Easy Sharing",
+        icon: <UserSharingIcon />,
+      },
+      {
+        title: "AI Suggestions",
+        icon: <ArtificialIntelligence04Icon />,
+      },
+      {
+        title: "Dark Mode",
+        icon: <DarkModeIcon />,
+      },
+      {
+        title: "Multiple Tags",
+        icon: <TagsIcon />,
+      },
+      {
+        title: "Tasks Scheduling",
+        icon: <TimeScheduleIcon />,
+      },
+    ],
     images: [
       {
         image: TaskFlow1,
@@ -209,6 +252,10 @@ export const projectData = [
         image: TaskFlow3,
         alt: "TaskFlow DashBoard",
       },
+      {
+        image: TaskFlow4,
+        alt: "TaskFlow About Me",
+      },
     ],
   },
   {
@@ -218,6 +265,32 @@ export const projectData = [
     link: "https://github.com/rishabhgokhe/SkillWave#readme",
     preview: "https://skillwave20.vercel.app/",
     numberIcon: <Number2Icon />,
+    features: [
+      {
+        title: "Responsive UI",
+        icon: <LaptopPhoneSyncIcon />,
+      },
+      {
+        title: "Personalised Path",
+        icon: <Mortarboard02Icon />,
+      },
+      {
+        title: "Affordable",
+        icon: <SaveMoneyDollarIcon />,
+      },
+      {
+        title: "Weekly Quiz",
+        icon: <Quiz05Icon />,
+      },
+      {
+        title: "AI Doubt Resolver",
+        icon: <AiGenerativeIcon />,
+      },
+      {
+        title: "Progress Tracking",
+        icon: <ChartBarLineIcon />,
+      },
+    ],
     images: [
       {
         image: SkillWave1,
@@ -230,6 +303,10 @@ export const projectData = [
       {
         image: SkillWave3,
         alt: "SkillWave Footer",
+      },
+      {
+        image: SkillWave4,
+        alt: "SkillWave About Me",
       },
     ],
   },

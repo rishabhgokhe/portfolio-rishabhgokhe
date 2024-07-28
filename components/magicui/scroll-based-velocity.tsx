@@ -120,7 +120,7 @@ export function VelocityScroll({
         <Image
           src={profilePhoto}
           alt="Profile Photo"
-          className="w-[250px] md:w-[340px] rounded-full shadow-xl border-4 border-white transform transition duration-500 hover:scale-105 hover:rotate-3"
+          className="w-[250px] md:w-[340px] rounded-full shadow-xl shadow-zinc-500/50 border-4 border-white transform transition duration-500 hover:scale-105 hover:rotate-3"
         />
       </div>
     </section>

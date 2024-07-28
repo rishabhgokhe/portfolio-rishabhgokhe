@@ -12,8 +12,7 @@ function IntroSec() {
     >
       <div className="text-center mb-8">
         <h1
-          className="text-5xl font-bold leading-tight text-purple-600"
-          style={{ fontFamily: "Pacifico" }}
+          className="text-5xl font-bold leading-tight text-purple-600 welcome-text"
         >
           Welcome...
         </h1>

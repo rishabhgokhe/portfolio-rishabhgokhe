@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 * {
-  font-family: "Varela Round";
+  font-family: "Varela Round", "Montserrat", sans-serif !important;
   margin: 0;
   padding: 0;
 }
@@ -12,24 +19,20 @@ html {
   scroll-behavior: smooth;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-// font classes
+// Font classes
 .inter {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
 }
+
 .libre-franklin {
   font-family: "Libre Franklin", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
+
 .montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -103,7 +106,6 @@ html {
   }
 }
 
-
 .gradient-background {
   // background: linear-gradient(300deg, #ffc5c5, #ffebd8, #c7dca7, #89b9ad);
   background: black;
@@ -134,89 +136,6 @@ html {
   z-index: 100;
 }
 
-.date {
-  margin: 0;
-  color: white;
-  font-size: medium;
-  font-weight: 500;
+.welcome-text {
+  font-family: "Pacifico", "Varela Round", sans-serif !important;
 }
-.date-block {
-  padding-top: 10px;
-}
-
-// Features Styling
-#Features {
-  background: white;
-}
-.feature-icon {
-  height: 30px;
-}
-.icon-square {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-}
-
-// IntroSec Styling
-.profile_photo_container {
-  position: relative;
-
-  .profile_photo,
-  .hover_photo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    backface-visibility: hidden;
-  }
-
-  .profile_photo {
-    width: 400px;
-    height: 400px;
-    z-index: 1;
-    animation: rotateIn 1s forwards;
-  }
-
-  .hover_photo {
-    position: absolute;
-    z-index: 0;
-    opacity: 0;
-    animation: rotateOut 1s forwards;
-  }
-
-  &:hover .profile_photo {
-    animation: rotateOut 1s forwards;
-  }
-
-  &:hover .hover_photo {
-    opacity: 1;
-    z-index: 2;
-    animation: rotateIn 1s forwards;
-  }
-}
-
-@keyframes rotateIn {
-  from {
-    transform: perspective(1000px) rotateY(180deg);
-  }
-  to {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-}
-
-@keyframes rotateOut {
-  from {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-  to {
-    transform: perspective(1000px) rotateY(180deg);
-  }
-}
-
-
-// // Projects Styling
-// .projects-background {
-//   background-image: url("./assets/img/projects-background.png");
-//   min-height: 500px;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-// }

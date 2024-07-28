@@ -12,6 +12,7 @@ import React from "react";
 
 import ViewIcon from "@/public/svg/icons/ViewIcon";
 import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
+import { Separator } from "@/components/ui/separator";
 
 export default function Projects() {
   return (
@@ -32,14 +33,41 @@ export default function Projects() {
                   <h3 className="text-3xl font-semibold mb-4">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
                   <div className="absolute right-3 top-3">
                     {project.numberIcon}
                   </div>
+                  <p className="text-gray-300">{project.description}</p>
+
+                  {/* Project Feature Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 pt-4 pb-4">
+                    {project.features.map(({ icon, title }, id) => (
+                      <div
+                        key={id}
+                        className="col-span-1 flex items-center space-x-2 p-2"
+                        style={{ color: "#22c55e" }}
+                      >
+                        {icon}
+                        <p className="opacity-90">{title}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Separator className="bg-neutral-700 mb-2"/>
+
                 </div>
-                <div className="flex gap-4">
-                  <CustomLinkButton href={project.preview} leftIcon={<ViewIcon />}>Live Preview</CustomLinkButton>
-                  <CustomLinkButton href={project.link} leftIcon={<CodeSquareIcon />}>View Details</CustomLinkButton>
+                <div className="flex gap-4 flex-col md:flex-row">
+                  <CustomLinkButton
+                    href={project.preview}
+                    leftIcon={<ViewIcon />}
+                  >
+                    Live Preview
+                  </CustomLinkButton>
+                  <CustomLinkButton
+                    href={project.link}
+                    leftIcon={<CodeSquareIcon />}
+                  >
+                    View Details
+                  </CustomLinkButton>
                 </div>
               </div>
             </div>
