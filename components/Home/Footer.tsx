@@ -12,8 +12,6 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Rishabh Gokhe. All rights reserved.
         </p>
         <div className="flex gap-2 items-center">
-          <p>Hosted on </p>
-          <VercelIcon/>
         </div>
         <SocialLinks className="flex" />
       </div>

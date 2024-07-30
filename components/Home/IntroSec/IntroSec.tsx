@@ -3,6 +3,7 @@ import CustomLinkButton from "@/components/elements/CustomLinkButton";
 
 import ContractsIcon from "@/public/svg/icons/ContractsIcon";
 import InformationCircleIcon from "@/public/svg/icons/InformationCircleIcon";
+import { navLinks } from "@/lib/Data";
 
 function IntroSec() {
   return (
@@ -31,10 +32,10 @@ function IntroSec() {
         </p>
       </div>
       <div className="flex justify-center items-center space-x-4">
-        <CustomLinkButton leftIcon={<InformationCircleIcon />}>
+        <CustomLinkButton href={navLinks[2].link} leftIcon={<InformationCircleIcon />}>
           About me
         </CustomLinkButton>
-        <CustomLinkButton leftIcon={<ContractsIcon />}>
+        <CustomLinkButton href={navLinks[3].link} leftIcon={<ContractsIcon />}>
           Contact me
         </CustomLinkButton>
       </div>

@@ -18,7 +18,7 @@ import {
             {triggerJsxElement}
           </TooltipTrigger>
           <TooltipContent>
-            <p className="font-semibold">{name}</p>
+            <p>{name}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

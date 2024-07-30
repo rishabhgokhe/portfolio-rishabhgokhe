@@ -28,7 +28,7 @@ export default function Projects() {
               <div className="w-full md:w-1/2 relative">
                 <ImageCarousel images={project.images} />
               </div>
-              <div className="flex-1 p-6 flex flex-col justify-between bg-opacity-80">
+              <div className="flex-1 p-0 pt-6 md:p-6 flex flex-col justify-between bg-opacity-80">
                 <div>
                   <h3 className="text-3xl font-semibold mb-4">
                     {project.title}

@@ -3,6 +3,7 @@ import GithubIcon from "@/public/svg/icons/GithubIcon";
 import InstagramIcon from "@/public/svg/icons/InstagramIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
 import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
+import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";
 
 export const navLinks = [
   {
@@ -44,6 +45,11 @@ export const navIcons = [
     link: "https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg",
     icon: <NewTwitterRectangleIcon />,
   },
+  {
+    name: "Mail Us",
+    link: "mailto:rishabhgokhe20contact@gmail.com",
+    icon: <MailSend01Icon />,
+  }
 ];
 
 // Features Section
@@ -311,3 +317,10 @@ export const projectData = [
     ],
   },
 ];
+
+// About Us Section
+// -------------------------------------------------------------------------------------------
+export const aboutData = {
+  aboutMe: "Hello! I'm Rishabh Gokhe, a passionate full-stack developer. I enjoy creating stunning, responsive web applications and am always eager to learn new technologies. In addition to coding, I have a keen interest in 3D modeling and UI design. When I'm not coding, you can find me modeling 3D Objects or hitting the gym.",
+  currentStatus: "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!"
+}

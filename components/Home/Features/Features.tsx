@@ -1,6 +1,10 @@
 import { FeaturesData, FeaturesQuote } from "@/lib/Data";
 import React from "react";
+import { ToolTipIcon } from "@/components/elements/ToolTipIcon";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
+
 import ArrowRight01Icon from "@/public/svg/icons/ArrowRight01Icon";
+import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";
 
 export default function Features() {
   return (
@@ -13,7 +17,9 @@ export default function Features() {
         <h2 className="font-bold text-xl md:text-3xl text-purple-400">
           {FeaturesQuote.title}
         </h2>
-        <p className="text-md md:text-lg text-neutral-300">{FeaturesQuote.description}</p>
+        <p className="text-md md:text-lg text-neutral-300">
+          {FeaturesQuote.description}
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -28,17 +34,26 @@ export default function Features() {
               <p className="text-base text-neutral-300 mb-4">
                 {item.description}
               </p>
-              <a
-                href={item.link}
-                target="_blank"
-                className="flex items-center text-blue-400 hover:text-blue-300 underline underline-offset-4"
-              >
-                Learn More
-                <ArrowRight01Icon className="ml-2" />
-              </a>
+              <ToolTipIcon
+                name={item.link}
+                triggerJsxElement={
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    className="flex items-center text-blue-400 hover:text-blue-300 underline underline-offset-4"
+                  >
+                    Learn More
+                    <ArrowRight01Icon className="ml-2" />
+                  </a>
+                }
+              ></ToolTipIcon>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center items-center mt-8">
+        <CustomLinkButton leftIcon={<DocumentAttachmentIcon />} >Download CV</CustomLinkButton>
       </div>
     </section>
   );
