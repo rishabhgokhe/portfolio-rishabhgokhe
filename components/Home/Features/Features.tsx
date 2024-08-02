@@ -53,7 +53,13 @@ export default function Features() {
       </div>
 
       <div className="flex justify-center items-center mt-8">
-        <CustomLinkButton leftIcon={<DocumentAttachmentIcon />} >Download CV</CustomLinkButton>
+        <CustomLinkButton
+          download
+          href={"/downloads/PortFolioRishabh.pdf"}
+          leftIcon={<DocumentAttachmentIcon />}
+        >
+          Download Resume
+        </CustomLinkButton>
       </div>
     </section>
   );
