@@ -49,7 +49,7 @@ export const navIcons = [
     name: "Mail Us",
     link: "mailto:rishabhgokhe20contact@gmail.com",
     icon: <MailSend01Icon />,
-  }
+  },
 ];
 
 // Features Section
@@ -195,9 +195,14 @@ import SkillWave1 from "@/public/images/Screenshots/SkillWave-1.png";
 import SkillWave2 from "@/public/images/Screenshots/SkillWave-2.png";
 import SkillWave3 from "@/public/images/Screenshots/SkillWave-3.png";
 import SkillWave4 from "@/public/images/Screenshots/SkillWave-4.png";
+import Animease1 from "@/public/images/Screenshots/Animease-1.png";
+import Animease2 from "@/public/images/Screenshots/Animease-2.png";
+import Animease3 from "@/public/images/Screenshots/Animease-3.png";
+import Animease4 from "@/public/images/Screenshots/Animease-4.png";
 
 import Number1Icon from "@/public/svg/icons/Number1Icon";
 import Number2Icon from "@/public/svg/icons/Number2Icon";
+import Number3Icon from "@/public/svg/icons/Number3Icon";
 
 import LaptopPhoneSyncIcon from "@/public/svg/icons/Features/LaptopPhoneSyncIcon";
 import UserSharingIcon from "@/public/svg/icons/Features/UserSharingIcon";
@@ -210,6 +215,12 @@ import SaveMoneyDollarIcon from "@/public/svg/icons/Features/SaveMoneyDollarIcon
 import Quiz05Icon from "@/public/svg/icons/Features/Quiz05Icon";
 import AiGenerativeIcon from "@/public/svg/icons/Features/AiGenerativeIcon";
 import ChartBarLineIcon from "@/public/svg/icons/Features/ChartBarLineIcon";
+import Rocket02Icon from "@/public/svg/icons/Features/Rocket02Icon";
+import FlashIcon from "@/public/svg/icons/Features/FlashIcon";
+import ThumbsUpIcon from "@/public/svg/icons/Features/ThumbsUpIcon";
+import Settings05Icon from "@/public/svg/icons/Features/Settings05Icon";
+import BookOpen02Icon from "@/public/svg/icons/Features/BookOpen02Icon";
+import SourceCodeSquareIcon from "@/public/svg/icons/Features/SourceCodeSquareIcon";
 
 export const projectData = [
   {
@@ -316,11 +327,65 @@ export const projectData = [
       },
     ],
   },
+  {
+    title: "Animease",
+    description:
+      "Animease is a utility package designed to make using animations easier for React projects. It provides a simplified react components for creating animations and transitions.",
+    link: "https://www.npmjs.com/package/animease",
+    preview: "https://www.npmjs.com/package/animease",
+    numberIcon: <Number3Icon />,
+    features: [
+      {
+        title: "Quick Animation",
+        icon: <FlashIcon />,
+      },
+      {
+        title: "Easy to use",
+        icon: <ThumbsUpIcon />,
+      },
+      {
+        title: "Custom Effects",
+        icon: <Settings05Icon />,
+      },
+      {
+        title: "Lightweight Library",
+        icon: <Rocket02Icon />,
+      },
+      {
+        title: "Documentation",
+        icon: <BookOpen02Icon />,
+      },
+      {
+        title: "Open Source",
+        icon: <SourceCodeSquareIcon />,
+      },
+    ],
+    images: [
+      {
+        image: Animease1,
+        alt: "Animease npm HomePage",
+      },
+      {
+        image: Animease2,
+        alt: "Animease source code github",
+      },
+      {
+        image: Animease3,
+        alt: "Animease usage github readme",
+      },
+      {
+        image: Animease4,
+        alt: "Animease github readme",
+      },
+    ],
+  },
 ];
 
 // About Us Section
 // -------------------------------------------------------------------------------------------
 export const aboutData = {
-  aboutMe: "Hello! I'm Rishabh Gokhe, a passionate full-stack developer. I enjoy creating stunning, responsive web applications and am always eager to learn new technologies. In addition to coding, I have a keen interest in 3D modeling and UI design. When I'm not coding, you can find me modeling 3D Objects or hitting the gym.",
-  currentStatus: "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!"
-}
+  aboutMe:
+    "Hello! I'm Rishabh Gokhe, a passionate full-stack developer. I enjoy creating stunning, responsive web applications and am always eager to learn new technologies. In addition to coding, I have a keen interest in 3D modeling and UI design. When I'm not coding, you can find me modeling 3D Objects or hitting the gym.",
+  currentStatus:
+    "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!",
+};

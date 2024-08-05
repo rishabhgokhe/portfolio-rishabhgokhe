@@ -1,8 +1,5 @@
 import React from "react";
 import SocialLinks from "../elements/SocialLinks";
-import Image from "next/image";
-
-import VercelIcon from "@/public/svg/icons/VercelIcon";
 
 export default function Footer() {
   return (
