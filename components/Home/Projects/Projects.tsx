@@ -69,6 +69,7 @@ export default function Projects() {
                     View Details
                   </CustomLinkButton>
                 </div>
+                <p className="text-xs text-neutral-500 pt-4 md:pt-0">*some features are under develpment</p>
               </div>
             </div>
           ))}

@@ -14,15 +14,28 @@ import {
 import { Input } from "@/components/ui/input";
 import { FloatingInput } from "@/components/elements/FloatingInput";
 import BuyMeACoffeeButton from "@/components/elements/BuyMeACoffeeButton";
+import { z } from "zod";
 import ThankYou from "./ThankYou";
+import AlertDialog from "@/components/elements/AlertDialog";
+import { toast } from "react-hot-toast";
 
 export default function Contact() {
   const [showThankYou, setShowThankYou] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phoneNumber: "",
     message: "",
+  });
+
+  // schema defining from zod
+  const formSchema = z.object({
+    name: z.string().min(2).max(50),
+    email: z.string().email(),
+    phoneNumber: z.string().max(10).optional(),
+    message: z.string(),
   });
 
   const handleChange = (
@@ -38,24 +51,39 @@ export default function Contact() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
+    // perform form validation
+    const validation = formSchema.safeParse(formData);
+
+    if (!validation.success) {
+      console.error("Validation failed:", validation.error.errors);
+      toast.error("Please check your inputs and try again.");
+      setErrorMessage("Please check your inputs and try again.");
+      return;
+    }
+
+    setLoading(true);
+
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const userId = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !userId) {
       console.error("EmailJS environment variables are not set");
-      alert("Failed to send message. Please try again later.");
+      toast.error("Failed to send message. Please try again later.");
+      setLoading(false);
       return;
     }
 
     emailjs.send(serviceId, templateId, formData, userId).then(
       (result) => {
         setShowThankYou(true);
-        alert("Message sent successfully! - "+ result.text);
+        toast.success("Message sent successfully! - " + result.text);
+        setLoading(false);
       },
       (error) => {
         console.error("Failed to send email:", error.text);
-        alert("Failed to send message. Please try again later.");
+        toast.error("Failed to send message. Please try again later.");
+        setLoading(false);
       }
     );
   };
@@ -104,6 +132,8 @@ export default function Contact() {
                 <div className="relative">
                   <Input
                     id="email"
+                    type="email"
+                    required
                     placeholder=" "
                     className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
                     value={formData.email}
@@ -132,9 +162,22 @@ export default function Contact() {
                   ></textarea>
                   <FloatingInput>Message</FloatingInput>
                 </div>
+
+                {/* Alert Dialog for validation warning */}
+                {/* {errorMessage && (
+                  <AlertDialog
+                    title="Validation Warning"
+                    message={errorMessage}
+                  />
+                )} */}
+
                 <CardFooter className="flex p-0 justify-between">
                   <CustomButton className="w-full" type="submit">
-                    Send Message
+                  {loading ? (
+                      <span className="loader">Sending your message ....</span>
+                    ) : (
+                      "Send Message"
+                    )}
                   </CustomButton>
                 </CardFooter>
               </form>
@@ -145,16 +188,9 @@ export default function Contact() {
         {showThankYou && <ThankYou />}
       </Card>
 
-      {/* if showThankYou block is active then the links will be disappeared and it will be inside thankyou block */}
       {!showThankYou && <SocialLinks className="flex justify-center mt-4" />}
 
       <BuyMeACoffeeButton />
-      {/* <CustomButton
-        onClick={() => setShowThankYou(!showThankYou)}
-        className="mt-6"
-      >
-        Show Thank you
-      </CustomButton> */}
     </section>
   );
 }

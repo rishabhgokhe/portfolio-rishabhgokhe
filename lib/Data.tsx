@@ -52,6 +52,11 @@ export const navIcons = [
   },
 ];
 
+
+// Intro Section
+// -------------------------------------------------------------------------------------------
+export const introPara = "A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together."
+
 // Features Section
 // -------------------------------------------------------------------------------------------
 import ReactIcon from "@/public/svg/icons/Tools/ReactIcon";
