@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import { ToolTipIcon } from "../elements/ToolTipIcon";
+import BentoGrid from "./BentoGrid/BentoGrid";
 
 export default function HomePage() {
   return (
@@ -17,13 +18,14 @@ export default function HomePage() {
       <Projects />
       <About />
       <Contact />
-      <p className="bg-black text-center text-white pb-3">
+      <BentoGrid />
+      <p className="bg-black text-center text-white py-4 shadow-inner">
         All animations are used from{" "}
         <ToolTipIcon
           name="https://www.npmjs.com/package/animease"
           triggerJsxElement={
             <a
-              className="rounded-md bg-neutral-600 pr-1 pl-1 hover:text-green-500 transition ease-in-out duration-500"
+              className="rounded-lg bg-gray-800 px-2 py-1 text-white hover:text-yellow-400 hover:bg-gray-700 transition duration-500 ease-in-out transform hover:scale-105 shadow-md"
               href={"https://www.npmjs.com/package/animease"}
             >
               animease

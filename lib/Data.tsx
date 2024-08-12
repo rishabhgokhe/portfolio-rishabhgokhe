@@ -341,7 +341,7 @@ export const projectData = [
     numberIcon: <Number3Icon />,
     features: [
       {
-        title: "Quick Animation",
+        title: "Smooth Animation",
         icon: <FlashIcon />,
       },
       {
