@@ -1,0 +1,2 @@
+green-500 = #22c55e
+yellow-500 = #eab308

@@ -52,10 +52,10 @@ export const navIcons = [
   },
 ];
 
-
 // Intro Section
 // -------------------------------------------------------------------------------------------
-export const introPara = "A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together."
+export const introPara =
+  "A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together.";
 
 // Features Section
 // -------------------------------------------------------------------------------------------
@@ -394,3 +394,90 @@ export const aboutData = {
   currentStatus:
     "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!",
 };
+
+// Bento Grid Section
+// -------------------------------------------------------------------------------------------
+import LinkedInColoredIcon from "@/public/svg/icons/Colored/LinkedinColoredIcon";
+import GithubColoredIcon from "@/public/svg/icons/Colored/GithubColoredIcon";
+import InstagramColoredIcon from "@/public/svg/icons/Colored/InstagramColoredIcon";
+import WhatsappColoredIcon from "@/public/svg/icons/Colored/WhatsappColoredIcon";
+import TwitterColoredIcon from "@/public/svg/icons/Colored/TwitterColoredIcon";
+import CallColoredIcon from "@/public/svg/icons/Colored/CallColoredIcon";
+import { BentoGridButton } from "@/components/Home/BentoGrid/BentoGridButton";
+
+export const socialBentoGridData = [
+  {
+    title: "LinkedIn",
+    icon: <LinkedInColoredIcon />,
+    description: "Let's connect on LinkedIn 🫱🏻‍🫲🏼",
+    link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
+    cardTrigger: (
+      <BentoGridButton
+        href="https://www.linkedin.com/in/rishabh-gokhe-22168b287"
+        title="Connect"
+      />
+    ),
+    span: 2,
+  },
+  {
+    title: "GitHub",
+    icon: <GithubColoredIcon />,
+    description: "Check out my GitHub 💻",
+    link: "https://github.com/rishabhgokhe",
+    cardTrigger: (
+      <BentoGridButton href="https://github.com/rishabhgokhe" title="Follow" />
+    ),
+    span: 3,
+  },
+  {
+    title: "Instagram",
+    icon: <InstagramColoredIcon />,
+    description: "Follow me on Instagram 📸",
+    link: "https://www.instagram.com/rishabhgokhe",
+    cardTrigger: (
+      <BentoGridButton
+        href="https://www.instagram.com/rishabhgokhe"
+        title="instagram.com"
+      />
+    ),
+    span: 1,
+  },
+  {
+    title: "WhatsApp",
+    icon: <WhatsappColoredIcon />,
+    description: "Chat with me on WhatsApp 💬",
+    link: "https://wa.me/919098447696",
+    cardTrigger: (
+      <BentoGridButton href="https://wa.me/919098447696" title="Message me" />
+    ),
+    span: 3,
+  },
+  {
+    title: "Twitter",
+    icon: <TwitterColoredIcon />,
+    description: "Connect with me on Twitter 🐦",
+    link: "https://twitter.com/rishabhgokhe",
+    cardTrigger: (
+      <BentoGridButton href="https://twitter.com/rishabhgokhe" title="Follow" />
+    ),
+    span: 1,
+  },
+  {
+    title: "Call Now",
+    icon: <CallColoredIcon />,
+    description: "Connect with me directly 📞",
+    link: "tel:+919098447696",
+    cardTrigger: (
+      <a
+        href="tel:+919098447696"
+        className="text-muted-foreground hover:text-purple-200 transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn Profile"
+      >
+        Call me
+      </a>
+    ),
+    span: 1,
+  },
+];

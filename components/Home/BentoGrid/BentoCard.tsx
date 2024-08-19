@@ -1,32 +1,46 @@
 "use client";
-import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 export default function BentoCard({
   title,
+  icon,
   description,
-  link,
+  cardTrigger,
   span,
-  className
+  link,
+  className,
 }: {
   title: string;
+  icon: JSX.Element;
   description: string;
-  link: string;
+  cardTrigger: JSX.Element;
   span: number;
+  link: string;
   className?: string;
 }) {
+
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(link);
+  };
+
   return (
-    <motion.div initial={{ scale: 1 }} whileHover={{ scale: 0.99 }}>
-      <Card
-        className={` ${className} bg-black col-span-${span} hover:bg-neutral-900 border-gray-800 transition ease-out duration-300`}
-      >
-        <CardContent>
+    <motion.div
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 0.98 }}
+      whileTap={{ scale: 0.97 }}
+      className={`col-span-${span} ${className} flex flex-col`}
+      onClick={handleClick}
+    >
+      <Card className="bg-black cursor-pointer hover:bg-neutral-900 hover:shadow-none border-gray-800 shadow-lg shadow-purple-600/50 flex-1">
+        <CardContent className="text-left space-y-2 flex items-start flex-col h-full">
+          <div className="flex justify-start pt-5">{icon}</div>
           <h3 className="text-white text-xl font-bold">{title}</h3>
           <p className="text-gray-300 text-sm">{description}</p>
-          <a href="#" className="text-white text-sm hover:text-gray-300">
-            {link}
-          </a>
+          {cardTrigger}
         </CardContent>
       </Card>
     </motion.div>

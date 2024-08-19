@@ -3,6 +3,7 @@ import React, { FormEvent, ChangeEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import CustomButton from "@/components/elements/CustomButton";
 import SocialLinks from "@/components/elements/SocialLinks";
+import ThankYou from "./ThankYou";
 import {
   Card,
   CardContent,
@@ -13,11 +14,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { FloatingInput } from "@/components/elements/FloatingInput";
-import BuyMeACoffeeButton from "@/components/elements/BuyMeACoffeeButton";
 import { z } from "zod";
-import ThankYou from "./ThankYou";
-import AlertDialog from "@/components/elements/AlertDialog";
 import { toast } from "react-hot-toast";
+import MobileContent from "@/public/svg/icons/MobileContent";
 
 export default function Contact() {
   const [showThankYou, setShowThankYou] = useState(false);
@@ -96,6 +95,7 @@ export default function Contact() {
       <h1 className="text-center text-5xl font-bold pb-8">
         Contact <span className="text-red-500">Me</span>
       </h1>
+
       <p className="text-center font-semibold mb-4">
         Mail me at:{" "}
         <a
@@ -106,91 +106,96 @@ export default function Contact() {
         </a>
       </p>
 
-      <Card className="max-w-[90vw] bg-neutral-900 border-neutral-800">
-        {!showThankYou && (
-          <>
-            <CardHeader>
-              <CardTitle className="text-green-500">
-                Write your message
-              </CardTitle>
-              <CardDescription>
-                Get in touch with us for any feedback or collaboration
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div className="relative">
-                  <Input
-                    id="name"
-                    placeholder=" "
-                    className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                  <FloatingInput>Name</FloatingInput>
-                </div>
-                <div className="relative">
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder=" "
-                    className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  <FloatingInput>Email</FloatingInput>
-                </div>
-                <div className="relative">
-                  <Input
-                    id="phoneNumber"
-                    placeholder=" "
-                    className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                  />
-                  <FloatingInput>Phone Number</FloatingInput>
-                </div>
-                <div className="relative">
-                  <textarea
-                    id="message"
-                    className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white border-2 border-gray-500 rounded-md focus:border-yellow-500 focus:ring-0 peer"
-                    placeholder=" "
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                  ></textarea>
-                  <FloatingInput>Message</FloatingInput>
-                </div>
+      <div className="flex w-full justify-center items-center gap-10">
+        <div className="hidden md:block">
+          <MobileContent />
+        </div>
+        <Card className="max-w-[90vw] bg-neutral-900 border-neutral-800">
+          {!showThankYou && (
+            <>
+              <CardHeader>
+                <CardTitle className="text-green-500">
+                  Write your message
+                </CardTitle>
+                <CardDescription>
+                  Get in touch with us for any feedback or collaboration
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div className="relative">
+                    <Input
+                      id="name"
+                      placeholder=" "
+                      className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                    <FloatingInput>Name</FloatingInput>
+                  </div>
+                  <div className="relative">
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      placeholder=" "
+                      className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                    <FloatingInput>Email</FloatingInput>
+                  </div>
+                  <div className="relative">
+                    <Input
+                      id="phoneNumber"
+                      placeholder=" "
+                      className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white rounded-md peer"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                    />
+                    <FloatingInput>Phone Number</FloatingInput>
+                  </div>
+                  <div className="relative">
+                    <textarea
+                      id="message"
+                      className="block w-full px-2.5 pb-2.5 pt-4 text-sm bg-neutral-900 text-white border-2 border-gray-500 rounded-md focus:border-yellow-500 focus:ring-0 peer"
+                      placeholder=" "
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                    ></textarea>
+                    <FloatingInput>Message</FloatingInput>
+                  </div>
 
-                {/* Alert Dialog for validation warning */}
-                {/* {errorMessage && (
+                  {/* Alert Dialog for validation warning */}
+                  {/* {errorMessage && (
                   <AlertDialog
                     title="Validation Warning"
                     message={errorMessage}
                   />
                 )} */}
 
-                <CardFooter className="flex p-0 justify-between">
-                  <CustomButton className="w-full" type="submit">
-                  {loading ? (
-                      <span className="loader">Sending your message ....</span>
-                    ) : (
-                      "Send Message"
-                    )}
-                  </CustomButton>
-                </CardFooter>
-              </form>
-            </CardContent>
-          </>
-        )}
+                  <CardFooter className="flex p-0 justify-between">
+                    <CustomButton className="w-full" type="submit">
+                      {loading ? (
+                        <span className="loader">
+                          Sending your message ....
+                        </span>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </CustomButton>
+                  </CardFooter>
+                </form>
+              </CardContent>
+            </>
+          )}
 
-        {showThankYou && <ThankYou />}
-      </Card>
+          {showThankYou && <ThankYou />}
+        </Card>
+      </div>
 
-      {!showThankYou && <SocialLinks className="flex justify-center mt-4" />}
-
-      <BuyMeACoffeeButton />
+      {/* {!showThankYou && <SocialLinks className="flex justify-center mt-4" />} */}
     </section>
   );
 }
