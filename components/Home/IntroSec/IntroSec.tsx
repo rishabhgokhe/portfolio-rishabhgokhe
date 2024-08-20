@@ -1,8 +1,8 @@
 "use client";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import CustomLinkButton from "@/components/elements/CustomLinkButton";
 import { introPara, navLinks } from "@/lib/Data";
 import { FadeDown, FadeRight } from "animease";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
 
 import ContractsIcon from "@/public/svg/icons/ContractsIcon";
 import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";

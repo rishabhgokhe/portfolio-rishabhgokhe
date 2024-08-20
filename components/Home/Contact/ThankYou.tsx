@@ -1,8 +1,9 @@
-import CustomLinkButton from "@/components/elements/CustomLinkButton";
-import SocialLinks from "@/components/elements/SocialLinks";
+import React from "react";
 import { CardContent } from "@/components/ui/card";
 import { FadeDown } from "animease";
-import React from "react";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
+import SocialLinks from "@/components/elements/SocialLinks";
+
 import TickDouble04Icon from "@/public/svg/icons/TickDouble04Icon";
 
 export default function ThankYou() {

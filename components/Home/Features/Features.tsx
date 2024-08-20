@@ -1,7 +1,7 @@
-import { FeaturesData, FeaturesQuote } from "@/lib/Data";
 import React from "react";
-import { ToolTipIcon } from "@/components/elements/ToolTipIcon";
+import { FeaturesData, FeaturesQuote } from "@/lib/Data";
 import CustomLinkButton from "@/components/elements/CustomLinkButton";
+import { ToolTipIcon } from "@/components/elements/ToolTipIcon";
 
 import ArrowRight01Icon from "@/public/svg/icons/ArrowRight01Icon";
 import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";

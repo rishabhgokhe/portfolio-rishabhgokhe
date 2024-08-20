@@ -1,7 +1,8 @@
 import React from "react";
-import ProfilePhoto from "@/public/images/profile_photo.jpeg";
 import Image from "next/image";
 import { aboutData } from "@/lib/Data";
+
+import ProfilePhoto from "@/public/images/profile_photo.jpeg";
 
 export default function About() {
   return (

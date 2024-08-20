@@ -1,17 +1,18 @@
-"use client"
+"use client";
 import React from "react";
 import { ToolTipIcon } from "./ToolTipIcon";
 import { Button } from "../ui/button";
 import BuyMeACoffeeBrandLogo from "@/public/svg/icons/BuyMeACoffeeBrandLogo";
 
+export const BuyMeCoffeeText = [
+  "Support Me ☕️",
+  "Fuel My Day 💪",
+  "Recharge Me ☕️",
+  "Boost My Energy 🚀",
+  "Coffee Break! ☕️",
+];
+
 const BuyMeACoffeeButton = () => {
-  const BuyMeCoffeeText = [
-    "Support Me ☕️",
-    "Fuel My Day 💪",
-    "Recharge Me ☕️",
-    "Boost My Energy 🚀",
-    "Coffee Break! ☕️",
-  ];
   return (
     <ToolTipIcon
       name={BuyMeCoffeeText[Math.floor(Math.random() * BuyMeCoffeeText.length)]}

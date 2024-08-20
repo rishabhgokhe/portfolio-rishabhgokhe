@@ -1,4 +1,4 @@
-import CustomLinkButton from "@/components/elements/CustomLinkButton";
+import React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,13 +6,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Separator } from "@/components/ui/separator";
 import { projectData } from "@/lib/Data";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import CustomLinkButton from "@/components/elements/CustomLinkButton";
 
 import ViewIcon from "@/public/svg/icons/ViewIcon";
 import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
-import { Separator } from "@/components/ui/separator";
 
 export default function Projects() {
   return (

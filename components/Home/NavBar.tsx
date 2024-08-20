@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import { navIcons, navLinks } from "@/lib/Data";
-import { ToolTipIcon } from "../elements/ToolTipIcon";
+import React, { useEffect, useState } from "react";
+import { navLinks } from "@/lib/Data";
 import { motion } from "framer-motion";
 import SocialLinks from "../elements/SocialLinks";
 
@@ -11,17 +10,40 @@ const NavBar = () => {
   const month = date.toLocaleDateString("en-US", { month: "short" });
   const currentDate = date.getDate();
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <nav
       id="nav-bar"
-      className="bg-black bg-opacity-60 backdrop-blur-md text-white border-b-2 border-gray-700"
+      className={`transition-colors duration-300 text-white ${
+        scrolled
+          ? "bg-black/50 backdrop-blur-lg backdrop-saturate-150 border border-white/20 rounded-lg"
+          : "bg-black"
+      }`}
     >
       <div className="container mx-auto py-2 flex items-center justify-between">
         {/* Nav-icons */}
         <SocialLinks className="hidden md:flex" />
 
         {/* Nav-links */}
-        <div className="flex gap-2 md:gap-4 items-center">
+        <div className="flex gap-2 md:gap-4 items-center m-1 md:m-0">
           {navLinks.map((item, id) => (
             <motion.li
               key={id}

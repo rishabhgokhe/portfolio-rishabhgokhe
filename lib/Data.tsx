@@ -395,6 +395,107 @@ export const aboutData = {
     "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!",
 };
 
+// Services Section
+// -------------------------------------------------------------------------------------------
+export const servicesData = [
+  {
+    title: "Web Development",
+    description:
+      "Creating dynamic, responsive websites with modern frameworks to deliver seamless user experiences across all devices.",
+    icon: "🌐",
+  },
+  // {
+  //   title: "UI/UX Design",
+  //   description:
+  //     "Designing intuitive, visually stunning interfaces that captivate users and enhance engagement.",
+  //   icon: "🖌️",
+  // },
+  {
+    title: "iOS App Development",
+    description:
+      "Building high-performance iOS apps with sleek designs and user-centric functionality for a seamless mobile experience.",
+    icon: "📱",
+  },
+  {
+    title: "SEO Optimization",
+    description:
+      "Boosting your website's visibility and ranking with tailored SEO strategies to attract and retain your target audience.",
+    icon: "📈",
+  },
+  // {
+  //   title: "Digital Marketing",
+  //   description:
+  //     "Elevating your brand with targeted digital marketing strategies that drive traffic and generate leads.",
+  //   icon: "🚀",
+  // },
+  // {
+  //   title: "API Development",
+  //   description:
+  //     "Designing and implementing scalable, efficient APIs to seamlessly connect your applications and services.",
+  //   icon: "🔌",
+  // },
+  // {
+  //   title: "Cloud Integration",
+  //   description:
+  //     "Enabling cloud computing solutions for enhanced scalability, flexibility, and security of your systems.",
+  //   icon: "☁️",
+  // },
+  // {
+  //   title: "E-commerce Solutions",
+  //   description:
+  //     "Crafting custom e-commerce platforms with secure payment gateways and optimized user experiences to maximize conversions.",
+  //   icon: "🛒",
+  // },
+  // {
+  //   title: "DevOps Consulting",
+  //   description:
+  //     "Streamlining your development and operations with expert DevOps practices to enhance your team's efficiency and delivery speed.",
+  //   icon: "🛠️",
+  // },
+  // {
+  //   title: "Artificial Intelligence",
+  //   description:
+  //     "Harnessing AI to automate processes, derive insights, and deliver innovative solutions tailored to your business.",
+  //   icon: "🤖",
+  // },
+  // {
+  //   title: "Data Analysis & Visualization",
+  //   description:
+  //     "Transforming raw data into actionable insights with advanced data analysis techniques and visualization tools.",
+  //   icon: "📊",
+  // },
+  // {
+  //   title: "Blockchain Development",
+  //   description:
+  //     "Building secure, decentralized applications and smart contracts with cutting-edge blockchain technologies.",
+  //   icon: "🔗",
+  // },
+  // {
+  //   title: "Game Development",
+  //   description:
+  //     "Creating immersive, interactive games for various platforms with engaging storytelling and innovative gameplay mechanics.",
+  //   icon: "🎮",
+  // },
+  // {
+  //   title: "Content Creation",
+  //   description:
+  //     "Developing high-quality content that informs, entertains, and drives engagement across multiple channels.",
+  //   icon: "✍️",
+  // },
+  // {
+  //   title: "Cybersecurity Solutions",
+  //   description:
+  //     "Ensuring the protection of your digital assets with comprehensive cybersecurity strategies and best practices.",
+  //   icon: "🔒",
+  // },
+  {
+    title: "Technical Support & Maintenance",
+    description:
+      "Providing reliable technical support and maintenance services to keep your applications running smoothly.",
+    icon: "🛡️",
+  },
+];
+
 // Bento Grid Section
 // -------------------------------------------------------------------------------------------
 import LinkedInColoredIcon from "@/public/svg/icons/Colored/LinkedinColoredIcon";
@@ -403,13 +504,16 @@ import InstagramColoredIcon from "@/public/svg/icons/Colored/InstagramColoredIco
 import WhatsappColoredIcon from "@/public/svg/icons/Colored/WhatsappColoredIcon";
 import TwitterColoredIcon from "@/public/svg/icons/Colored/TwitterColoredIcon";
 import CallColoredIcon from "@/public/svg/icons/Colored/CallColoredIcon";
+import GmailColoredIcon from "@/public/svg/icons/Colored/GmailColoredIcon";
+import BmcColoredIcon from "@/public/svg/icons/Colored/BmcColoredIcon";
+import TelegramColoredIcon from "@/public/svg/icons/Colored/TelegramColoredIcon";
 import { BentoGridButton } from "@/components/Home/BentoGrid/BentoGridButton";
 
 export const socialBentoGridData = [
   {
     title: "LinkedIn",
     icon: <LinkedInColoredIcon />,
-    description: "Let's connect on LinkedIn 🫱🏻‍🫲🏼",
+    description: "Let's connect on LinkedIn 🫱🏻‍🫲🏼.",
     link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
     cardTrigger: (
       <BentoGridButton
@@ -417,15 +521,16 @@ export const socialBentoGridData = [
         title="Connect"
       />
     ),
-    span: 2,
+    span: 1,
   },
   {
     title: "GitHub",
     icon: <GithubColoredIcon />,
-    description: "Check out my GitHub 💻",
+    description:
+      "Check out my latest projects, from web development to open-source contributions! Let's code together 💻.",
     link: "https://github.com/rishabhgokhe",
     cardTrigger: (
-      <BentoGridButton href="https://github.com/rishabhgokhe" title="Follow" />
+      <BentoGridButton href="https://github.com/rishabhgokhe" title="Explore Projects" />
     ),
     span: 3,
   },
@@ -437,28 +542,35 @@ export const socialBentoGridData = [
     cardTrigger: (
       <BentoGridButton
         href="https://www.instagram.com/rishabhgokhe"
-        title="instagram.com"
+        title="Follow"
       />
     ),
     span: 1,
   },
   {
-    title: "WhatsApp",
-    icon: <WhatsappColoredIcon />,
-    description: "Chat with me on WhatsApp 💬",
-    link: "https://wa.me/919098447696",
+    title: "Buy me a Coffee",
+    icon: <BmcColoredIcon />,
+    description: "Support my work with a coffee ☕. Every cup helps me create more!",
+    link: "https://buymeacoffee.com/rishabhgokhe",
     cardTrigger: (
-      <BentoGridButton href="https://wa.me/919098447696" title="Message me" />
+      <BentoGridButton
+        href="https://buymeacoffee.com/rishabhgokhe"
+        title={"Coffee Break! ☕️"
+        }
+      />
     ),
     span: 3,
   },
   {
     title: "Twitter",
     icon: <TwitterColoredIcon />,
-    description: "Connect with me on Twitter 🐦",
+    description: "Let’s tweet and connect 🐦.",
     link: "https://twitter.com/rishabhgokhe",
     cardTrigger: (
-      <BentoGridButton href="https://twitter.com/rishabhgokhe" title="Follow" />
+      <BentoGridButton
+        href="https://twitter.com/rishabhgokhe"
+        title="Follow me"
+      />
     ),
     span: 1,
   },
@@ -467,17 +579,53 @@ export const socialBentoGridData = [
     icon: <CallColoredIcon />,
     description: "Connect with me directly 📞",
     link: "tel:+919098447696",
+    cardTrigger: <BentoGridButton href="tel:+919098447696" title="Call me" />,
+    // <a
+    //   href="tel:+919098447696"
+    //   className="text-muted-foreground hover:text-purple-200 transition-colors"
+    //   target="_blank"
+    //   rel="noopener noreferrer"
+    //   aria-label="LinkedIn Profile"
+    // >
+    //   Call me
+    // </a>
+    span: 1,
+  },
+  {
+    title: "Email",
+    icon: <GmailColoredIcon />,
+    description: "Reach out via email 📧.",
+    link: "mailto:rishabhgokhe20contact@gmail.com",
     cardTrigger: (
-      <a
-        href="tel:+919098447696"
-        className="text-muted-foreground hover:text-purple-200 transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn Profile"
-      >
-        Call me
-      </a>
+      <BentoGridButton
+        href="mailto:rishabhgokhe20contact@gmail.com"
+        title="Email me"
+      />
     ),
     span: 1,
+  },
+  {
+    title: "Telegram",
+    icon: <TelegramColoredIcon />,
+    description: "Join me on Telegram 📲.",
+    link: "https://t.me/rishabhgokhe",
+    cardTrigger: (
+      <BentoGridButton
+        href="https://t.me/rishabhgokhe"
+        title="Message me"
+      />
+    ),
+    span: 1,
+  },
+  {
+    title: "WhatsApp",
+    icon: <WhatsappColoredIcon />,
+    description:
+      "Let’s chat! Reach out to me anytime for a quick conversation or collaboration 💬.",
+    link: "https://wa.me/919098447696",
+    cardTrigger: (
+      <BentoGridButton href="https://wa.me/919098447696" title="Message on WhatsApp" />
+    ),
+    span: 3,
   },
 ];

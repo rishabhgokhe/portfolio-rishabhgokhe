@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
 
 export default function BentoCard({
   title,
@@ -22,9 +21,8 @@ export default function BentoCard({
   className?: string;
 }) {
 
-  const router = useRouter();
   const handleClick = () => {
-    router.push(link);
+    window.open(link, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -35,7 +33,7 @@ export default function BentoCard({
       className={`col-span-${span} ${className} flex flex-col`}
       onClick={handleClick}
     >
-      <Card className="bg-black cursor-pointer hover:bg-neutral-900 hover:shadow-none border-gray-800 shadow-lg shadow-purple-600/50 flex-1">
+      <Card className="bg-black cursor-pointer hover:bg-neutral-900 hover:shadow-none border-gray-800 shadow-lg shadow-orange-900/50 flex-1">
         <CardContent className="text-left space-y-2 flex items-start flex-col h-full">
           <div className="flex justify-start pt-5">{icon}</div>
           <h3 className="text-white text-xl font-bold">{title}</h3>

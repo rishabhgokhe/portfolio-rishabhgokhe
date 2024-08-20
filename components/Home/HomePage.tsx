@@ -6,8 +6,10 @@ import Projects from "./Projects/Projects";
 import Footer from "./Footer";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
-import { ToolTipIcon } from "../elements/ToolTipIcon";
+import Services from "./Services/Services";
 import BentoGrid from "./BentoGrid/BentoGrid";
+
+import { ToolTipIcon } from "../elements/ToolTipIcon";
 
 export default function HomePage() {
   return (
@@ -18,6 +20,7 @@ export default function HomePage() {
       <Projects />
       <About />
       <Contact />
+      <Services />
       <BentoGrid />
       <p className="bg-black text-center text-white py-4 shadow-inner">
         All animations are used from{" "}

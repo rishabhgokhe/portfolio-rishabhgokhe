@@ -129,8 +129,6 @@ html {
 #nav-bar {
   position: sticky;
   top: 0;
-  background-color: rgba(0, 0, 0);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 100;

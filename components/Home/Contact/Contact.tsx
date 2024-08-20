@@ -1,8 +1,5 @@
 "use client";
 import React, { FormEvent, ChangeEvent, useState } from "react";
-import emailjs from "@emailjs/browser";
-import CustomButton from "@/components/elements/CustomButton";
-import SocialLinks from "@/components/elements/SocialLinks";
 import ThankYou from "./ThankYou";
 import {
   Card,
@@ -16,7 +13,10 @@ import { Input } from "@/components/ui/input";
 import { FloatingInput } from "@/components/elements/FloatingInput";
 import { z } from "zod";
 import { toast } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import CustomButton from "@/components/elements/CustomButton";
 import MobileContent from "@/public/svg/icons/MobileContent";
+import Loader from "@/public/svg/icons/Loader";
 
 export default function Contact() {
   const [showThankYou, setShowThankYou] = useState(false);
@@ -90,7 +90,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-black text-white pb-10 flex flex-col items-center justify-center"
+      className="bg-black text-white pb-10 pt-4 flex flex-col items-center justify-center"
     >
       <h1 className="text-center text-5xl font-bold pb-8">
         Contact <span className="text-red-500">Me</span>
@@ -178,9 +178,10 @@ export default function Contact() {
                   <CardFooter className="flex p-0 justify-between">
                     <CustomButton className="w-full" type="submit">
                       {loading ? (
-                        <span className="loader">
-                          Sending your message ....
-                        </span>
+                        <div className="flex flex-row items-center cursor-progress">
+                          <span className="mr-2">Sending your message</span>
+                          <Loader />
+                        </div>
                       ) : (
                         "Send Message"
                       )}
