@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { navLinks } from "@/lib/Data";
 import { motion } from "framer-motion";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import SocialLinks from "../elements/SocialLinks";
 
 const NavBar = () => {
@@ -28,6 +30,16 @@ const NavBar = () => {
     };
   }, []);
 
+  useGSAP(()=>{
+    gsap.from('.navlinks', {
+      y: -20,
+      opacity: 0,
+      duration: 1,
+      delay: 4,
+      ease: "power2.inOut",
+      stagger: 0.2
+    });
+  })
 
   return (
     <nav
@@ -47,7 +59,7 @@ const NavBar = () => {
           {navLinks.map((item, id) => (
             <motion.li
               key={id}
-              className="list-none"
+              className="navlinks list-none"
               whileHover={{ scale: 1.1, color: "#d1d5db", y: -1 }}
               transition={{ duration: 0.3 }}
             >

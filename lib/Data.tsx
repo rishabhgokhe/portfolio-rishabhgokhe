@@ -64,13 +64,13 @@ import Typescript01Icon from "@/public/svg/icons/Tools/Typescript01Icon";
 import JavaScriptIcon from "@/public/svg/icons/Tools/JavaScriptIcon";
 import JavaIcon from "@/public/svg/icons/Tools/JavaIcon";
 import NpmIcon from "@/public/svg/icons/Tools/NpmIcon";
-import Html5Icon from "@/public/svg/icons/Tools/Html5Icon";
+import GSAPIcon from "@/public/svg/icons/Tools/GSAPIcon";
 import NextIcon from "@/public/svg/icons/Tools/NextIcon";
 import PythonIcon from "@/public/svg/icons/Tools/PythonIcon";
 import ExpressIcon from "@/public/svg/icons/Tools/ExpressIcon";
 import MongoDBIcon from "@/public/svg/icons/Tools/MongoDBIcon";
 import PostgresIcon from "@/public/svg/icons/Tools/PostgresIcon";
-import ScssIcon from "@/public/svg/icons/Tools/ScssIcon";
+import PostmanIcon from "@/public/svg/icons/Tools/PostmanIcon";
 import SwiftIcon from "@/public/svg/icons/Tools/SwiftIcon";
 import TailwindIcon from "@/public/svg/icons/Tools/TailwindIcon";
 import ReduxIcon from "@/public/svg/icons/Tools/ReduxIcon";
@@ -175,18 +175,18 @@ export const FeaturesData = [
     link: "https://www.postgresql.org/",
   },
   {
-    icon: <Html5Icon />,
-    title: "HTML",
+    icon: <GSAPIcon />,
+    title: "GSAP",
     description:
-      "Experienced in writing semantic and accessible HTML for web pages.",
-    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "Experienced in using GSAP for creating high-performance animations and transitions on web pages.",
+    link: "https://greensock.com/gsap/",
   },
   {
-    icon: <ScssIcon />,
-    title: "Sass",
+    icon: <PostmanIcon />,
+    title: "Postman",
     description:
-      "Proficient in using Sass for writing maintainable and scalable CSS.",
-    link: "https://sass-lang.com/",
+      "Proficient in using Postman for API testing and development, ensuring robust and reliable APIs.",
+    link: "https://www.postman.com/",
   },
 ];
 
@@ -404,12 +404,6 @@ export const servicesData = [
       "Creating dynamic, responsive websites with modern frameworks to deliver seamless user experiences across all devices.",
     icon: "🌐",
   },
-  // {
-  //   title: "UI/UX Design",
-  //   description:
-  //     "Designing intuitive, visually stunning interfaces that captivate users and enhance engagement.",
-  //   icon: "🖌️",
-  // },
   {
     title: "iOS App Development",
     description:
@@ -422,72 +416,6 @@ export const servicesData = [
       "Boosting your website's visibility and ranking with tailored SEO strategies to attract and retain your target audience.",
     icon: "📈",
   },
-  // {
-  //   title: "Digital Marketing",
-  //   description:
-  //     "Elevating your brand with targeted digital marketing strategies that drive traffic and generate leads.",
-  //   icon: "🚀",
-  // },
-  // {
-  //   title: "API Development",
-  //   description:
-  //     "Designing and implementing scalable, efficient APIs to seamlessly connect your applications and services.",
-  //   icon: "🔌",
-  // },
-  // {
-  //   title: "Cloud Integration",
-  //   description:
-  //     "Enabling cloud computing solutions for enhanced scalability, flexibility, and security of your systems.",
-  //   icon: "☁️",
-  // },
-  // {
-  //   title: "E-commerce Solutions",
-  //   description:
-  //     "Crafting custom e-commerce platforms with secure payment gateways and optimized user experiences to maximize conversions.",
-  //   icon: "🛒",
-  // },
-  // {
-  //   title: "DevOps Consulting",
-  //   description:
-  //     "Streamlining your development and operations with expert DevOps practices to enhance your team's efficiency and delivery speed.",
-  //   icon: "🛠️",
-  // },
-  // {
-  //   title: "Artificial Intelligence",
-  //   description:
-  //     "Harnessing AI to automate processes, derive insights, and deliver innovative solutions tailored to your business.",
-  //   icon: "🤖",
-  // },
-  // {
-  //   title: "Data Analysis & Visualization",
-  //   description:
-  //     "Transforming raw data into actionable insights with advanced data analysis techniques and visualization tools.",
-  //   icon: "📊",
-  // },
-  // {
-  //   title: "Blockchain Development",
-  //   description:
-  //     "Building secure, decentralized applications and smart contracts with cutting-edge blockchain technologies.",
-  //   icon: "🔗",
-  // },
-  // {
-  //   title: "Game Development",
-  //   description:
-  //     "Creating immersive, interactive games for various platforms with engaging storytelling and innovative gameplay mechanics.",
-  //   icon: "🎮",
-  // },
-  // {
-  //   title: "Content Creation",
-  //   description:
-  //     "Developing high-quality content that informs, entertains, and drives engagement across multiple channels.",
-  //   icon: "✍️",
-  // },
-  // {
-  //   title: "Cybersecurity Solutions",
-  //   description:
-  //     "Ensuring the protection of your digital assets with comprehensive cybersecurity strategies and best practices.",
-  //   icon: "🔒",
-  // },
   {
     title: "Technical Support & Maintenance",
     description:

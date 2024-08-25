@@ -137,3 +137,37 @@ html {
 .welcome-text {
   font-family: "Pacifico", "Varela Round", sans-serif !important;
 }
+
+#main {
+  position: relative;
+  z-index: 10;
+  background-color: #000000;
+}
+
+#footer {
+  position: fixed;
+  z-index: 9;
+  bottom: 0;
+}
+
+#footer h1 {
+    font-family: 'Montserrat' !important;
+    font-weight: bolder;
+}
+
+#loader {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease;
+}
+
+#loader .text {
+  font-family: 'Montserrat' !important;
+  font-weight: bolder;
+}
+
+h1 span {
+  display: inline-block;
+}
