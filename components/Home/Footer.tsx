@@ -3,7 +3,7 @@ import SocialLinks from "../elements/SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="h-[30vh] sm:h-[40vh] md:h-[50vh] w-full bg-yellow-500 bg-opacity-80 text-white pt-4">
+    <footer className="h-[30vh] sm:h-[40vh] md:h-[50vh] w-[100vw] bg-yellow-500 bg-opacity-80 text-white pt-4">
       {/* Uncomment and update the following section if needed */}
       {/* <div className="flex flex-col md:flex-row justify-between items-center px-4">
         <p className="text-gray-400 text-md">

@@ -13,21 +13,21 @@ import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
-  useGSAP(() => {
-    gsap.from(".feature-card", {
-      scrollTrigger: {
-        trigger: ".feature-card",
-        start: "top 90%",
-        end: "bottom top",
-        scrub: 1,
-      },
-      y: 50,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1,
-      ease: "power1.inOut",
-    });
-  }, []);
+  // useGSAP(() => {
+  //   gsap.from(".feature-card", {
+  //     scrollTrigger: {
+  //       trigger: ".feature-card",
+  //       start: "top 90%",
+  //       end: "bottom top",
+  //       scrub: 1,
+  //     },
+  //     y: 50,
+  //     opacity: 0,
+  //     stagger: 0.2,
+  //     duration: 1,
+  //     ease: "power1.inOut",
+  //   });
+  // }, []);
 
   return (
     <section id="features" className="bg-black text-white py-12">
