@@ -14,6 +14,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import { ToolTipIcon } from "../elements/ToolTipIcon";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import LandingIntro from "./LandingIntro";
+import SVGDivider from "../elements/SVGDivider";
 
 export default function HomePage() {
   // useEffect(() => {
@@ -34,9 +35,10 @@ export default function HomePage() {
   return (
     <div id="root">
       <LandingIntro />
+      <NavBar />
       <div id="main" data-scroll-container>
-        <NavBar />
         <IntroSec />
+        <SVGDivider />
         <Features />
         <Projects />
         <About />

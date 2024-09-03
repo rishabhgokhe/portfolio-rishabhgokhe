@@ -9,9 +9,9 @@ export default function BentoGrid() {
       id="bento"
       className="bg-black text-white pb-10 p-5"
     >
-      <h1 className="text-center text-5xl font-bold pb-8">
+      {/* <h1 className="text-center text-5xl font-bold pb-8">
       My Digital Footprint : <span className="text-red-500">Connect & Follow</span>
-      </h1>
+      </h1> */}
       {/* <h3 className="text-xl font-semibold mb-6 animate-pulse">
         Social Bento grid is under development...
       </h3> */}

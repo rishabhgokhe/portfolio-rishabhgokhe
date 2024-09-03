@@ -26,6 +26,7 @@ export const LandingIntro = () => {
         opacity: 0,
         duration: 0.7,
         stagger: 0.1,
+        filter: "blur(15px)",
       });
     }
   }, [isVisible]);

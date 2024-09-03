@@ -46,7 +46,7 @@ const NavBar = () => {
       id="nav-bar"
       className={`transition-colors duration-300 text-white ${
         scrolled
-          ? "bg-black/50 backdrop-blur-lg backdrop-saturate-150 border border-white/20 rounded-lg"
+          ? "bg-black/50 backdrop-blur-lg backdrop-saturate-150 border border-white/20 rounded-lg m-[0.5vh]"
           : "bg-black"
       }`}
     >
