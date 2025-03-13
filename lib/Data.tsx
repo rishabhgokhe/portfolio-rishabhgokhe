@@ -4,6 +4,7 @@ import InstagramIcon from "@/public/svg/icons/InstagramIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
 import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
 import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";
+import LeetcodeIcon from "@/public/svg/icons/LeetcodeIcon";
 
 export const navLinks = [
   {
@@ -31,18 +32,23 @@ export const navIcons = [
     icon: <GithubIcon />,
   },
   {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/rishabh-gokhe",
+    icon: <Linkedin01Icon />,
+  },
+  {
+    name: "LeetCode",
+    link: "https://leetcode.com/u/rishabh_gokhe/",
+    icon: <LeetcodeIcon />,
+  },
+  {
     name: "Instagram",
     link: "https://instagram.com/rishabh_gokhe",
     icon: <InstagramIcon />,
   },
   {
-    name: "Linkedin",
-    link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
-    icon: <Linkedin01Icon />,
-  },
-  {
     name: "Twitter",
-    link: "https://twitter.com/rishabhgokhe?s=21&t=Flej6ro1R2UhXzVpOMJTdg",
+    link: "https://twitter.com/rishabhgokhe",
     icon: <NewTwitterRectangleIcon />,
   },
   {
@@ -55,7 +61,7 @@ export const navIcons = [
 // Intro Section
 // -------------------------------------------------------------------------------------------
 export const introPara =
-  "A passionate full stack developer, 3D modeling, and UI design. This website is a showcase of my diverse portfolio, highlighting my expertise and creativity. I'm eager to explore new opportunities and collaborations. Feel free to browse through my work and get in touch to discuss how we can create something amazing together.";
+  "Versatile Full-Stack and Android Developer with expertise in React, Next.js, Node.js, and MongoDB. This website is a showcase of my diverse portfolio, highlighting my problem-solving skills and passion for creating scalable, high-performance applications. Exploring Blockchain and Large Language Models (LLMs). Feel free to explore my work and connect with me for exciting collaborations!";
 
 // Features Section
 // -------------------------------------------------------------------------------------------
@@ -112,18 +118,18 @@ export const FeaturesData = [
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
-    icon: <SwiftIcon />,
-    title: "Swift",
-    description:
-      "Experienced in using Swift for iOS and macOS app development.",
-    link: "https://developer.apple.com/swift/",
-  },
-  {
     icon: <JavaIcon />,
     title: "Java",
     description:
       "Proficient in building applications using Java, including Spring framework.",
     link: "https://www.java.com/",
+  },
+  {
+    icon: <SwiftIcon />,
+    title: "Swift",
+    description:
+      "Experienced in using Swift for iOS and macOS app development.",
+    link: "https://developer.apple.com/swift/",
   },
   {
     icon: <NpmIcon />,
@@ -390,9 +396,9 @@ export const projectData = [
 // -------------------------------------------------------------------------------------------
 export const aboutData = {
   aboutMe:
-    "Hello! I'm Rishabh Gokhe, a passionate full-stack developer. I enjoy creating stunning, responsive web applications and am always eager to learn new technologies. In addition to coding, I have a keen interest in 3D modeling and UI design. When I'm not coding, you can find me modeling 3D Objects or hitting the gym.",
+    "Hey! I'm Rishabh Gokhe, a full-stack developer skilled in web and mobile development. I specialize in Next.js, React Native, and backend technologies like Node.js and MongoDB. I love solving complex problems, exploring AI and cybersecurity, and contributing to developer communities. Outside of coding, I enjoy AI research, reading self-improvement books, and fitness.",
   currentStatus:
-    "I am currently working on SkillWave, an ed-tech platform that aims to revolutionize online learning, and TaskFlow, a task management software with a unique design and easy UI. Feel free to explore my projects and connect with me!",
+    "Currently building SkillWave (ed-tech platform), TaskFlow (task management app), and ByteChat (real-time chat). Also diving into Blockchain, advancing DSA, and researching LLMs. Let's build something awesome together!",
 };
 
 // Services Section
@@ -536,10 +542,10 @@ export const socialBentoGridData = [
     title: "Telegram",
     icon: <TelegramColoredIcon />,
     description: "Join me on Telegram 📲.",
-    link: "https://t.me/rishabhgokhe",
+    link: "https://t.me/rishDiscovers",
     cardTrigger: (
       <BentoGridButton
-        href="https://t.me/rishabhgokhe"
+        href="https://t.me/rishDiscovers"
         title="Message me"
       />
     ),

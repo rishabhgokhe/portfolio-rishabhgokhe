@@ -45,7 +45,7 @@ export default function HomePage() {
         <Contact />
         <Services />
         <BentoGrid />
-        <p className="bg-black text-center text-white py-4 shadow-inner">
+        {/* <p className="bg-black text-center text-white py-4 shadow-inner">
           All animations are used from{" "}
           <ToolTipIcon
             name="https://www.npmjs.com/package/animease"
@@ -59,6 +59,9 @@ export default function HomePage() {
             }
           />{" "}
           npm package
+        </p> */}
+        <p className="bg-black text-center text-white py-4 shadow-inner underline underline-offset-2">
+          New portfolio website design launching soon...
         </p>
       </div>
       <Footer />

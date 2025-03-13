@@ -3,6 +3,7 @@ import { Inter, Varela_Round } from "next/font/google";
 import "./globals.scss";
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
+import CustomCursor from "@/components/elements/CustomCursor/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const varelaRound = Varela_Round({ subsets: ["latin"], weight: "400", variable: "--font-varela" });
@@ -26,6 +27,7 @@ export default function RootLayout({
           varelaRound.variable
         )}
       >
+        {/* <CustomCursor /> */}
         <Toaster position="top-right" />
         {children}
       </body>
