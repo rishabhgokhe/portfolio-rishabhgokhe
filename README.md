@@ -1,7 +1,7 @@
 # Rishabh's Portfolio Website
 
 ## 📝 Description
-Welcome to my portfolio website! This site showcases my projects, skills, and experiences as a web developer. Here, you can find information about me, explore my work, and get in touch. I'm passionate about creating innovative and user-friendly web applications that help people improve their productivity and organization.
+Welcome to my Portfolio Website! This site showcases my projects, skills, and experiences as a web developer. Here, you can find information about me, explore my work, and get in touch. I'm passionate about creating innovative and user-friendly web applications that help people improve their productivity and organization.
 
 ## 🖥️ Technologies Used
 - **Frontend:** JavaScript, TypeScript, Next.js, GSAP, Tailwind CSS, SCSS
@@ -37,5 +37,12 @@ Feel free to reach out if you have any questions, suggestions, or just want to c
 
 If you have any feedback or just want to get in touch, please reach out to me at [rishabhgokhe20contact@gmail.com](mailto:rishabhgokhe20contact@gmail.com)
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## 🔒 License
+
+This project is **proprietary and not open for public use**. All rights are reserved by **Rishabh Gokhe**.
+Unauthorized use, distribution, or modification of this project is strictly prohibited.
+
+For full license details, refer to the **[LICENSE](LICENSE)** file.
+
+For inquiries regarding licensing or permissions, please contact:
+📧 [rishabhgokhe20contact@gmail.com](mailto:rishabhgokhe20contact@gmail.com)
