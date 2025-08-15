@@ -17,7 +17,7 @@ import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
 export default function Projects() {
   return (
     <section id="projects" className="bg-black text-white pb-10">
-      <h1 className="text-center text-5xl font-bold mb-12">Projects</h1>
+      {/* <h1 className="text-center text-5xl font-bold mb-12">Projects</h1> */}
       <div className="container mx-auto px-4">
         <div className="space-y-8">
           {projectData.map((project, index) => (

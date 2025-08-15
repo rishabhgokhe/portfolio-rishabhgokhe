@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import IntroSec from "./IntroSec/IntroSec";
 import Features from "./Features/Features";
@@ -10,11 +10,12 @@ import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Services from "./Services/Services";
 import BentoGrid from "./BentoGrid/BentoGrid";
-import LocomotiveScroll from "locomotive-scroll";
-import { ToolTipIcon } from "../elements/ToolTipIcon";
-import "locomotive-scroll/dist/locomotive-scroll.css";
 import LandingIntro from "./LandingIntro";
 import SVGDivider from "../elements/SVGDivider";
+import Divider from "./../elements/Divider";
+
+import "locomotive-scroll/dist/locomotive-scroll.css";
+import LocomotiveScroll from "locomotive-scroll";
 
 export default function HomePage() {
   // useEffect(() => {
@@ -40,7 +41,12 @@ export default function HomePage() {
         <IntroSec />
         <SVGDivider />
         <Features />
+
+        <div className="m-5 bg-white">
+          <Divider text="PROJECTS' 25" />
+        </div>
         <Projects />
+
         <About />
         <Contact />
         <Services />

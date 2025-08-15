@@ -472,10 +472,10 @@ export const socialBentoGridData = [
     title: "Instagram",
     icon: <InstagramColoredIcon />,
     description: "Follow me on Instagram 📸",
-    link: "https://www.instagram.com/rishabhgokhe",
+    link: "https://www.instagram.com/rishabh_gokhe",
     cardTrigger: (
       <BentoGridButton
-        href="https://www.instagram.com/rishabhgokhe"
+        href="https://www.instagram.com/rishabh_gokhe"
         title="Follow"
       />
     ),
