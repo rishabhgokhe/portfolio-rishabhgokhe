@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Varela_Round } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.scss";
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from '@vercel/analytics/next';
 import CustomCursor from "@/components/elements/CustomCursor/CustomCursor";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const varelaRound = Varela_Round({ subsets: ["latin"], weight: "400", variable: "--font-varela" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Rishabh Gokhe",
@@ -24,8 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          varelaRound.variable
+          inter.variable
         )}
       >
         {/* <CustomCursor /> */}

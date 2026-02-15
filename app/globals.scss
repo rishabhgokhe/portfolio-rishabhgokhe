@@ -2,15 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-
 * {
-  font-family: "Varela Round", "Montserrat", sans-serif !important;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif !important;
   margin: 0;
   padding: 0;
 }
@@ -21,20 +15,23 @@ html {
 
 // Font classes
 .inter {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
 }
 
 .libre-franklin {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 .montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -135,7 +132,8 @@ html {
 }
 
 .welcome-text {
-  font-family: "Pacifico", "Varela Round", sans-serif !important;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif !important;
 }
 
 #main {
@@ -152,7 +150,8 @@ html {
 }
 
 #footer h1 {
-  font-family: "Montserrat", "Varela Round", "Montserrat", sans-serif !important;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif !important;
   font-weight: bolder;
 }
 
@@ -165,7 +164,8 @@ html {
 }
 
 #loader .text {
-  font-family: "Montserrat", "Varela Round", "Montserrat", sans-serif !important;
+  font-family: var(--font-sans), "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif !important;
   font-weight: bolder;
 }
 

@@ -14,24 +14,7 @@ import LandingIntro from "./LandingIntro";
 import SVGDivider from "../elements/SVGDivider";
 import Divider from "./../elements/Divider";
 
-import "locomotive-scroll/dist/locomotive-scroll.css";
-import LocomotiveScroll from "locomotive-scroll";
-
 export default function HomePage() {
-  // useEffect(() => {
-  //   const el = document.querySelector("#root");
-
-  //   if (el instanceof HTMLElement) {
-  //     const scroll = new LocomotiveScroll({
-  //       el: el,
-  //       smooth: true,
-  //     });
-
-  //     return () => {
-  //       if (scroll) scroll.destroy();
-  //     };
-  //   }
-  // }, []);
 
   return (
     <div id="root">
