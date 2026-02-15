@@ -1,17 +1,36 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-
 import { Playfair_Display } from "next/font/google";
 import { HyperText } from "@/components/ui/hyper-text";
 import { GridBackground } from "@/components/ui/grid-background";
+import SectionTag from "@/components/elements/SectionTag";
 import { TechStackSkillGroups } from "@/lib/Data";
-
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+const dataTrails = [
+  { top: "16%", width: 90, delay: "0s", duration: "10s" },
+  { top: "24%", width: 90, delay: "1.4s", duration: "12s" },
+  { top: "33%", width: 84, delay: "0.7s", duration: "9s" },
+  { top: "45%", width: 100, delay: "2.2s", duration: "13s" },
+  { top: "56%", width: 95, delay: "1.1s", duration: "10s" },
+  { top: "67%", width: 96, delay: "2.8s", duration: "12s" },
+  { top: "78%", width: 85, delay: "0.4s", duration: "9s" },
+];
+
+const constellationDots = [
+  { left: "8%", top: "20%", size: 3, delay: "0s" },
+  { left: "18%", top: "38%", size: 2, delay: "0.9s" },
+  { left: "29%", top: "17%", size: 3, delay: "1.6s" },
+  { left: "41%", top: "50%", size: 2, delay: "0.4s" },
+  { left: "53%", top: "28%", size: 3, delay: "2.1s" },
+  { left: "64%", top: "61%", size: 2, delay: "0.8s" },
+  { left: "77%", top: "34%", size: 3, delay: "1.4s" },
+  { left: "88%", top: "52%", size: 2, delay: "2.5s" },
+];
 
 export default function TechStack() {
   const toneClasses: Record<string, string> = {
@@ -31,6 +50,41 @@ export default function TechStack() {
       className="relative overflow-hidden bg-black py-20 text-white sm:py-24"
     >
       <GridBackground color="#0ea5e9" />
+      <div className="pointer-events-none absolute inset-0 z-[12]">
+        {dataTrails.map((trail) => (
+          <span
+            key={`${trail.top}-${trail.delay}`}
+            className="absolute h-[1.2px] bg-gradient-to-r from-transparent via-sky-300/50 to-transparent shadow-[0_0_12px_rgba(125,211,252,0.75)]"
+            style={{
+              top: trail.top,
+              width: `${trail.width}px`,
+              animationName: "packet-trail",
+              animationDuration: trail.duration,
+              animationDelay: trail.delay,
+              animationIterationCount: "infinite",
+              animationTimingFunction: "linear",
+            }}
+          />
+        ))}
+
+        {constellationDots.map((dot) => (
+          <span
+            key={`${dot.left}-${dot.top}`}
+            className="absolute rounded-full bg-sky-200/40 shadow-[0_0_6px_rgba(125,211,252,0.4)]"
+            style={{
+              left: dot.left,
+              top: dot.top,
+              width: `${dot.size}px`,
+              height: `${dot.size}px`,
+              animationName: "constellation-pulse",
+              animationDuration: "4.5s",
+              animationDelay: dot.delay,
+              animationIterationCount: "infinite",
+              animationTimingFunction: "ease-in-out",
+            }}
+          />
+        ))}
+      </div>
 
       {/* top black gradient */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-black via-black/50 to-transparent sm:h-44" />
@@ -38,19 +92,11 @@ export default function TechStack() {
 
       <div className="relative z-20 mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:px-6">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
-          <div className="relative inline-flex self-center">
-            <span className="rounded-md border border-sky-400/40 bg-sky-400/10 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-200">
-              Tech Stack
-            </span>
-            <Image
-              src="/images/Emphasis Line Right.png"
-              alt=""
-              width={32}
-              height={32}
-              aria-hidden="true"
-              className="absolute -right-6 -top-3 opacity-90"
-            />
-          </div>
+          <SectionTag
+            label="Tech Stack"
+            containerClassName="self-center"
+            badgeClassName="border-sky-400/40 bg-sky-400/10 text-sky-200"
+          />
           <h1
             className={`${playfairDisplay.className} text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-5xl md:text-6xl`}
           >
@@ -125,6 +171,38 @@ export default function TechStack() {
           </div>
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-36 bg-gradient-to-t from-black/50 via-black/10 to-transparent sm:h-44" />
+
+      <style jsx>{`
+        @keyframes packet-trail {
+          0% {
+            transform: translateX(-20vw);
+            opacity: 0;
+          }
+          15% {
+            opacity: 0.6;
+          }
+          85% {
+            opacity: 0.35;
+          }
+          100% {
+            transform: translateX(120vw);
+            opacity: 0;
+          }
+        }
+
+        @keyframes constellation-pulse {
+          0%,
+          100% {
+            transform: scale(0.9);
+            opacity: 0.2;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.55;
+          }
+        }
+      `}</style>
     </section>
   );
 }

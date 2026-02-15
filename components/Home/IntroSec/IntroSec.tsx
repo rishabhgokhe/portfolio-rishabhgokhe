@@ -5,6 +5,7 @@ import { Playfair_Display } from "next/font/google";
 import CustomLinkButton from "@/components/elements/CustomLinkButton";
 import { GridBackground } from "@/components/ui/grid-background";
 import { navIcons } from "@/lib/Data";
+import SectionTag from "@/components/elements/SectionTag";
 import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";
 import profilePhoto from "@/public/images/profile_photo.jpeg";
 
@@ -37,21 +38,10 @@ function IntroSec() {
       <GridBackground color="#16b981" />
 
       <div className="pointer-events-none absolute inset-x-0 top-[3vh] z-10 flex flex-col items-center text-center">
-        <div className="relative inline-flex">
-          <span
-            className="rounded-full border border-emerald-400/45 bg-emerald-400/10 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-100 backdrop-blur-sm"
-          >
-            Hello! 👋🏼
-          </span>
-          <Image
-            src="/images/Emphasis Line Right.png"
-            alt=""
-            width={32}
-            height={32}
-            aria-hidden="true"
-            className="absolute -right-6 -top-3 opacity-90"
-          />
-        </div>
+        <SectionTag
+          label="Hello!👋🏼"
+          badgeClassName="rounded-full border-emerald-400/45 bg-emerald-400/10 text-emerald-100 backdrop-blur-sm"
+        />
         <h1
           className={`${playfairDisplay.className} text-[2rem] leading-none font-extrabold tracking-tight text-zinc-100/90 sm:text-[3.2rem] md:text-[5.2rem]`}
         >

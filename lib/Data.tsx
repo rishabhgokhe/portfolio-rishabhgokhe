@@ -1,29 +1,8 @@
 // Navigation bar
 import GithubIcon from "@/public/svg/icons/GithubIcon";
-import InstagramIcon from "@/public/svg/icons/InstagramIcon";
 import Linkedin01Icon from "@/public/svg/icons/Linkedin01Icon";
-import NewTwitterRectangleIcon from "@/public/svg/icons/NewTwitterRectangleIcon";
 import MailSend01Icon from "@/public/svg/icons/MailSend01Icon";
 import LeetcodeIcon from "@/public/svg/icons/LeetcodeIcon";
-
-export const navLinks = [
-  {
-    name: "Skills",
-    link: "#features",
-  },
-  {
-    name: "Projects",
-    link: "#projects",
-  },
-  {
-    name: "About",
-    link: "#about",
-  },
-  {
-    name: "Contact",
-    link: "#contact",
-  },
-];
 
 export const navIcons = [
   {
@@ -42,26 +21,11 @@ export const navIcons = [
     icon: <LeetcodeIcon />,
   },
   {
-    name: "Instagram",
-    link: "https://instagram.com/rishabh_gokhe",
-    icon: <InstagramIcon />,
-  },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/rishabhgokhe",
-    icon: <NewTwitterRectangleIcon />,
-  },
-  {
     name: "Mail Us",
     link: "mailto:rishabhgokhe20contact@gmail.com",
     icon: <MailSend01Icon />,
   },
 ];
-
-// Intro Section
-// -------------------------------------------------------------------------------------------
-export const introPara =
-  "Versatile Full-Stack and Android Developer with expertise in React, Next.js, Node.js, and MongoDB. This website is a showcase of my diverse portfolio, highlighting my problem-solving skills and passion for creating scalable, high-performance applications. Exploring Blockchain and Large Language Models (LLMs). Feel free to explore my work and connect with me for exciting collaborations!";
 
 // Features Section
 // -------------------------------------------------------------------------------------------
@@ -83,7 +47,6 @@ import TailwindIcon from "@/public/svg/icons/Tools/TailwindIcon";
 import ReduxIcon from "@/public/svg/icons/Tools/ReduxIcon";
 import Html5Icon from "@/public/svg/icons/Tools/Html5Icon";
 import ScssIcon from "@/public/svg/icons/Tools/ScssIcon";
-import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
 import Solidity from "@/public/svg/icons/Tools/Solidity";
 import SupabaseLogo from "@/public/svg/icons/Tools/Supabase";
 import RedisLogo from "@/public/svg/icons/Tools/Redis";
@@ -449,174 +412,60 @@ export const projectData = [
   },
 ];
 
-// About Us Section
-// -------------------------------------------------------------------------------------------
-export const aboutData = {
-  aboutMe:
-    "Hey! I'm Rishabh Gokhe, a full-stack developer skilled in web and mobile development. I specialize in Next.js, React Native, and backend technologies like Node.js and MongoDB. I love solving complex problems, exploring AI and cybersecurity, and contributing to developer communities. Outside of coding, I enjoy AI research, reading self-improvement books, and fitness.",
-  currentStatus:
-    "Currently building SkillWave (ed-tech platform), TaskFlow (task management app), and ByteChat (real-time chat). Also diving into Blockchain, advancing DSA, and researching LLMs. Let's build something awesome together!",
-};
-
 // Services Section
 // -------------------------------------------------------------------------------------------
 export const servicesData = [
   {
-    title: "Web Development",
+    title: "Product Grade Web Apps",
     description:
-      "Creating dynamic, responsive websites with modern frameworks to deliver seamless user experiences across all devices.",
+      "Scalable apps with Next.js and React, built for real users and production traffic.",
     icon: "🌐",
   },
   {
-    title: "iOS App Development",
+    title: "Software Testing",
     description:
-      "Building high-performance iOS apps with sleek designs and user-centric functionality for a seamless mobile experience.",
-    icon: "📱",
+      "Unit, integration, and e2e test strategy to ship stable releases with confidence.",
+    icon: "🧪",
   },
   {
-    title: "SEO Optimization",
+    title: "Database Scaling",
     description:
-      "Boosting your website's visibility and ranking with tailored SEO strategies to attract and retain your target audience.",
-    icon: "📈",
+      "Schema, indexing, and query tuning for MongoDB/PostgreSQL as traffic grows.",
+    icon: "🗄️",
   },
   {
-    title: "Technical Support & Maintenance",
+    title: "Performance Optimization",
     description:
-      "Providing reliable technical support and maintenance services to keep your applications running smoothly.",
-    icon: "🛡️",
+      "Profiling, caching, and bottleneck fixes for faster UX and lower backend latency.",
+    icon: "⚡",
   },
 ];
 
-// Bento Grid Section
+// Footer Links
 // -------------------------------------------------------------------------------------------
-import LinkedInColoredIcon from "@/public/svg/icons/Colored/LinkedinColoredIcon";
-import GithubColoredIcon from "@/public/svg/icons/Colored/GithubColoredIcon";
-import InstagramColoredIcon from "@/public/svg/icons/Colored/InstagramColoredIcon";
-import WhatsappColoredIcon from "@/public/svg/icons/Colored/WhatsappColoredIcon";
-import TwitterColoredIcon from "@/public/svg/icons/Colored/TwitterColoredIcon";
-import CallColoredIcon from "@/public/svg/icons/Colored/CallColoredIcon";
-import GmailColoredIcon from "@/public/svg/icons/Colored/GmailColoredIcon";
-import BmcColoredIcon from "@/public/svg/icons/Colored/BmcColoredIcon";
-import TelegramColoredIcon from "@/public/svg/icons/Colored/TelegramColoredIcon";
-import { BentoGridButton } from "@/components/Home/BentoGrid/BentoGridButton";
-
 export const socialBentoGridData = [
   {
+    title: "Email",
+    link: "mailto:rishabhgokhe20contact@gmail.com",
+  },
+  {
     title: "LinkedIn",
-    icon: <LinkedInColoredIcon />,
-    description: "Let's connect on LinkedIn 🫱🏻‍🫲🏼.",
     link: "https://www.linkedin.com/in/rishabh-gokhe-22168b287",
-    cardTrigger: (
-      <BentoGridButton
-        href="https://www.linkedin.com/in/rishabh-gokhe-22168b287"
-        title="Connect"
-      />
-    ),
-    span: 1,
   },
   {
     title: "GitHub",
-    icon: <GithubColoredIcon />,
-    description:
-      "Check out my latest projects, from web development to open-source contributions! Let's code together 💻.",
     link: "https://github.com/rishabhgokhe",
-    cardTrigger: (
-      <BentoGridButton href="https://github.com/rishabhgokhe" title="Explore Projects" />
-    ),
-    span: 3,
   },
   {
     title: "Instagram",
-    icon: <InstagramColoredIcon />,
-    description: "Follow me on Instagram 📸",
     link: "https://www.instagram.com/rishabh_gokhe",
-    cardTrigger: (
-      <BentoGridButton
-        href="https://www.instagram.com/rishabh_gokhe"
-        title="Follow"
-      />
-    ),
-    span: 1,
   },
   {
     title: "Buy me a Coffee",
-    icon: <BmcColoredIcon />,
-    description: "Support my work with a coffee ☕. Every cup helps me create more!",
     link: "https://buymeacoffee.com/rishabhgokhe",
-    cardTrigger: (
-      <BentoGridButton
-        href="https://buymeacoffee.com/rishabhgokhe"
-        title={"Coffee Break! ☕️"
-        }
-      />
-    ),
-    span: 3,
   },
   {
     title: "Twitter",
-    icon: <TwitterColoredIcon />,
-    description: "Let’s tweet and connect 🐦.",
     link: "https://twitter.com/rishabhgokhe",
-    cardTrigger: (
-      <BentoGridButton
-        href="https://twitter.com/rishabhgokhe"
-        title="Follow me"
-      />
-    ),
-    span: 1,
-  },
-  {
-    title: "Call Now",
-    icon: <CallColoredIcon />,
-    description: "Connect with me directly 📞",
-    link: "tel:+919098447696",
-    cardTrigger: <BentoGridButton href="tel:+919098447696" title="Call me" />,
-    // <a
-    //   href="tel:+919098447696"
-    //   className="text-muted-foreground hover:text-purple-200 transition-colors"
-    //   target="_blank"
-    //   rel="noopener noreferrer"
-    //   aria-label="LinkedIn Profile"
-    // >
-    //   Call me
-    // </a>
-    span: 1,
-  },
-  {
-    title: "Email",
-    icon: <GmailColoredIcon />,
-    description: "Reach out via email 📧.",
-    link: "mailto:rishabhgokhe20contact@gmail.com",
-    cardTrigger: (
-      <BentoGridButton
-        href="mailto:rishabhgokhe20contact@gmail.com"
-        title="Email me"
-      />
-    ),
-    span: 1,
-  },
-  {
-    title: "Telegram",
-    icon: <TelegramColoredIcon />,
-    description: "Join me on Telegram 📲.",
-    link: "https://t.me/rishDiscovers",
-    cardTrigger: (
-      <BentoGridButton
-        href="https://t.me/rishDiscovers"
-        title="Message me"
-      />
-    ),
-    span: 1,
-  },
-  {
-    title: "WhatsApp",
-    icon: <WhatsappColoredIcon />,
-    description:
-      "Let’s chat! Reach out to me anytime for a quick conversation or collaboration 💬.",
-    link: "https://wa.me/919098447696",
-    cardTrigger: (
-      <BentoGridButton href="https://wa.me/919098447696" title="Message on WhatsApp" />
-    ),
-    span: 3,
-  },
+  }
 ];

@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import { cn } from "@/lib/utils";
-import { Toaster } from "react-hot-toast";
 import { Analytics } from '@vercel/analytics/next';
-import CustomCursor from "@/components/elements/CustomCursor/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,8 +27,6 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        {/* <CustomCursor /> */}
-        <Toaster position="top-right" />
         {children}
         <Analytics />
       </body>
