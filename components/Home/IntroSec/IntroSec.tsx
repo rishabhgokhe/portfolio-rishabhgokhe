@@ -18,11 +18,15 @@ function IntroSec() {
   const birthMonthIndex = 6;
   const birthDay = 25;
   const now = new Date();
-  const birthdayThisYear = new Date(now.getFullYear(), birthMonthIndex, birthDay);
+  const birthdayThisYear = new Date(
+    now.getFullYear(),
+    birthMonthIndex,
+    birthDay,
+  );
   const hasHadBirthdayThisYear = now >= birthdayThisYear;
   const age = now.getFullYear() - birthYear - (hasHadBirthdayThisYear ? 0 : 1);
   const socialLinks = navIcons.filter((item) =>
-    ["Github", "Linkedin", "LeetCode", "Mail Us"].includes(item.name)
+    ["Github", "Linkedin", "LeetCode", "Mail Us"].includes(item.name),
   );
 
   return (
@@ -32,73 +36,90 @@ function IntroSec() {
     >
       <GridBackground color="#16b981" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-7">
-        {/* <FadeDown
-          variant="div"
-          delay={0.2}
-          className="w-fit rounded-full border border-emerald-500/35 bg-emerald-500/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-300 md:text-xs"
-        >
-          Open to Collaborations
-        </FadeDown> */}
-      </div>
-
-      <div className="pointer-events-none absolute inset-x-0 top-[5vh] z-10 flex flex-col items-center text-center">
+      <div className="pointer-events-none absolute inset-x-0 top-[3vh] z-10 flex flex-col items-center text-center">
+        <div className="relative inline-flex">
+          <span
+            className="rounded-full border border-emerald-400/45 bg-emerald-400/10 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-100 backdrop-blur-sm"
+          >
+            Hello! 👋🏼
+          </span>
+          <Image
+            src="/images/Emphasis Line Right.png"
+            alt=""
+            width={32}
+            height={32}
+            aria-hidden="true"
+            className="absolute -right-6 -top-3 opacity-90"
+          />
+        </div>
         <h1
           className={`${playfairDisplay.className} text-[2rem] leading-none font-extrabold tracking-tight text-zinc-100/90 sm:text-[3.2rem] md:text-[5.2rem]`}
         >
-          Hi!👋🏼 I&apos;m Rishabh
+          I&apos;m Rishabh
         </h1>
-        <h2
-          className={`${playfairDisplay.className} mt-1 text-[2.5rem] leading-none font-bold tracking-tight text-emerald-300/85 sm:text-[4rem] md:text-[6rem]`}
-        >
-          Software Engineer
-        </h2>
+        <div className="relative inline-flex">
+          <h2
+            className={`${playfairDisplay.className} mt-1 text-[2.5rem] leading-none font-bold tracking-tight text-emerald-300/85 sm:text-[4rem] md:text-[6rem]`}
+          >
+            Software Engineer
+          </h2>
+          <Image
+            src="/images/Emphasis Line Left.png"
+            alt=""
+            width={62}
+            height={62}
+            aria-hidden="true"
+            className="absolute -bottom-8 -left-10 opacity-90 hidden sm:block"
+          />
+        </div>
         <div className="mt-2 h-2 w-64 rounded-full bg-emerald-400/30 blur-md md:w-96" />
       </div>
 
-      <div
-        className="absolute left-4 right-4 top-[102vh] z-20 rounded-xl border border-emerald-500/25 bg-black/35 p-4 text-left sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:max-w-[360px] md:left-[4vw]"
-      >
-        <p className="font-mono text-[11px] leading-relaxed text-zinc-300 md:text-xs">
-          <span className="text-emerald-300">{">_ "}</span>
-          Full-stack engineer shipping fast, scalable apps with React, Next.js,
-          Node.js, and MongoDB. I build clean systems, solve hard problems, and
-          actively explore Blockchain + LLM workflows.
-        </p>
-      </div>
+      <div className="absolute left-4 right-4 top-[98vh] z-30 flex flex-col gap-3 sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:w-[360px] md:left-[4vw]">
+        <div className="rounded-xl border border-emerald-500/25 bg-black/35 p-4 text-left">
+          <p className="font-mono text-[12px] leading-relaxed text-zinc-300 md:text-sm">
+            <span className="text-emerald-300">{">_ "}</span>
+            Full-Stack Developer building scalable apps with React, Next.js,
+            Node.js, and MongoDB. Strong in problem-solving, DSA, and clean,
+            secure architecture.
+          </p>
+        </div>
 
-      <div
-        className="absolute left-4 right-4 top-[124vh] z-20 grid grid-cols-2 gap-2 sm:left-8 sm:right-8 md:right-auto md:top-[49vh] md:w-[360px] md:left-[4vw]"
-      >
-        <div className="rounded-lg border border-emerald-500/25 bg-black/35 p-3">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
-            Age
-          </p>
-          <p className="mt-1 font-mono text-sm text-zinc-100">{age}</p>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="rounded-lg border border-emerald-500/25 bg-black/35 p-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
+              Age
+            </p>
+            <p className="mt-1 font-mono text-sm text-zinc-100">{age}</p>
+          </div>
+          <div className="rounded-lg border border-emerald-500/25 bg-black/35 p-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
+              City
+            </p>
+            <p className="mt-1 font-mono text-sm text-zinc-100">Nagpur</p>
+          </div>
+          <div className="col-span-2 rounded-lg border border-emerald-500/25 bg-black/35 p-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
+              Current Status
+            </p>
+            <p className="mt-1 font-mono text-sm text-zinc-100">
+              Student at YCCE, Nagpur
+            </p>
+          </div>
+          <div className="col-span-2 rounded-lg border border-emerald-500/25 bg-black/35 p-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
+              Mission
+            </p>
+            <p className="mt-1 font-mono text-sm text-zinc-100">
+              Write clean code. Ship real products.
+            </p>
+          </div>
         </div>
-        <div className="rounded-lg border border-emerald-500/25 bg-black/35 p-3">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
-            City
-          </p>
-          <p className="mt-1 font-mono text-sm text-zinc-100">Nagpur</p>
-        </div>
-        <div className="rounded-lg border col-span-2 border-emerald-500/25 bg-black/35 p-3">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
-            Current Status
-          </p>
-          <p className="mt-1 font-mono text-sm text-zinc-100">
-            Student at YCCE, Nagpur
-          </p>
-        </div>
-        <div className="rounded-lg border col-span-2 border-emerald-500/25 bg-black/35 p-3">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
-            Mission
-          </p>
-          <p className="mt-1 font-mono text-sm text-zinc-100">Write clean code. Ship real products.</p>
-        </div>
+
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-center justify-center">
+        {/* for mobile phones */}
         <div className="relative h-[70vh] right-8 w-[100vw] scale-150 sm:hidden">
           <div className="absolute bottom-6 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full bg-emerald-400/25 blur-3xl" />
           <Image
@@ -110,7 +131,8 @@ function IntroSec() {
           />
         </div>
 
-        <div className="relative hidden w-[50vw] md:w-[50vw] sm:block">
+        {/* for desktop */}
+        <div className="relative hidden w-[50vw] md:w-[48vw] sm:block">
           <div className="absolute bottom-6 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl md:h-52 md:w-96" />
           <Image
             src={profilePhoto}
@@ -147,6 +169,11 @@ function IntroSec() {
           </CustomLinkButton>
         </div>
       </div>
+
+      {/* bottom black gradient */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-36 bg-gradient-to-t from-black/100 via-black/50 to-transparent sm:h-44" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-20 bg-black/50 blur-2xl" />
+
     </section>
   );
 }

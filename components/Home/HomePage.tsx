@@ -3,7 +3,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import IntroSec from "./IntroSec/IntroSec";
-import Features from "./Features/Features";
+import TechStack from "./TechStack/TechStack";
 import Projects from "./Projects/Projects";
 import Footer from "./Footer";
 import About from "./About/About";
@@ -22,8 +22,8 @@ export default function HomePage() {
       {/* <NavBar /> */}
       <div id="main" data-scroll-container>
         <IntroSec />
-        <SVGDivider />
-        <Features />
+        {/* <SVGDivider /> */}
+        <TechStack />
 
         <div className="m-5 bg-white">
           <Divider text="PROJECTS' 25" />

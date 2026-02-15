@@ -77,122 +77,179 @@ import ExpressIcon from "@/public/svg/icons/Tools/ExpressIcon";
 import MongoDBIcon from "@/public/svg/icons/Tools/MongoDBIcon";
 import PostgresIcon from "@/public/svg/icons/Tools/PostgresIcon";
 import PostmanIcon from "@/public/svg/icons/Tools/PostmanIcon";
+import SpringBootLogo from "@/public/svg/icons/Tools/SpringBoot";
 import SwiftIcon from "@/public/svg/icons/Tools/SwiftIcon";
 import TailwindIcon from "@/public/svg/icons/Tools/TailwindIcon";
 import ReduxIcon from "@/public/svg/icons/Tools/ReduxIcon";
+import Html5Icon from "@/public/svg/icons/Tools/Html5Icon";
+import ScssIcon from "@/public/svg/icons/Tools/ScssIcon";
+import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
+import Solidity from "@/public/svg/icons/Tools/Solidity";
+import SupabaseLogo from "@/public/svg/icons/Tools/Supabase";
+import RedisLogo from "@/public/svg/icons/Tools/Redis";
+import DockerLogo from "@/public/svg/icons/Tools/Docker";
+import VSCodeLogo from "@/public/svg/icons/Tools/VSCode";
 
-export const FeaturesQuote = {
-  title: `“The only thing that doesn't weigh you down on your travels in
-          life are skills”`,
-  description:
-    "Embark on a transformative journey with me, where skills are the only luggage we carry. In the vast terrain of life's travels, my diverse skill set serves as the compass, guiding and lightening the path. From beginner to extreme, these proficiencies are the wings that empower exploration and fuel innovation. Join me in the adventure of skillful living, where every capability acquired becomes a ticket to new horizons and endless possibilities.",
-};
-
-export const FeaturesData = [
+export const TechStackSkillGroups = [
   {
-    icon: <ReactIcon />,
-    title: "React",
-    description:
-      "Proficient in building dynamic and responsive user interfaces with React.",
-    link: "https://react.dev/",
+    id: "languages",
+    title: "Languages",
+    tone: "emerald",
+    items: [
+      {
+        name: "TypeScript",
+        icon: <Typescript01Icon className="h-4 w-4" />,
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "JavaScript",
+        icon: <JavaScriptIcon className="h-4 w-4" />,
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      {
+        name: "Python",
+        icon: <PythonIcon className="h-4 w-4" />,
+        link: "https://www.python.org/",
+      },
+      {
+        name: "Java",
+        icon: <JavaIcon className="h-4 w-4" />,
+        link: "https://www.java.com/",
+      },
+      {
+        name: "Swift",
+        icon: <SwiftIcon className="h-4 w-4" />,
+        link: "https://developer.apple.com/swift/",
+      },
+      {
+        name: "Solidity",
+        icon: <Solidity className="h-4 w-4" />,
+        link: "https://soliditylang.org/",
+      },
+      {
+        name: "HTML",
+        icon: <Html5Icon className="h-4 w-4" />,
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      },
+      {
+        name: "CSS",
+        icon: <Html5Icon className="h-4 w-4" />,
+        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      },
+      {
+        name: "Sass",
+        icon: <ScssIcon className="h-4 w-4" />,
+        link: "https://sass-lang.com/",
+      },
+    ],
   },
   {
-    icon: <NextIcon />,
-    title: "Next.js",
-    description:
-      "Expert in building fast and scalable web applications using Next.js.",
-    link: "https://nextjs.org/",
+    id: "frontend",
+    title: "Frontend",
+    tone: "sky",
+    items: [
+      {
+        name: "React",
+        icon: <ReactIcon className="h-4 w-4" />,
+        link: "https://react.dev/",
+      },
+      {
+        name: "Next.js",
+        icon: <NextIcon className="h-4 w-4" />,
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "Redux",
+        icon: <ReduxIcon className="h-4 w-4" />,
+        link: "https://redux.js.org/",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <TailwindIcon className="h-4 w-4" />,
+        link: "https://tailwindcss.com/",
+      },
+      {
+        name: "GSAP",
+        icon: <GSAPIcon className="h-4 w-4" />,
+        link: "https://greensock.com/gsap/",
+      },
+    ],
   },
   {
-    icon: <Typescript01Icon />,
-    title: "TypeScript",
-    description:
-      "Experienced in using TypeScript for robust and type-safe JavaScript development.",
-    link: "https://www.typescriptlang.org/",
+    id: "backend",
+    title: "Backend",
+    tone: "cyan",
+    items: [
+      {
+        name: "Node.js",
+        icon: <NpmIcon className="h-4 w-4" />,
+        link: "https://nodejs.org/",
+      },
+      {
+        name: "Express",
+        icon: <ExpressIcon className="h-4 w-4" />,
+        link: "https://expressjs.com/",
+      },
+      {
+        name: "Spring Boot",
+        icon: <SpringBootLogo className="h-4 w-4" />,
+        link: "https://spring.io/projects/spring-boot",
+      },
+    ],
   },
   {
-    icon: <JavaScriptIcon />,
-    title: "JavaScript",
-    description:
-      "Skilled in writing clean and efficient JavaScript for web development.",
-    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    id: "databases",
+    title: "Databases & Cloud",
+    tone: "violet",
+    items: [
+      {
+        name: "PostgreSQL",
+        icon: <PostgresIcon className="h-4 w-4" />,
+        link: "https://www.postgresql.org/",
+      },
+      {
+        name: "MongoDB",
+        icon: <MongoDBIcon className="h-4 w-4" />,
+        link: "https://www.mongodb.com/",
+      },
+      {
+        name: "Supabase",
+        icon: <SupabaseLogo className="h-4 w-4" />,
+        link: "https://supabase.com/",
+      },
+      {
+        name: "Redis",
+        icon: <RedisLogo className="h-4 w-4" />,
+        link: "https://redis.io/",
+      },
+    ],
   },
   {
-    icon: <JavaIcon />,
-    title: "Java",
-    description:
-      "Proficient in building applications using Java, including Spring framework.",
-    link: "https://www.java.com/",
-  },
-  {
-    icon: <SwiftIcon />,
-    title: "Swift",
-    description:
-      "Experienced in using Swift for iOS and macOS app development.",
-    link: "https://developer.apple.com/swift/",
-  },
-  {
-    icon: <NpmIcon />,
-    title: "Node.js",
-    description:
-      "Expert in server-side development with Node.js for scalable applications.",
-    link: "https://nodejs.org/",
-  },
-  {
-    icon: <ExpressIcon />,
-    title: "Express",
-    description:
-      "Experienced in building RESTful APIs and web applications with Express.js.",
-    link: "https://expressjs.com/",
-  },
-  {
-    icon: <ReduxIcon />,
-    title: "Redux",
-    description:
-      "Skilled in using Redux for managing application state in JavaScript apps.",
-    link: "https://redux.js.org/",
-  },
-  {
-    icon: <TailwindIcon />,
-    title: "Tailwind CSS",
-    description:
-      "Proficient in using Tailwind CSS for rapidly building custom user interfaces.",
-    link: "https://tailwindcss.com/",
-  },
-
-  {
-    icon: <PythonIcon />,
-    title: "Python",
-    description:
-      "Experienced in Python for web development, data analysis, and scripting.",
-    link: "https://www.python.org/",
-  },
-  {
-    icon: <MongoDBIcon />,
-    title: "MongoDB",
-    description: "Proficient in using MongoDB for NoSQL database management.",
-    link: "https://www.mongodb.com/",
-  },
-  {
-    icon: <PostgresIcon />,
-    title: "PostgreSQL",
-    description:
-      "Skilled in using PostgreSQL for relational database management.",
-    link: "https://www.postgresql.org/",
-  },
-  {
-    icon: <GSAPIcon />,
-    title: "GSAP",
-    description:
-      "Experienced in using GSAP for creating high-performance animations and transitions on web pages.",
-    link: "https://greensock.com/gsap/",
-  },
-  {
-    icon: <PostmanIcon />,
-    title: "Postman",
-    description:
-      "Proficient in using Postman for API testing and development, ensuring robust and reliable APIs.",
-    link: "https://www.postman.com/",
+    id: "tools",
+    title: "Tools",
+    tone: "amber",
+    items: [
+      {
+        name: "Docker",
+        icon: <DockerLogo className="h-4 w-4" />,
+        link: "https://www.docker.com/",
+      },
+      {
+        name: "GitHub",
+        icon: <GithubIcon className="h-4 w-4" />,
+        link: "https://github.com/",
+      },
+      {
+        name: "Postman",
+        icon: <PostmanIcon className="h-4 w-4" />,
+        link: "https://www.postman.com/",
+      },
+      {
+        name: "Visual Studio Code",
+        icon: <VSCodeLogo className="h-4 w-4" />,
+        link: "https://code.visualstudio.com/",
+      }
+    ],
   },
 ];
 

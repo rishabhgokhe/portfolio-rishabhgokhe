@@ -1,11 +1,12 @@
 import React from 'react';
 
-const MongoDBIcon = () => (
+const MongoDBIcon = (props) => (
   <svg
     width={50}
     height={50}
     viewBox="0 0 1024 1024"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <circle cx="512" cy="512" r="512" fill="#13aa52" />
     <path

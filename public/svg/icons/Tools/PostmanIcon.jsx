@@ -1,11 +1,12 @@
 import React from "react";
 
-const PostmanIcon = () => (
+const PostmanIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="50"
     height="50"
     viewBox="-13.58674873666481 -3.5096047119942106 81.71274873666479 72.05384966725056"
+    {...props}
   >
     <style>
       {`
