@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <div id="root">
       <LandingIntro />
-      <NavBar />
+      {/* <NavBar /> */}
       <div id="main" data-scroll-container>
         <IntroSec />
         <SVGDivider />
