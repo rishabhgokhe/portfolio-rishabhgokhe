@@ -8,6 +8,8 @@ import Projects from "./Projects/Projects";
 import Footer from "./Footer";
 import Services from "./Services/Services";
 import LandingIntro from "./LandingIntro";
+import FloatingAIBotButton from "../elements/FloatingAIBotButton";
+import Achievements from "./Achievements/Achievements";
 
 export default function HomePage() {
 
@@ -19,9 +21,11 @@ export default function HomePage() {
         <TechStack />
         <ContributionHeatmap />
         <Services />
+        <Achievements />
         <Projects />
       </div>
       <Footer />
+      <FloatingAIBotButton />
     </div>
   );
 }

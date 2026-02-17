@@ -1,10 +1,15 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Playfair_Display } from "next/font/google";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HyperText } from "@/components/ui/hyper-text";
 import { GridBackground } from "@/components/ui/grid-background";
 import SectionTag from "@/components/elements/SectionTag";
 import { TechStackSkillGroups } from "@/lib/Data";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -33,6 +38,153 @@ const constellationDots = [
 ];
 
 export default function TechStack() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        {
+          isDesktop: "(min-width: 768px)",
+          reduceMotion: "(prefers-reduced-motion: reduce)",
+        },
+        (context) => {
+          const { isDesktop, reduceMotion } = context.conditions as {
+            isDesktop: boolean;
+            reduceMotion: boolean;
+          };
+
+          if (reduceMotion) {
+            gsap.from(".techstack-reveal, .techstack-group, .techstack-chipline", {
+              opacity: 0,
+              duration: 0.4,
+              stagger: 0.06,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 78%",
+                toggleActions: "play none none reverse",
+                invalidateOnRefresh: true,
+              },
+            });
+            return;
+          }
+
+          const revealY = isDesktop ? 28 : 16;
+          const groupY = isDesktop ? 34 : 22;
+          const chipY = isDesktop ? 14 : 10;
+          const headingBlur = isDesktop ? "blur(4px)" : "blur(2px)";
+          const cardBlur = isDesktop ? "blur(5px)" : "blur(3px)";
+
+          const headingTimeline = gsap.timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 72%",
+              toggleActions: "play none none reverse",
+              invalidateOnRefresh: true,
+            },
+          });
+
+          headingTimeline.from(".techstack-reveal", {
+            y: revealY,
+            opacity: 0,
+            filter: headingBlur,
+            duration: isDesktop ? 0.78 : 0.58,
+            stagger: isDesktop ? 0.1 : 0.08,
+            onStart: () => {
+              gsap.set(".techstack-reveal", {
+                willChange: "transform, opacity, filter",
+              });
+            },
+            onComplete: () => {
+              gsap.set(".techstack-reveal", { clearProps: "willChange" });
+            },
+            onReverseComplete: () => {
+              gsap.set(".techstack-reveal", { clearProps: "willChange" });
+            },
+          });
+
+          const groupsTimeline = gsap.timeline({
+            defaults: { ease: "power2.out" },
+            scrollTrigger: {
+              trigger: ".techstack-grid",
+              start: isDesktop ? "top 82%" : "top 86%",
+              toggleActions: "play none none reverse",
+              invalidateOnRefresh: true,
+            },
+          });
+
+          groupsTimeline
+            .from(".techstack-group", {
+              y: groupY,
+              opacity: 0,
+              scale: isDesktop ? 0.97 : 0.985,
+              filter: cardBlur,
+              transformOrigin: "top center",
+              duration: isDesktop ? 0.72 : 0.56,
+              stagger: isDesktop ? 0.1 : 0.08,
+              onStart: () => {
+                gsap.set(".techstack-group, .techstack-chipline", {
+                  willChange: "transform, opacity, filter",
+                });
+              },
+              onComplete: () => {
+                gsap.set(".techstack-group, .techstack-chipline", {
+                  clearProps: "willChange",
+                });
+              },
+              onReverseComplete: () => {
+                gsap.set(".techstack-group, .techstack-chipline", {
+                  clearProps: "willChange",
+                });
+              },
+            })
+            .from(
+              ".techstack-chipline",
+              {
+                y: chipY,
+                opacity: 0,
+                duration: isDesktop ? 0.46 : 0.36,
+                stagger: isDesktop ? 0.08 : 0.06,
+              },
+              "-=0.42"
+            )
+            .fromTo(
+              ".techstack-grid",
+              { y: -2 },
+              { y: 0, duration: 0.28, ease: "power1.out" },
+              "-=0.08"
+            );
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: isDesktop ? 1.2 : 0.8,
+              },
+            })
+            .to(".techstack-data-layer", {
+              yPercent: -7,
+              ease: "power1.out",
+              duration: 0.42,
+            })
+            .to(".techstack-data-layer", {
+              yPercent: -14,
+              ease: "power1.inOut",
+              duration: 0.58,
+            });
+        }
+      );
+
+      return () => mm.revert();
+    },
+    { scope: sectionRef }
+  );
+
   const toneClasses: Record<string, string> = {
     emerald:
       "border-emerald-500/30 bg-emerald-500/[0.07] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.12)]",
@@ -46,11 +198,12 @@ export default function TechStack() {
 
   return (
     <section
+      ref={sectionRef}
       id="features"
       className="relative overflow-hidden bg-black py-20 text-white sm:py-24"
     >
       <GridBackground color="#0ea5e9" />
-      <div className="pointer-events-none absolute inset-0 z-[12]">
+      <div className="techstack-data-layer pointer-events-none absolute inset-0 z-[12]">
         {dataTrails.map((trail) => (
           <span
             key={`${trail.top}-${trail.delay}`}
@@ -94,15 +247,15 @@ export default function TechStack() {
         <div className="mx-auto flex max-w-4xl flex-col gap-4 text-center">
           <SectionTag
             label="Tech Stack"
-            containerClassName="self-center"
+            containerClassName="techstack-reveal self-center"
             badgeClassName="border-sky-400/40 bg-sky-400/10 text-sky-200"
           />
           <h1
-            className={`${playfairDisplay.className} text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-5xl md:text-6xl`}
+            className={`${playfairDisplay.className} techstack-reveal text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-5xl md:text-6xl`}
           >
             Area of Expertise
           </h1>
-          <p className="font-mono text-[12px] leading-relaxed text-zinc-400 sm:text-sm">
+          <p className="techstack-reveal font-mono text-[12px] leading-relaxed text-zinc-400 sm:text-sm">
             Core languages, frameworks, and engineering tools used to build
             production-grade products.
           </p>
@@ -113,11 +266,11 @@ export default function TechStack() {
             stack.index.ts
           </div>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="techstack-grid grid grid-cols-1 gap-4 md:grid-cols-2">
             {TechStackSkillGroups.map((group, groupIndex) => (
               <div
                 key={group.id}
-                className={`p-4 ${
+                className={`techstack-group p-4 ${
                   group.id === "languages" ? "md:col-span-2" : ""
                 }`}
               >
@@ -140,7 +293,7 @@ export default function TechStack() {
                 </div>
 
                 <div
-                  className={`flex flex-wrap items-center gap-x-2 gap-y-2 rounded-md border p-3 ${
+                  className={`techstack-chipline flex flex-wrap items-center gap-x-2 gap-y-2 rounded-md border p-3 ${
                     toneClasses[group.tone]
                   }`}
                 >

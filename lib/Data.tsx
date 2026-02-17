@@ -441,6 +441,71 @@ export const servicesData = [
   },
 ];
 
+// Achievements & Leadership Section
+// -------------------------------------------------------------------------------------------
+export const leadershipPostsData = [
+  {
+    title: "Technical Committee Lead",
+    organization: "College Developer Community",
+    period: "2024 - Present",
+    impact:
+      "Led weekly engineering sessions, mentored juniors, and coordinated technical event delivery.",
+  },
+  {
+    title: "Event Coordinator",
+    organization: "Department Tech Fest Committee",
+    period: "2023 - 2024",
+    impact:
+      "Managed speaker operations, event timelines, and volunteer collaboration for campus tech events.",
+  },
+  {
+    title: "Core Team Member",
+    organization: "Innovation & Entrepreneurship Cell",
+    period: "2022 - 2023",
+    impact:
+      "Supported startup-focused workshops and student project showcases across departments.",
+  },
+];
+
+export const hackathonWinsData = [
+  {
+    rank: "Winner",
+    event: "College Hackathon",
+    year: "2024",
+    project: "AI-driven task management prototype",
+  },
+  {
+    rank: "1st Runner-Up",
+    event: "Inter-College Web Challenge",
+    year: "2024",
+    project: "Full-stack collaboration platform",
+  },
+  {
+    rank: "Top 10 Finalist",
+    event: "State Level Innovation Sprint",
+    year: "2023",
+    project: "Learning analytics dashboard",
+  },
+];
+
+export const achievementHighlightsData = [
+  {
+    title: "Technical Workshops Conducted",
+    value: "12+",
+    detail: "Hands-on sessions on web development, Git workflows, and deployment.",
+  },
+  {
+    title: "Students Mentored",
+    value: "80+",
+    detail: "Supported project planning, debugging, and career guidance for peers.",
+  },
+  {
+    title: "Campus Events Delivered",
+    value: "15+",
+    detail: "Managed execution from planning to post-event documentation.",
+  },
+];
+
 // Footer Links
 // -------------------------------------------------------------------------------------------
 export const socialBentoGridData = [
