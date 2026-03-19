@@ -465,12 +465,12 @@ export const hackathonWinsData = [
     ],
   },
   {
-    rank: "Top 5",
+    rank: "Special Mention",
     event:
       "National CyberShield Hackathon (Madhya Pradesh Police, SGSITS Indore)",
     year: "2025",
     project:
-      "Developed an all-India campaign detection system using NLP techniques.",
+      "Developed an all-India campaign detection system using NLP techniques that detects real time threats from Internet",
     images: [
       CIIS1.src,
       CIIS2.src,
@@ -478,11 +478,11 @@ export const hackathonWinsData = [
     ],
   },
   {
-    rank: "Top 10",
+    rank: "Finalist",
     event: "GEN-A-THON (IIIT Nagpur)",
-    year: "2025",
+    year: "2024",
     project:
-      "Built an AI-powered call analysis tool with real-time analytics features.",
+      "Built an AI-powered call analysis tool with real-time sentiment and metrics analytics features.",
     images: [
       IIITN1.src,
       IIITN2.src,
@@ -493,19 +493,21 @@ export const hackathonWinsData = [
 
 export const achievementHighlightsData = [
   {
-    title: "Technical Workshops Conducted",
-    value: "12+",
-    detail: "Hands-on sessions on web development, Git workflows, and deployment.",
+    title: "Technical Head (YASH & COSMOS)",
+    value: "2 Roles",
+    detail:
+      "Organised 5+ events like Smakathon, ENIGMA 2.0, CipherChase, and Coding Relay.",
   },
   {
-    title: "Students Mentored",
-    value: "80+",
-    detail: "Supported project planning, debugging, and career guidance for peers.",
+    title: "Technical Cohead (YCCEXMUN)",
+    value: "1 Role",
+    detail: "Worked on Website and Technical Part of Model United Nations Organised by YCCE.",
   },
   {
-    title: "Campus Events Delivered",
-    value: "15+",
-    detail: "Managed execution from planning to post-event documentation.",
+    title: "Events Delivered",
+    value: "5+",
+    detail:
+      "Planned Various Technical Events from Start to End, with Multiple Domains.",
   },
 ];
 

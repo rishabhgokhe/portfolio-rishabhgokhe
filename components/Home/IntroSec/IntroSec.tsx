@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Playfair_Display } from "next/font/google";
-import CustomLinkButton from "@/components/elements/CustomLinkButton";
 import { GridBackground } from "@/components/ui/grid-background";
 import { navIcons } from "@/lib/Data";
 import SectionTag from "@/components/elements/SectionTag";
-import DocumentAttachmentIcon from "@/public/svg/icons/DocumentAttachmentIcon";
 import profilePhoto from "@/public/images/profile_photo.jpeg";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -29,6 +29,38 @@ function IntroSec() {
   const socialLinks = navIcons.filter((item) =>
     ["Github", "Linkedin", "LeetCode", "Mail Us"].includes(item.name),
   );
+  const [nagpurTemp, setNagpurTemp] = useState<number | null>(null);
+  const [tempStatus, setTempStatus] = useState<"idle" | "loading" | "error">(
+    "idle",
+  );
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const loadTemp = async () => {
+      try {
+        setTempStatus("loading");
+        const response = await fetch(
+          "https://api.open-meteo.com/v1/forecast?latitude=21.1458&longitude=79.0882&current=temperature_2m&temperature_unit=celsius",
+          { signal: controller.signal },
+        );
+        if (!response.ok) throw new Error("weather_fetch_failed");
+        const data = await response.json();
+        const temp = data?.current?.temperature_2m;
+        if (typeof temp === "number") {
+          setNagpurTemp(temp);
+          setTempStatus("idle");
+        } else {
+          setTempStatus("error");
+        }
+      } catch (error) {
+        if ((error as Error).name === "AbortError") return;
+        setTempStatus("error");
+      }
+    };
+
+    loadTemp();
+    return () => controller.abort();
+  }, []);
 
   return (
     <section
@@ -86,7 +118,47 @@ function IntroSec() {
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
               City
             </p>
-            <p className="mt-1 font-mono text-sm text-zinc-100">Nagpur</p>
+            <div className="mt-1 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 font-mono text-sm text-zinc-100">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5 text-emerald-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 22s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"
+                  />
+                  <circle cx="12" cy="11" r="2.5" />
+                </svg>
+                <span>Nagpur</span>
+              </div>
+              <div className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-emerald-300/80">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5 text-emerald-300/80"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"
+                  />
+                </svg>
+                {tempStatus === "loading" && <span>Fetching</span>}
+                {tempStatus === "error" && <span>Temp N/A</span>}
+                {tempStatus === "idle" && nagpurTemp !== null
+                  ? `${Math.round(nagpurTemp)}°C`
+                  : ""}
+              </div>
+            </div>
           </div>
           <div className="col-span-2 rounded-lg border border-emerald-500/25 bg-black/35 p-3">
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-300">
@@ -149,14 +221,17 @@ function IntroSec() {
           ))}
         </div>
         <div className="pointer-events-auto mt-2 w-full md:w-auto">
-          <CustomLinkButton
-            download
+          <a
             href="/downloads/PortFolioRishabh.pdf"
-            leftIcon={<DocumentAttachmentIcon />}
-            className="w-full justify-center px-4 py-2 text-sm md:w-auto"
+            download
+            className="inline-flex w-full md:w-auto"
           >
-            Resume
-          </CustomLinkButton>
+            <InteractiveHoverButton className="w-full justify-center border-emerald-400/40 bg-black/40 px-4 py-2 text-sm font-mono text-emerald-100 backdrop-blur-sm md:w-auto">
+              <span className="inline-flex items-center gap-2">
+                Resume
+              </span>
+            </InteractiveHoverButton>
+          </a>
         </div>
       </div>
 

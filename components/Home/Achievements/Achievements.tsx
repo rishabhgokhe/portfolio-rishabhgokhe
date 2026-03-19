@@ -43,70 +43,68 @@ export default function Achievements() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 p-5">
-          <div className="space-y-6">
-            <div className="rounded-xl">
-              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-orange-300/80">
-                hackathon.wins.ts
-              </p>
-              <div className="space-y-3">
-                {hackathonWinsData.map((item, index) => (
-                  <div
-                    key={`${item.event}-${index}`}
-                    className="rounded-lg border border-orange-500/15 bg-zinc-950/60 p-4"
-                  >
-                    <div className="mb-2 flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        {item.images?.length ? (
-                          <ImagesBadge
-                            text=""
-                            images={item.images}
-                            folderSize={{ width: 28, height: 20 }}
-                            teaserImageSize={{ width: 28, height: 20 }}
-                            hoverImageSize={{ width: 136, height: 96 }}
-                            hoverTranslateY={-95}
-                            hoverSpread={42}
-                          />
-                        ) : null}
-                        <span className="rounded border border-orange-400/35 bg-orange-400/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-orange-200">
-                          {item.rank}
-                        </span>
-                      </div>
-                      <span className="font-mono text-[10px] text-zinc-500">
-                        {item.year}
+        <div className="grid grid-cols-1 gap-6 p-5 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+          <div className="rounded-xl">
+            <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-orange-300/80">
+              hackathon.wins.ts
+            </p>
+            <div className="space-y-3">
+              {hackathonWinsData.map((item, index) => (
+                <div
+                  key={`${item.event}-${index}`}
+                  className="rounded-lg border border-orange-500/15 bg-zinc-950/60 p-4"
+                >
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      {item.images?.length ? (
+                        <ImagesBadge
+                          text=""
+                          images={item.images}
+                          folderSize={{ width: 28, height: 20 }}
+                          teaserImageSize={{ width: 28, height: 20 }}
+                          hoverImageSize={{ width: 136, height: 96 }}
+                          hoverTranslateY={-95}
+                          hoverSpread={42}
+                        />
+                      ) : null}
+                      <span className="rounded border border-orange-400/35 bg-orange-400/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-orange-200">
+                        {item.rank}
                       </span>
                     </div>
-                    <p className="font-mono text-xs text-zinc-200">{item.event}</p>
-                    <p className="mt-1 font-mono text-[11px] text-zinc-400">
-                      {item.project}
-                    </p>
+                    <span className="font-mono text-[10px] text-zinc-500">
+                      {item.year}
+                    </span>
                   </div>
-                ))}
-              </div>
+                  <p className="font-mono text-xs text-zinc-200">{item.event}</p>
+                  <p className="mt-1 font-mono text-[11px] text-zinc-400">
+                    {item.project}
+                  </p>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div className="rounded-xl border border-yellow-500/20 bg-black/45 p-5">
-              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-yellow-300/80">
-                impact.metrics.ts
-              </p>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {achievementHighlightsData.map((item, index) => (
-                  <div
-                    key={`${item.title}-${index}`}
-                    className="rounded-lg border border-yellow-500/15 bg-zinc-950/60 p-3"
-                  >
-                    <p className="font-mono text-lg font-semibold text-yellow-200">
-                      {item.value}
-                    </p>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-300">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 font-mono text-[10px] leading-relaxed text-zinc-500">
-                      {item.detail}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div className="">
+            <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-yellow-300/80">
+              impact.metrics.ts
+            </p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {achievementHighlightsData.map((item, index) => (
+                <div
+                  key={`${item.title}-${index}`}
+                  className="rounded-lg border border-yellow-500/15 bg-zinc-950/60 p-3"
+                >
+                  <p className="font-mono text-lg font-semibold text-yellow-200">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-300">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] leading-relaxed text-zinc-500">
+                    {item.detail}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
