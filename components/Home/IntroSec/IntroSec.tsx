@@ -65,7 +65,7 @@ function IntroSec() {
         <div className="mt-2 h-2 w-64 rounded-full bg-emerald-400/30 blur-md md:w-96" />
       </div>
 
-      <div className="absolute left-4 right-4 top-[98vh] z-30 flex flex-col gap-3 sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:w-[360px] md:left-[4vw]">
+      <div className="pointer-events-none absolute left-4 right-4 top-[98vh] z-30 flex flex-col gap-3 sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:w-[360px] md:left-[4vw]">
         <div className="rounded-xl border border-emerald-500/25 bg-black/35 p-4 text-left">
           <p className="font-mono text-[12px] leading-relaxed text-zinc-300 md:text-sm">
             <span className="text-emerald-300">{">_ "}</span>
@@ -133,8 +133,8 @@ function IntroSec() {
         </div>
       </div>
 
-      <div className="absolute left-4 right-4 top-[152vh] z-30 flex flex-col items-start gap-2 sm:left-8 sm:right-8 md:left-auto md:right-20 md:top-auto md:bottom-20 md:items-center">
-        <div className="flex items-center gap-2">
+      <div className="pointer-events-none absolute left-4 right-4 top-[152vh] z-30 flex flex-col items-start gap-2 sm:left-8 sm:right-8 md:left-auto md:right-20 md:top-auto md:bottom-20 md:items-center">
+        <div className="pointer-events-auto flex items-center gap-2">
           {socialLinks.map((item) => (
             <a
               key={item.name}
@@ -148,7 +148,7 @@ function IntroSec() {
             </a>
           ))}
         </div>
-        <div className="mt-2 w-full md:w-auto">
+        <div className="pointer-events-auto mt-2 w-full md:w-auto">
           <CustomLinkButton
             download
             href="/downloads/PortFolioRishabh.pdf"

@@ -2,10 +2,10 @@ import React from "react";
 import { Playfair_Display } from "next/font/google";
 import SectionTag from "@/components/elements/SectionTag";
 import { GridBackground } from "@/components/ui/grid-background";
+import { ImagesBadge } from "@/components/ui/images-badge";
 import {
   achievementHighlightsData,
   hackathonWinsData,
-  leadershipPostsData,
 } from "@/lib/Data";
 
 const playfairDisplay = Playfair_Display({
@@ -43,39 +43,9 @@ export default function Achievements() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-amber-500/20 bg-black/45 p-5">
-            <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-amber-300/80">
-              leadership.posts.ts
-            </p>
-            <div className="space-y-4">
-              {leadershipPostsData.map((role, index) => (
-                <div
-                  key={`${role.title}-${index}`}
-                  className="rounded-lg border border-amber-500/15 bg-zinc-950/60 p-4"
-                >
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-zinc-100">
-                      {role.title}
-                    </h3>
-                    <span className="font-mono text-[10px] text-amber-200/80">
-                      {role.period}
-                    </span>
-                  </div>
-                  <p className="mb-1 font-mono text-[11px] text-amber-200/85">
-                    {role.organization}
-                  </p>
-                  <p className="font-mono text-[11px] leading-relaxed text-zinc-400">
-                    <span className="text-amber-300">{">_ "}</span>
-                    {role.impact}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
+        <div className="grid grid-cols-1 gap-6 p-5">
           <div className="space-y-6">
-            <div className="rounded-xl border border-orange-500/20 bg-black/45 p-5">
+            <div className="rounded-xl">
               <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-orange-300/80">
                 hackathon.wins.ts
               </p>
@@ -86,9 +56,22 @@ export default function Achievements() {
                     className="rounded-lg border border-orange-500/15 bg-zinc-950/60 p-4"
                   >
                     <div className="mb-2 flex items-center justify-between gap-2">
-                      <span className="rounded border border-orange-400/35 bg-orange-400/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-orange-200">
-                        {item.rank}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        {item.images?.length ? (
+                          <ImagesBadge
+                            text=""
+                            images={item.images}
+                            folderSize={{ width: 28, height: 20 }}
+                            teaserImageSize={{ width: 28, height: 20 }}
+                            hoverImageSize={{ width: 136, height: 96 }}
+                            hoverTranslateY={-95}
+                            hoverSpread={42}
+                          />
+                        ) : null}
+                        <span className="rounded border border-orange-400/35 bg-orange-400/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-orange-200">
+                          {item.rank}
+                        </span>
+                      </div>
                       <span className="font-mono text-[10px] text-zinc-500">
                         {item.year}
                       </span>

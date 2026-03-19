@@ -230,6 +230,15 @@ import Animease1 from "@/public/images/Screenshots/Animease-1.png";
 import Animease2 from "@/public/images/Screenshots/Animease-2.png";
 import Animease3 from "@/public/images/Screenshots/Animease-3.png";
 import Animease4 from "@/public/images/Screenshots/Animease-4.png";
+import CIIS1 from "@/public/images/hackathon/CIIS_1.jpeg";
+import CIIS2 from "@/public/images/hackathon/CIIS_2.jpeg";
+import CIIS3 from "@/public/images/hackathon/CIIS_3.jpeg";
+import ENIGMA1 from "@/public/images/hackathon/ENIGMA_1.jpeg";
+import ENIGMA2 from "@/public/images/hackathon/ENIGMA_2.jpeg";
+import ENIGMA3 from "@/public/images/hackathon/ENIGMA_3.jpeg";
+import IIITN1 from "@/public/images/hackathon/IIITN_1.jpeg";
+import IIITN2 from "@/public/images/hackathon/IIITN_2.jpeg";
+import IIITN3 from "@/public/images/hackathon/IIITN_3.jpeg";
 
 import Number1Icon from "@/public/svg/icons/Number1Icon";
 import Number2Icon from "@/public/svg/icons/Number2Icon";
@@ -442,49 +451,43 @@ export const servicesData = [
 ];
 
 // Achievements & Leadership Section
-// -------------------------------------------------------------------------------------------
-export const leadershipPostsData = [
-  {
-    title: "Technical Committee Lead",
-    organization: "College Developer Community",
-    period: "2024 - Present",
-    impact:
-      "Led weekly engineering sessions, mentored juniors, and coordinated technical event delivery.",
-  },
-  {
-    title: "Event Coordinator",
-    organization: "Department Tech Fest Committee",
-    period: "2023 - 2024",
-    impact:
-      "Managed speaker operations, event timelines, and volunteer collaboration for campus tech events.",
-  },
-  {
-    title: "Core Team Member",
-    organization: "Innovation & Entrepreneurship Cell",
-    period: "2022 - 2023",
-    impact:
-      "Supported startup-focused workshops and student project showcases across departments.",
-  },
-];
-
 export const hackathonWinsData = [
   {
     rank: "Winner",
-    event: "College Hackathon",
-    year: "2024",
-    project: "AI-driven task management prototype",
+    event: "ENIGMA 2025 (YCCE Nagpur)",
+    year: "2025",
+    project:
+      "Built an Android GPS + camera tracking app using Firebase and Kotlin. 1st among 10 finalists.",
+    images: [
+      ENIGMA1.src,
+      ENIGMA2.src,
+      ENIGMA3.src,
+    ],
   },
   {
-    rank: "1st Runner-Up",
-    event: "Inter-College Web Challenge",
-    year: "2024",
-    project: "Full-stack collaboration platform",
+    rank: "Top 5",
+    event:
+      "National CyberShield Hackathon (Madhya Pradesh Police, SGSITS Indore)",
+    year: "2025",
+    project:
+      "Developed an all-India campaign detection system using NLP techniques.",
+    images: [
+      CIIS1.src,
+      CIIS2.src,
+      CIIS3.src,
+    ],
   },
   {
-    rank: "Top 10 Finalist",
-    event: "State Level Innovation Sprint",
-    year: "2023",
-    project: "Learning analytics dashboard",
+    rank: "Top 10",
+    event: "GEN-A-THON (IIIT Nagpur)",
+    year: "2025",
+    project:
+      "Built an AI-powered call analysis tool with real-time analytics features.",
+    images: [
+      IIITN1.src,
+      IIITN2.src,
+      IIITN3.src,
+    ],
   },
 ];
 
