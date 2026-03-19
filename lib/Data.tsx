@@ -211,38 +211,16 @@ export const TechStackSkillGroups = [
         name: "Visual Studio Code",
         icon: <VSCodeLogo className="h-4 w-4" />,
         link: "https://code.visualstudio.com/",
-      }
+      },
     ],
   },
 ];
 
 // Project Section
 // -------------------------------------------------------------------------------------------
-import TaskFlow1 from "@/public/images/Screenshots/TaskFlow-1.png";
-import TaskFlow2 from "@/public/images/Screenshots/TaskFlow-2.png";
-import TaskFlow3 from "@/public/images/Screenshots/TaskFlow-3.png";
-import TaskFlow4 from "@/public/images/Screenshots/TaskFlow-4.png";
-import SkillWave1 from "@/public/images/Screenshots/SkillWave-1.png";
-import SkillWave2 from "@/public/images/Screenshots/SkillWave-2.png";
-import SkillWave3 from "@/public/images/Screenshots/SkillWave-3.png";
-import SkillWave4 from "@/public/images/Screenshots/SkillWave-4.png";
-import Animease1 from "@/public/images/Screenshots/Animease-1.png";
-import Animease2 from "@/public/images/Screenshots/Animease-2.png";
-import Animease3 from "@/public/images/Screenshots/Animease-3.png";
-import Animease4 from "@/public/images/Screenshots/Animease-4.png";
-import CIIS1 from "@/public/images/hackathon/CIIS_1.jpeg";
-import CIIS2 from "@/public/images/hackathon/CIIS_2.jpeg";
-import CIIS3 from "@/public/images/hackathon/CIIS_3.jpeg";
-import ENIGMA1 from "@/public/images/hackathon/ENIGMA_1.jpeg";
-import ENIGMA2 from "@/public/images/hackathon/ENIGMA_2.jpeg";
-import ENIGMA3 from "@/public/images/hackathon/ENIGMA_3.jpeg";
-import IIITN1 from "@/public/images/hackathon/IIITN_1.jpeg";
-import IIITN2 from "@/public/images/hackathon/IIITN_2.jpeg";
-import IIITN3 from "@/public/images/hackathon/IIITN_3.jpeg";
-
-import Number1Icon from "@/public/svg/icons/Number1Icon";
-import Number2Icon from "@/public/svg/icons/Number2Icon";
-import Number3Icon from "@/public/svg/icons/Number3Icon";
+import TaskFlow from "@/public/images/Screenshots/TaskFlow.png";
+import SkillWave from "@/public/images/Screenshots/SkillWave.png";
+import Animease from "@/public/images/Screenshots/Animease.png";
 
 import LaptopPhoneSyncIcon from "@/public/svg/icons/Features/LaptopPhoneSyncIcon";
 import UserSharingIcon from "@/public/svg/icons/Features/UserSharingIcon";
@@ -265,159 +243,112 @@ import SourceCodeSquareIcon from "@/public/svg/icons/Features/SourceCodeSquareIc
 export const projectData = [
   {
     title: "TaskFlow",
+    category: "Web",
     description:
-      "TaskFlow is a powerful and intuitive web application designed to help users manage and organize their tasks efficiently. It offers a user-friendly interface to add, view, and manage to-do items, enhancing workflow organization and task tracking.",
-    link: "https://github.com/rishabhgokhe/SkillWave#readme",
+      "TaskFlow is a focused task manager with smart tagging, calendar views, and productivity analytics.",
+    link: "https://github.com/rishabhgokhe/TaskFlow#readme",
     preview: "https://taskflow20.vercel.app/",
-    numberIcon: <Number1Icon />,
-    features: [
-      {
-        title: "Responsive UI",
-        icon: <LaptopPhoneSyncIcon />,
-      },
-      {
-        title: "Easy Sharing",
-        icon: <UserSharingIcon />,
-      },
-      {
-        title: "AI Suggestions",
-        icon: <ArtificialIntelligence04Icon />,
-      },
-      {
-        title: "Dark Mode",
-        icon: <DarkModeIcon />,
-      },
-      {
-        title: "Multiple Tags",
-        icon: <TagsIcon />,
-      },
-      {
-        title: "Tasks Scheduling",
-        icon: <TimeScheduleIcon />,
-      },
-    ],
-    images: [
-      {
-        image: TaskFlow1,
-        alt: "TaskFlow HomePage",
-      },
-      {
-        image: TaskFlow2,
-        alt: "TaskFlow Uniquely Crafted UI",
-      },
-      {
-        image: TaskFlow3,
-        alt: "TaskFlow DashBoard",
-      },
-      {
-        image: TaskFlow4,
-        alt: "TaskFlow About Me",
-      },
-    ],
+    features: [],
+    images: {
+      image: TaskFlow,
+      alt: "TaskFlow HomePage",
+    },
   },
   {
     title: "SkillWave",
+    category: "Web",
     description:
-      "SkillWave is an innovative online platform dedicated to empowering learners worldwide. Our mission is to provide accessible, high-quality courses that enable individuals to acquire new skills, advance their careers, and achieve personal growth.",
+      "SkillWave is a learning platform with cohort journeys, quizzes, and progress insights.",
     link: "https://github.com/rishabhgokhe/SkillWave#readme",
     preview: "https://skillwave20.vercel.app/",
-    numberIcon: <Number2Icon />,
-    features: [
-      {
-        title: "Responsive UI",
-        icon: <LaptopPhoneSyncIcon />,
-      },
-      {
-        title: "Personalised Path",
-        icon: <Mortarboard02Icon />,
-      },
-      {
-        title: "Affordable",
-        icon: <SaveMoneyDollarIcon />,
-      },
-      {
-        title: "Weekly Quiz",
-        icon: <Quiz05Icon />,
-      },
-      {
-        title: "AI Doubt Resolver",
-        icon: <AiGenerativeIcon />,
-      },
-      {
-        title: "Progress Tracking",
-        icon: <ChartBarLineIcon />,
-      },
-    ],
-    images: [
-      {
-        image: SkillWave1,
-        alt: "SkillWave HomePage",
-      },
-      {
-        image: SkillWave2,
-        alt: "SkillWave Explore Courses",
-      },
-      {
-        image: SkillWave3,
-        alt: "SkillWave Footer",
-      },
-      {
-        image: SkillWave4,
-        alt: "SkillWave About Me",
-      },
-    ],
+    features: [],
+    images: {
+      image: SkillWave,
+      alt: "SkillWave HomePage",
+    },
   },
   {
     title: "Animease",
+    category: "Library",
     description:
-      "Animease is a utility package designed to make using animations easier for React projects. It provides a simplified react components for creating animations and transitions.",
+      "Animease is a lightweight React animation helper with presets and composable transitions.",
     link: "https://www.npmjs.com/package/animease",
     preview: "https://www.npmjs.com/package/animease",
-    numberIcon: <Number3Icon />,
-    features: [
-      {
-        title: "Smooth Animation",
-        icon: <FlashIcon />,
-      },
-      {
-        title: "Easy to use",
-        icon: <ThumbsUpIcon />,
-      },
-      {
-        title: "Custom Effects",
-        icon: <Settings05Icon />,
-      },
-      {
-        title: "Lightweight Library",
-        icon: <Rocket02Icon />,
-      },
-      {
-        title: "Documentation",
-        icon: <BookOpen02Icon />,
-      },
-      {
-        title: "Open Source",
-        icon: <SourceCodeSquareIcon />,
-      },
-    ],
-    images: [
-      {
-        image: Animease1,
-        alt: "Animease npm HomePage",
-      },
-      {
-        image: Animease2,
-        alt: "Animease source code github",
-      },
-      {
-        image: Animease3,
-        alt: "Animease usage github readme",
-      },
-      {
-        image: Animease4,
-        alt: "Animease github readme",
-      },
-    ],
+    features: [],
+    images: {
+      image: Animease,
+      alt: "Animease npm HomePage",
+    },
+  },
+  {
+    title: "PulseBoard",
+    category: "AI",
+    description:
+      "Real-time ops dashboard that flags anomalies and summarizes incidents using NLP.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "CallSense",
+    category: "AI",
+    description:
+      "Call analytics suite with sentiment, key-topic extraction, and action item detection.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "ChainVote",
+    category: "Blockchain",
+    description:
+      "Tamper-proof voting prototype with wallet auth and verifiable result proofs.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "VaultPay",
+    category: "Blockchain",
+    description:
+      "Smart-contract based escrow flow with multi-sig releases and audit trail.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "CampusConnect",
+    category: "Web",
+    description:
+      "Event and club management portal with RSVP, ticketing, and announcements.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "RouteSnap",
+    category: "Mobile",
+    description:
+      "Android app for GPS + camera tracking with Firebase sync and live route history.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "SecureDocs",
+    category: "Security",
+    description:
+      "Document sharing with zero-trust access, expiring links, and watermarking.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
   },
 ];
 
@@ -451,6 +382,16 @@ export const servicesData = [
 ];
 
 // Achievements & Leadership Section
+import CIIS1 from "@/public/images/hackathon/CIIS_1.jpeg";
+import CIIS2 from "@/public/images/hackathon/CIIS_2.jpeg";
+import CIIS3 from "@/public/images/hackathon/CIIS_3.jpeg";
+import ENIGMA1 from "@/public/images/hackathon/ENIGMA_1.jpeg";
+import ENIGMA2 from "@/public/images/hackathon/ENIGMA_2.jpeg";
+import ENIGMA3 from "@/public/images/hackathon/ENIGMA_3.jpeg";
+import IIITN1 from "@/public/images/hackathon/IIITN_1.jpeg";
+import IIITN2 from "@/public/images/hackathon/IIITN_2.jpeg";
+import IIITN3 from "@/public/images/hackathon/IIITN_3.jpeg";
+
 export const hackathonWinsData = [
   {
     rank: "Winner",
@@ -458,11 +399,7 @@ export const hackathonWinsData = [
     year: "2025",
     project:
       "Built an Android GPS + camera tracking app using Firebase and Kotlin. 1st among 10 finalists.",
-    images: [
-      ENIGMA1.src,
-      ENIGMA2.src,
-      ENIGMA3.src,
-    ],
+    images: [ENIGMA1.src, ENIGMA2.src, ENIGMA3.src],
   },
   {
     rank: "Special Mention",
@@ -471,11 +408,7 @@ export const hackathonWinsData = [
     year: "2025",
     project:
       "Developed an all-India campaign detection system using NLP techniques that detects real time threats from Internet",
-    images: [
-      CIIS1.src,
-      CIIS2.src,
-      CIIS3.src,
-    ],
+    images: [CIIS1.src, CIIS2.src, CIIS3.src],
   },
   {
     rank: "Finalist",
@@ -483,11 +416,7 @@ export const hackathonWinsData = [
     year: "2024",
     project:
       "Built an AI-powered call analysis tool with real-time sentiment and metrics analytics features.",
-    images: [
-      IIITN1.src,
-      IIITN2.src,
-      IIITN3.src,
-    ],
+    images: [IIITN1.src, IIITN2.src, IIITN3.src],
   },
 ];
 
@@ -501,7 +430,8 @@ export const achievementHighlightsData = [
   {
     title: "Technical Cohead (YCCEXMUN)",
     value: "1 Role",
-    detail: "Worked on Website and Technical Part of Model United Nations Organised by YCCE.",
+    detail:
+      "Worked on Website and Technical Part of Model United Nations Organised by YCCE.",
   },
   {
     title: "Events Delivered",
@@ -537,5 +467,5 @@ export const socialBentoGridData = [
   {
     title: "Twitter",
     link: "https://twitter.com/rishabhgokhe",
-  }
+  },
 ];

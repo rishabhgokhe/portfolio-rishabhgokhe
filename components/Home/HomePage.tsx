@@ -10,6 +10,8 @@ import Services from "./Services/Services";
 import LandingIntro from "./LandingIntro";
 import FloatingAIBotButton from "../elements/FloatingAIBotButton";
 import Achievements from "./Achievements/Achievements";
+import BackgroundAudio from "@/components/elements/BackgroundAudio";
+import InteractiveSection from "@/components/Home/InteractiveSection/InteractiveSection";
 
 export default function HomePage() {
   return (
@@ -20,11 +22,13 @@ export default function HomePage() {
         <TechStack />
         <ContributionHeatmap />
         <Services />
-        <Achievements />
         <Projects />
+        <Achievements />
+        <InteractiveSection />
       </div>
       <Footer />
       <FloatingAIBotButton />
+      <BackgroundAudio />
     </div>
   );
 }
