@@ -20,6 +20,7 @@ const LandingIntro = () => {
     const totalTicks = loadDuration / tickMs;
     let currentTick = 0;
     let exitTriggerTimer: ReturnType<typeof setTimeout>;
+    let hardKillTimer: ReturnType<typeof setTimeout>;
 
     const progressTimer = setInterval(() => {
       currentTick += 1;
@@ -36,10 +37,16 @@ const LandingIntro = () => {
       exitTriggerTimer = setTimeout(() => setIsExiting(true), 300);
     }, loadDuration);
 
+    hardKillTimer = setTimeout(() => {
+      setIsExiting(true);
+      setShouldRender(false);
+    }, loadDuration + 1600);
+
     return () => {
       clearInterval(progressTimer);
       clearTimeout(timer);
       if (exitTriggerTimer) clearTimeout(exitTriggerTimer);
+      if (hardKillTimer) clearTimeout(hardKillTimer);
     };
   }, []);
 
@@ -110,6 +117,12 @@ const LandingIntro = () => {
     };
   }, [isExiting]);
 
+  useEffect(() => {
+    if (!isExiting) return;
+    const fallback = setTimeout(() => setShouldRender(false), 900);
+    return () => clearTimeout(fallback);
+  }, [isExiting]);
+
   const texts = useMemo(
     () => ["INITIALSING..", "OPTIMISING..", "DEPLOYING.."],
     []
@@ -121,7 +134,9 @@ const LandingIntro = () => {
     <div
       ref={containerRef}
       id="loader"
-      className="fixed inset-0 z-[9999] flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-[#05070a] text-[#dfffe2]"
+      className={`fixed inset-0 z-[9999] flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-[#05070a] text-[#dfffe2] ${
+        isExiting || progress >= 100 ? "pointer-events-none" : ""
+      }`}
     >
       <GridBackground color="#16b981" />
 

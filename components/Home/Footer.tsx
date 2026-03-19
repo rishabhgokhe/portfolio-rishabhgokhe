@@ -48,7 +48,7 @@ export default function Footer() {
 
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black via-black/30 to-transparent" />
 
-      <div className="relative z-20 pointer-events-none mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div className="relative z-20 mx-auto w-full max-w-6xl px-4 sm:px-6">
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2

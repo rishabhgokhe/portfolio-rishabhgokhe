@@ -6,7 +6,7 @@ export default function FloatingAIBotButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-5 left-5 z-[120] sm:bottom-8 sm:right-8">
+    <div className="pointer-events-none fixed bottom-5 left-5 z-[120] sm:bottom-8 sm:right-8">
       <div
         className={`mb-3 w-[min(92vw,360px)] overflow-hidden rounded-xl border border-emerald-500/30 bg-black/90 shadow-[0_0_40px_rgba(16,185,129,0.14)] backdrop-blur-md transition-all duration-300 ${
           isOpen
@@ -58,7 +58,7 @@ export default function FloatingAIBotButton() {
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Open personal AI bot"
-        className="group relative inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-black/80 px-3 py-2 font-mono text-xs font-semibold tracking-[0.08em] text-emerald-200 backdrop-blur-md transition hover:border-emerald-300/70 hover:text-emerald-100"
+        className="pointer-events-auto group relative inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-black/80 px-3 py-2 font-mono text-xs font-semibold tracking-[0.08em] text-emerald-200 backdrop-blur-md transition hover:border-emerald-300/70 hover:text-emerald-100"
       >
         <span className="relative grid h-8 w-8 place-items-center rounded-full border border-emerald-400/35 bg-emerald-500/12 text-emerald-200">
           <span className="absolute inset-0 rounded-full bg-emerald-400/15 blur-sm" />
@@ -80,7 +80,7 @@ export default function FloatingAIBotButton() {
           </svg>
         </span>
         <span className="whitespace-nowrap">
-          <span className="text-emerald-300">$</span> {isOpen ? "Close AI" : "Ask AI"}
+          <span className="text-emerald-300">$</span> {isOpen ? "Close" : "Ask Rishu"}
         </span>
         <span className="absolute -inset-1 -z-10 rounded-full bg-emerald-400/20 opacity-0 blur-xl transition group-hover:opacity-100" />
       </button>

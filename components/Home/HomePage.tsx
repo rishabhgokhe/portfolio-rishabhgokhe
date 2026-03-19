@@ -12,7 +12,6 @@ import FloatingAIBotButton from "../elements/FloatingAIBotButton";
 import Achievements from "./Achievements/Achievements";
 
 export default function HomePage() {
-
   return (
     <div id="root">
       <LandingIntro />
