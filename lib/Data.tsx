@@ -242,6 +242,56 @@ import SourceCodeSquareIcon from "@/public/svg/icons/Features/SourceCodeSquareIc
 
 export const projectData = [
   {
+    title: "ChainVote",
+    category: "Blockchain",
+    description:
+      "Tamper-proof voting prototype with wallet auth and verifiable result proofs.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "VaultPay",
+    category: "Blockchain",
+    description:
+      "Smart-contract based escrow flow with multi-sig releases and audit trail.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "CampusConnect",
+    category: "Web",
+    description:
+      "Event and club management portal with RSVP, ticketing, and announcements.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "RouteSnap",
+    category: "Mobile",
+    description:
+      "Android app for GPS + camera tracking with Firebase sync and live route history.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
+    title: "SecureDocs",
+    category: "Security",
+    description:
+      "Document sharing with zero-trust access, expiring links, and watermarking.",
+    link: "#",
+    preview: "#",
+    features: [],
+    images: [],
+  },
+  {
     title: "TaskFlow",
     category: "Web",
     description:
@@ -295,56 +345,6 @@ export const projectData = [
     category: "AI",
     description:
       "Call analytics suite with sentiment, key-topic extraction, and action item detection.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "ChainVote",
-    category: "Blockchain",
-    description:
-      "Tamper-proof voting prototype with wallet auth and verifiable result proofs.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "VaultPay",
-    category: "Blockchain",
-    description:
-      "Smart-contract based escrow flow with multi-sig releases and audit trail.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "CampusConnect",
-    category: "Web",
-    description:
-      "Event and club management portal with RSVP, ticketing, and announcements.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "RouteSnap",
-    category: "Mobile",
-    description:
-      "Android app for GPS + camera tracking with Firebase sync and live route history.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "SecureDocs",
-    category: "Security",
-    description:
-      "Document sharing with zero-trust access, expiring links, and watermarking.",
     link: "#",
     preview: "#",
     features: [],

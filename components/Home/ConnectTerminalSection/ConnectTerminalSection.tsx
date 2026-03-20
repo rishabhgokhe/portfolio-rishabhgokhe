@@ -7,11 +7,41 @@ import { GridBackground } from "@/components/ui/grid-background";
 import { Globe } from "@/components/ui/globe";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Terminal } from "@/components/ui/terminal";
+import { projectData } from "@/lib/Data";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+const normalizeProjectKey = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, "");
+
+const terminalProjectDetails = projectData.reduce(
+  (acc, project) => {
+    const key = normalizeProjectKey(project.title);
+    const repo =
+      project.link && project.link !== "#"
+        ? `Repo: ${project.link}`
+        : "Repo: coming soon";
+    const live =
+      project.preview && project.preview !== "#"
+        ? `Live: ${project.preview}`
+        : "Live: coming soon";
+
+    acc[key] = [
+      project.title,
+      `Category: ${project.category}`,
+      project.description,
+      repo,
+      live,
+    ];
+    return acc;
+  },
+  {} as Record<string, string[]>,
+);
+
+const terminalProjectTitles = projectData.map((project) => project.title);
 
 export default function ConnectTerminalSection() {
   return (
@@ -103,16 +133,13 @@ export default function ConnectTerminalSection() {
               commandResponses={{
                 whoami: ["rishabh-gokhe"],
                 projects: [
-                  "TaskFlow",
-                  "SkillWave",
-                  "Animease",
+                  ...terminalProjectTitles,
                   "Tip: use `cd taskflow` or `cd skillwave` for details.",
                 ],
+                loves: ["Kshitija Urmale"],
                 "projects --top": [
                   "Top picks:",
-                  "1) TaskFlow — Next.js productivity suite",
-                  "2) SkillWave — cohort learning platform",
-                  "3) Animease — animation helper library",
+                  "Not yet Added.. Working on it",
                 ],
                 skills: ["React · Next.js · TypeScript · Node.js · Tailwind"],
                 contact: [
@@ -122,26 +149,7 @@ export default function ConnectTerminalSection() {
                 resume: ["downloads/PortFolioRishabh.pdf"],
                 location: ["Nagpur, IN"],
               }}
-              projectDetails={{
-                taskflow: [
-                  "TaskFlow",
-                  "Stack: Next.js, React, TypeScript",
-                  "Highlights: smart tagging, calendar views, analytics",
-                  "Status: production-ready UI",
-                ],
-                skillwave: [
-                  "SkillWave",
-                  "Stack: Next.js, React, TypeScript",
-                  "Highlights: quizzes, cohort paths, progress tracking",
-                  "Focus: engagement + learning outcomes",
-                ],
-                animease: [
-                  "Animease",
-                  "Stack: React, TypeScript",
-                  "Highlights: composable presets, lightweight animations",
-                  "NPM: animation helper library",
-                ],
-              }}
+              projectDetails={terminalProjectDetails}
             />
           </div>
         </div>
