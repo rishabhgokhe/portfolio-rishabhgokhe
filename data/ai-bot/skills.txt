@@ -1,0 +1,5 @@
+Frontend: React, Next.js, TypeScript, Tailwind CSS
+Backend: Node.js, Express, Spring Boot
+Database/Cloud: MongoDB, PostgreSQL, Supabase, Redis
+Tools: GitHub, Docker, Postman, VS Code
+Languages: JavaScript, TypeScript, Python, Java, Solidity, HTML, CSS, Sass

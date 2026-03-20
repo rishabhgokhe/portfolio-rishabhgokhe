@@ -1,0 +1,19 @@
+Full-Stack Software Engineer | Rishabh Gokhe
+Location: Nagpur, India
+Email: rishabhgokhe20contact@gmail.com
+
+Summary:
+- Full-stack developer focused on scalable web apps and clean architecture.
+- Strong in DSA, system design, and building production-ready UI.
+
+Projects:
+- TaskFlow: Task management with tags, scheduling, and analytics (Next.js/React/TS).
+- SkillWave: Learning platform with quizzes and personalised path (Next.js/React/TS).
+- Animease: Animation helper library for React (TypeScript).
+
+Leadership & Achievements:
+- Winner: ENIGMA 2025 (YCCE Nagpur).
+- Top 5: National CyberShield Hackathon (Madhya Pradesh Police, SGSITS Indore).
+- Top 10: GEN-A-THON (IIIT Nagpur).
+- Technical Head: YASH and COSMOS; organised 5+ events.
+- Technical Cohead: YCCEXMUN.

@@ -1,0 +1,92 @@
+[
+  {
+    "title": "TaskFlow",
+    "category": "Web",
+    "summary": "Task manager with smart tagging, calendar views, and productivity analytics.",
+    "stack": ["Next.js", "React", "TypeScript"],
+    "highlights": ["Responsive UI", "AI suggestions", "Dark mode", "Task scheduling"],
+    "github": "https://github.com/rishabhgokhe/TaskFlow#readme",
+    "preview": "https://taskflow20.vercel.app/"
+  },
+  {
+    "title": "SkillWave",
+    "category": "Web",
+    "summary": "Learning platform with quizzes, cohort paths, and progress tracking.",
+    "stack": ["Next.js", "React", "TypeScript"],
+    "highlights": ["Personalised path", "AI doubt resolver", "Weekly quiz"],
+    "github": "https://github.com/rishabhgokhe/SkillWave#readme",
+    "preview": "https://skillwave20.vercel.app/"
+  },
+  {
+    "title": "Animease",
+    "category": "Library",
+    "summary": "Lightweight React animation helper with presets and composable transitions.",
+    "stack": ["React", "TypeScript"],
+    "highlights": ["Smooth animation", "Open source", "Lightweight"],
+    "github": "https://www.npmjs.com/package/animease",
+    "preview": "https://www.npmjs.com/package/animease"
+  },
+  {
+    "title": "PulseBoard",
+    "category": "AI",
+    "summary": "Real-time ops dashboard that flags anomalies and summarizes incidents using NLP.",
+    "stack": ["NLP", "Dashboard"],
+    "highlights": ["Anomaly alerts", "Incident summaries"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "CallSense",
+    "category": "AI",
+    "summary": "Call analytics with sentiment, topic extraction, and action item detection.",
+    "stack": ["NLP", "Analytics"],
+    "highlights": ["Sentiment", "Topics", "Insights"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "ChainVote",
+    "category": "Blockchain",
+    "summary": "Voting prototype with wallet auth and verifiable result proofs.",
+    "stack": ["Solidity", "Web3"],
+    "highlights": ["Tamper-proof", "Audit trail"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "VaultPay",
+    "category": "Blockchain",
+    "summary": "Smart-contract escrow flow with multi-sig releases.",
+    "stack": ["Solidity", "Web3"],
+    "highlights": ["Multi-sig", "Escrow"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "CampusConnect",
+    "category": "Web",
+    "summary": "Event and club management portal with RSVP and announcements.",
+    "stack": ["Next.js", "React"],
+    "highlights": ["RSVP", "Announcements"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "RouteSnap",
+    "category": "Mobile",
+    "summary": "Android GPS + camera tracking with Firebase sync.",
+    "stack": ["Kotlin", "Firebase"],
+    "highlights": ["GPS", "Camera", "Live tracking"],
+    "github": "#",
+    "preview": "#"
+  },
+  {
+    "title": "SecureDocs",
+    "category": "Security",
+    "summary": "Document sharing with zero-trust access and expiring links.",
+    "stack": ["Security", "Web"],
+    "highlights": ["Expiring links", "Watermarking"],
+    "github": "#",
+    "preview": "#"
+  }
+]

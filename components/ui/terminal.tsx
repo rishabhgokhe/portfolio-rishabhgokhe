@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useAIBot } from "@/components/elements/AIBotContext";
 
 const KEY_SOUNDS_DOWN: Record<string, [number, number]> = {
   A: [31542, 85],
@@ -245,15 +246,15 @@ function tokenizeBash(text: string): Token[] {
 }
 
 const tokenColors: Record<TokenType, string> = {
-  command: "text-emerald-400",
-  flag: "text-sky-400",
-  string: "text-amber-300",
-  number: "text-purple-400",
-  operator: "text-red-400",
-  path: "text-cyan-300",
-  variable: "text-pink-400",
-  comment: "text-neutral-500",
-  default: "text-neutral-300",
+  command: "text-emerald-400 font-mono",
+  flag: "text-sky-400 font-mono",
+  string: "text-amber-300 font-mono",
+  number: "text-purple-400 font-mono",
+  operator: "text-red-400 font-mono",
+  path: "text-cyan-300 font-mono",
+  variable: "text-pink-400 font-mono",
+  comment: "text-neutral-500 font-mono",
+  default: "text-neutral-300 font-mono",
 };
 
 function SyntaxHighlightedText({ text }: { text: string }) {
@@ -307,6 +308,9 @@ export function Terminal({
   const inView = useInView(containerRef);
   const [soundOn, setSoundOn] = useState(enableSound);
   const { down, up } = useAudio(soundOn);
+  const [aiMode, setAiMode] = useState(false);
+  const { messages: aiMessages, loading: aiLoading, mode, setMode, sendMessage } =
+    useAIBot();
 
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [currentText, setCurrentText] = useState("");
@@ -435,16 +439,19 @@ export function Terminal({
     );
   }, [interactive, welcomeLines]);
 
+  const modeLabel = mode === "hr" ? "HR" : mode === "tech" ? "Tech" : "Bro";
+  const promptName = aiMode ? `${modeLabel} Rishu` : username;
+
   const prompt = (
-    <span className="text-neutral-500">
-      <span className="text-sky-500">{username}</span>
-      <span className="text-emerald-600">:</span>
-      <span className="text-sky-400">~</span>
-      <span className="text-neutral-500">$</span>{" "}
+    <span className="font-mono text-neutral-500">
+      <span className="font-mono text-sky-500">{promptName}</span>
+      <span className="font-mono text-emerald-600">:</span>
+      <span className="font-mono text-sky-400">~</span>
+      <span className="font-mono text-neutral-500">$</span>{" "}
     </span>
   );
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmed = inputValue.trim();
     if (!trimmed) return;
@@ -456,6 +463,49 @@ export function Terminal({
     setInputValue("");
 
     const normalized = trimmed.toLowerCase();
+
+    if (normalized === "cd ai") {
+      setAiMode(true);
+      setMode("bro");
+      setLines((prev) => [
+        ...prev,
+        {
+          type: "output",
+          content: "AI mode enabled. Bro Rishu is talking.",
+        } as TerminalLine,
+      ]);
+      return;
+    }
+
+    if (aiMode) {
+      if (normalized === "exit" || normalized === "cd .." || normalized === "cd ~") {
+        setAiMode(false);
+        setLines((prev) => [
+          ...prev,
+          { type: "output", content: "Exited AI mode." } as TerminalLine,
+        ]);
+        return;
+      }
+
+      if (normalized.startsWith("mode ")) {
+        const next = normalized.replace("mode ", "").trim();
+        if (next === "bro" || next === "hr" || next === "tech") {
+          setMode(next);
+          setLines((prev) => [
+            ...prev,
+            {
+              type: "output",
+              content: `Mode switched to ${next.toUpperCase()}.`,
+            } as TerminalLine,
+          ]);
+          return;
+        }
+      }
+
+      if (aiLoading) return;
+      await sendMessage(trimmed, mode);
+      return;
+    }
     if (normalized === "clear") {
       setLines([]);
       return;
@@ -467,6 +517,9 @@ export function Terminal({
         ? [
             "Available commands:",
             ...available.map((cmd) => `- ${cmd}`),
+            "- cd ai (enter AI mode)",
+            "- exit (leave AI mode)",
+            "- mode bro|hr|tech (only in AI mode)",
           ]
         : ["No commands configured."];
       setLines((prev) => [
@@ -508,17 +561,23 @@ export function Terminal({
     >
       <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
         {/* Title Bar */}
-        <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3">
+        <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3 font-mono">
           <div className="flex items-center gap-1.5">
             <div className="h-3 w-3 rounded-full bg-red-500 transition-colors hover:bg-red-600" />
             <div className="h-3 w-3 rounded-full bg-yellow-500 transition-colors hover:bg-yellow-600" />
             <div className="h-3 w-3 rounded-full bg-green-500 transition-colors hover:bg-green-600" />
           </div>
           <div className="flex-1 text-center">
-            <span className="truncate text-xs text-neutral-400">
+            <span className="truncate text-xs font-mono text-neutral-400">
               {username} — bash
             </span>
           </div>
+          {aiMode ? (
+            <span className="flex items-center gap-1 rounded-full border border-neutral-600/70 bg-neutral-900/80 px-2 py-0.5 text-[10px] uppercase tracking-[0.14em] text-neutral-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)]" />
+              {modeLabel} Mode
+            </span>
+          ) : null}
           <button
             type="button"
             onClick={() => setSoundOn((prev) => !prev)}
@@ -592,13 +651,33 @@ export function Terminal({
                   <SyntaxHighlightedText text={line.content} />
                 </span>
               ) : (
-                <span className="text-neutral-400">{line.content}</span>
+                <span className="font-mono text-neutral-400">
+                  {line.content}
+                </span>
               )}
             </div>
           ))}
 
+          {aiMode &&
+            aiMessages.map((message, i) => (
+              <div key={`ai-${i}`} className="leading-relaxed whitespace-pre-wrap">
+                {message.role === "user" ? (
+                  <span>
+                    {prompt}
+                    <span className="font-mono text-neutral-200">
+                      {message.content}
+                    </span>
+                  </span>
+                ) : (
+                  <span className="font-mono text-neutral-400">
+                    {message.content}
+                  </span>
+                )}
+              </div>
+            ))}
+
           {!interactive && phase === "typing" && (
-            <div className="leading-relaxed whitespace-pre-wrap">
+            <div className="font-mono leading-relaxed whitespace-pre-wrap">
               {prompt}
               <SyntaxHighlightedText text={currentText} />
               <span className="ml-0.5 inline-block h-4 w-2 bg-neutral-300 align-middle" />
@@ -609,7 +688,7 @@ export function Terminal({
             (phase === "done" ||
               phase === "pausing" ||
               phase === "outputting") && (
-            <div className="leading-relaxed whitespace-pre-wrap">
+            <div className="font-mono leading-relaxed whitespace-pre-wrap">
               {prompt}
               <span
                 className={cn(
@@ -622,7 +701,7 @@ export function Terminal({
 
           {interactive && (
             <form onSubmit={handleSubmit} className="leading-relaxed">
-              <label className="flex items-center gap-0.5 whitespace-pre-wrap">
+              <label className="flex items-center gap-0.5 whitespace-pre-wrap font-mono">
                 {prompt}
                 <input
                   ref={inputRef}
@@ -648,11 +727,17 @@ export function Terminal({
                       up(event.key);
                     }
                   }}
-                  className="flex-1 bg-transparent text-neutral-200 outline-none"
+                  className="flex-1 bg-transparent font-mono text-neutral-200 outline-none"
                   autoComplete="off"
                   spellCheck={false}
                 />
               </label>
+              {aiMode && aiLoading ? (
+                <div className="mt-2 flex items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-emerald-300/70">
+                  <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-300/80" />
+                  Rishu is typing...
+                </div>
+              ) : null}
             </form>
           )}
         </div>

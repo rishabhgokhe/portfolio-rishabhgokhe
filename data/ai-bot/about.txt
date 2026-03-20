@@ -1,0 +1,4 @@
+Rishabh Gokhe — Full-Stack Software Engineer based in Nagpur, India.
+Focus areas: scalable web apps, system design, DSA, and clean architecture.
+Current status: Open to opportunities.
+Strengths: Problem-solving, clean UI/UX, and production-minded development.

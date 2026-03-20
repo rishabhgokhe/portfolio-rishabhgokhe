@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AIBotPanel from "@/components/elements/AIBotPanel";
 
 export default function FloatingAIBotButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,42 +17,19 @@ export default function FloatingAIBotButton() {
       >
         <div className="flex items-center justify-between border-b border-emerald-500/20 px-3 py-2 font-mono">
           <p className="text-[11px] uppercase tracking-[0.12em] text-emerald-200">
-            Personal AI (Demo)
+            Personal AI
           </p>
           <button
             type="button"
             onClick={() => setIsOpen(false)}
             className="text-zinc-400 transition hover:text-white"
-            aria-label="Close demo AI popup"
+            aria-label="Close AI popup"
           >
             ✕
           </button>
         </div>
 
-        <div className="space-y-2 px-3 py-3 font-mono text-xs">
-          <div className="max-w-[85%] rounded-md border border-zinc-700/70 bg-zinc-900/80 px-2.5 py-2 text-zinc-200">
-            Hi Rishabh, I can help with portfolio reviews, resumes, and DSA prep.
-          </div>
-          <div className="ml-auto max-w-[85%] rounded-md border border-emerald-500/35 bg-emerald-500/10 px-2.5 py-2 text-emerald-100">
-            Show me best projects to highlight for recruiters.
-          </div>
-          <div className="max-w-[85%] rounded-md border border-zinc-700/70 bg-zinc-900/80 px-2.5 py-2 text-zinc-200">
-            Demo mode: add backend later to connect real AI responses.
-          </div>
-        </div>
-
-        <div className="border-t border-emerald-500/20 p-3">
-          <div className="flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900/80 px-2 py-1.5">
-            <span className="text-[11px] text-zinc-500">$</span>
-            <input
-              value="Ask anything... (demo)"
-              readOnly
-              className="w-full bg-transparent font-mono text-xs text-zinc-500 outline-none"
-              aria-label="Demo AI input"
-            />
-            <span className="text-[11px] text-emerald-300/80">SEND</span>
-          </div>
-        </div>
+        <AIBotPanel showHeader={false} className="h-[420px] border-0 bg-transparent p-3" />
       </div>
 
       <button

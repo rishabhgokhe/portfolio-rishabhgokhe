@@ -1,0 +1,5 @@
+- Winner, ENIGMA 2025 (YCCE Nagpur): Android GPS + camera tracking app using Firebase & Kotlin. 1st among 10 finalists.
+- Top 5, National CyberShield Hackathon (Madhya Pradesh Police, SGSITS Indore): All-India campaign detection system using NLP.
+- Top 10, GEN-A-THON (IIIT Nagpur): AI-powered call analysis tool with real-time analytics.
+- Technical Head: YASH (Annual Techno-cultural Fest) and COSMOS (CSE Department Committee). Organised 5+ events like Smakathon, ENIGMA 2.0, CipherChase, Coding Relay.
+- Technical Cohead: YCCEXMUN. Worked on website and technical operations.
