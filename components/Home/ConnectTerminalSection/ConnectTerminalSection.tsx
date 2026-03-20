@@ -89,7 +89,7 @@ export default function ConnectTerminalSection() {
               Know Me More..!
             </h2>
             <p className="mb-6 font-mono text-[12px] leading-relaxed text-zinc-400 sm:text-sm">
-              Get details What you Want..
+              Get details What you Want.. Talk to my personal AI which can answer your question..
             </p>
 
             <Terminal
@@ -98,16 +98,49 @@ export default function ConnectTerminalSection() {
               className="mx-0 w-full max-w-none px-0"
               welcomeLines={[
                 "Type 'help' to see available commands.",
-                "Tip: try 'projects' or 'contact'.",
+                "Tip: try 'projects' or 'cd ai'.",
               ]}
               commandResponses={{
                 whoami: ["rishabh-gokhe"],
-                projects: ["TaskFlow", "SkillWave", "Animease"],
-                "projects --top": ["TaskFlow", "SkillWave", "Animease"],
-                skills: ["React · Next.js · TypeScript · Node.js"],
-                contact: ["email: rishabhgokhe20contact@gmail.com"],
+                projects: [
+                  "TaskFlow",
+                  "SkillWave",
+                  "Animease",
+                  "Tip: use `cd taskflow` or `cd skillwave` for details.",
+                ],
+                "projects --top": [
+                  "Top picks:",
+                  "1) TaskFlow — Next.js productivity suite",
+                  "2) SkillWave — cohort learning platform",
+                  "3) Animease — animation helper library",
+                ],
+                skills: ["React · Next.js · TypeScript · Node.js · Tailwind"],
+                contact: [
+                  "email: rishabhgokhe20contact@gmail.com",
+                  "linkedin: linkedin.com/in/rishabh-gokhe",
+                ],
                 resume: ["downloads/PortFolioRishabh.pdf"],
                 location: ["Nagpur, IN"],
+              }}
+              projectDetails={{
+                taskflow: [
+                  "TaskFlow",
+                  "Stack: Next.js, React, TypeScript",
+                  "Highlights: smart tagging, calendar views, analytics",
+                  "Status: production-ready UI",
+                ],
+                skillwave: [
+                  "SkillWave",
+                  "Stack: Next.js, React, TypeScript",
+                  "Highlights: quizzes, cohort paths, progress tracking",
+                  "Focus: engagement + learning outcomes",
+                ],
+                animease: [
+                  "Animease",
+                  "Stack: React, TypeScript",
+                  "Highlights: composable presets, lightweight animations",
+                  "NPM: animation helper library",
+                ],
               }}
             />
           </div>

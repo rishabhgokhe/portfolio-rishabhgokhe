@@ -288,6 +288,7 @@ export interface TerminalProps {
   interactive?: boolean;
   commandResponses?: Record<string, string[]>;
   welcomeLines?: string[];
+  projectDetails?: Record<string, string[]>;
 }
 
 export function Terminal({
@@ -302,6 +303,7 @@ export function Terminal({
   interactive = false,
   commandResponses = {},
   welcomeLines = [],
+  projectDetails = {},
 }: TerminalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -464,6 +466,34 @@ export function Terminal({
 
     const normalized = trimmed.toLowerCase();
 
+    if (normalized === "help") {
+      const ordered = [
+        "whoami",
+        "projects",
+        "cd ai (enter AI mode)",
+        "exit (leave AI mode)",
+        "mode bro|hr|tech (only in AI mode)",
+        "projects --top",
+        "skills",
+        "contact",
+        "resume",
+        "location",
+      ];
+
+      const helpLines = [
+        "Available commands:",
+        ...ordered.map((cmd) => `- ${cmd}`),
+      ];
+
+      setLines((prev) => [
+        ...prev,
+        ...helpLines.map(
+          (line): TerminalLine => ({ type: "output", content: line }),
+        ),
+      ]);
+      return;
+    }
+
     if (normalized === "cd ai") {
       setAiMode(true);
       setMode("bro");
@@ -506,28 +536,22 @@ export function Terminal({
       await sendMessage(trimmed, mode);
       return;
     }
+
+    if (normalized.startsWith("cd ")) {
+      const projectKey = normalized.replace("cd ", "").trim();
+      const detailLines = projectDetails[projectKey];
+      if (detailLines && detailLines.length > 0) {
+        setLines((prev) => [
+          ...prev,
+          ...detailLines.map(
+            (line): TerminalLine => ({ type: "output", content: line }),
+          ),
+        ]);
+        return;
+      }
+    }
     if (normalized === "clear") {
       setLines([]);
-      return;
-    }
-
-    if (normalized === "help") {
-      const available = Object.keys(commandResponses);
-      const helpLines = available.length
-        ? [
-            "Available commands:",
-            ...available.map((cmd) => `- ${cmd}`),
-            "- cd ai (enter AI mode)",
-            "- exit (leave AI mode)",
-            "- mode bro|hr|tech (only in AI mode)",
-          ]
-        : ["No commands configured."];
-      setLines((prev) => [
-        ...prev,
-        ...helpLines.map(
-          (line): TerminalLine => ({ type: "output", content: line }),
-        ),
-      ]);
       return;
     }
 
@@ -559,7 +583,7 @@ export function Terminal({
         className,
       )}
     >
-      <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
+      <div className="overflow-hidden min-h-[420px] rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
         {/* Title Bar */}
         <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3 font-mono">
           <div className="flex items-center gap-1.5">
@@ -641,7 +665,7 @@ export function Terminal({
         {/* Terminal Content */}
         <div
           ref={contentRef}
-          className="no-visible-scrollbar h-80 overflow-y-auto p-4 font-mono"
+          className="no-visible-scrollbar min-h-[420px] h-80 overflow-y-auto p-4 font-mono"
         >
           {lines.map((line, i) => (
             <div key={i} className="leading-relaxed whitespace-pre-wrap">

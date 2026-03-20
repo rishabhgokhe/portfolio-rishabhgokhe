@@ -25,7 +25,7 @@ export function AIBotProvider({ children }: { children: React.ReactNode }) {
   const [messages, setMessages] = useState<AIBotMessage[]>([
     {
       role: "assistant",
-      content: "Hey! Ask me anything about my projects, skills, or achievements.",
+      content: "Hey! Rishu here, Ask me anything..",
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -102,8 +102,7 @@ export function AIBotProvider({ children }: { children: React.ReactNode }) {
     setMessages([
       {
         role: "assistant",
-        content:
-          "Chat cleared. Ask me anything about my projects, skills, or achievements.",
+        content: "Chat cleared. Hey! Rishu here, Ask me anything..",
       },
     ]);
     setError(null);

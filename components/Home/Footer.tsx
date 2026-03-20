@@ -126,7 +126,7 @@ export default function Footer() {
       ref={footerRef}
       className="relative overflow-hidden bg-black py-12 text-white"
     >
-      <GridBackground color="#22c55e" />
+      <GridBackground color="#000000" />
 
       <div className="footer-scan pointer-events-none absolute inset-x-0 top-0 z-10 h-24 origin-left bg-gradient-to-b from-black via-black/30 to-transparent" />
 

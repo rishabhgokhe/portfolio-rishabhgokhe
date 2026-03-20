@@ -24,7 +24,7 @@ let cachedData: BotData | null = null;
 
 async function loadBotData(): Promise<BotData> {
   if (cachedData) return cachedData;
-  const base = path.join(process.cwd(), "data", "ai-bot");
+  const base = path.join(process.cwd(), "lib", "ai-bot");
   const [about, skills, achievements, resume, projects, personality] =
     await Promise.all([
       fs.readFile(path.join(base, "about.txt"), "utf8"),
