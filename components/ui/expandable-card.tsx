@@ -104,21 +104,46 @@ export default function ExpandableCardDemo({
               {...modalMotion}
               className="relative flex h-full w-full max-w-[620px] flex-col overflow-hidden rounded-3xl border border-emerald-400/40 bg-zinc-950/95 shadow-[0_30px_80px_rgba(0,0,0,0.55)] md:h-fit md:max-h-[90%]"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                {hasImage(active) ? (
-                  <img
-                    width={560}
-                    height={320}
-                    src={active.src}
-                    alt={active.title}
-                    className="h-72 w-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="flex h-48 w-full items-center justify-center bg-emerald-500/10 text-xs uppercase tracking-[0.2em] text-emerald-200/70">
-                    Preview
-                  </div>
-                )}
-              </motion.div>
+              {active.previewLink ? (
+                <a
+                  href={active.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block"
+                >
+                  <motion.div layoutId={`image-${active.title}-${id}`}>
+                    {hasImage(active) ? (
+                      <img
+                        width={560}
+                        height={320}
+                        src={active.src}
+                        alt={active.title}
+                        className="h-72 w-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="flex h-48 w-full items-center justify-center bg-emerald-500/10 text-xs uppercase tracking-[0.2em] text-emerald-200/70">
+                        Preview
+                      </div>
+                    )}
+                  </motion.div>
+                </a>
+              ) : (
+                <motion.div layoutId={`image-${active.title}-${id}`}>
+                  {hasImage(active) ? (
+                    <img
+                      width={560}
+                      height={320}
+                      src={active.src}
+                      alt={active.title}
+                      className="h-72 w-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="flex h-48 w-full items-center justify-center bg-emerald-500/10 text-xs uppercase tracking-[0.2em] text-emerald-200/70">
+                      Preview
+                    </div>
+                  )}
+                </motion.div>
+              )}
 
               <div>
                 <div className="flex items-start justify-between gap-3 p-4">
@@ -147,7 +172,7 @@ export default function ExpandableCardDemo({
                         layoutId={`button-${active.title}-${id}`}
                         href={active.ctaLink}
                         target="_blank"
-                        className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-100"
+                        className="text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-100 transition hover:text-emerald-200"
                         rel="noreferrer"
                       >
                         {active.ctaText}
@@ -157,7 +182,7 @@ export default function ExpandableCardDemo({
                       <motion.a
                         href={active.previewLink}
                         target="_blank"
-                        className="rounded-full border border-emerald-400/30 bg-black/40 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-100"
+                        className="rounded-full border border-emerald-400/30 bg-black/40 px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-100 transition hover:border-emerald-300/70 hover:bg-emerald-400/10 hover:text-emerald-50"
                         rel="noreferrer"
                       >
                         {active.previewText}

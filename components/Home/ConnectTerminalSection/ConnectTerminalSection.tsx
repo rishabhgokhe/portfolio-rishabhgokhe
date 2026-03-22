@@ -21,8 +21,8 @@ const terminalProjectDetails = projectData.reduce(
   (acc, project) => {
     const key = normalizeProjectKey(project.title);
     const repo =
-      project.link && project.link !== "#"
-        ? `Repo: ${project.link}`
+      project.github && project.github !== "#"
+        ? `Repo: ${project.github}`
         : "Repo: coming soon";
     const live =
       project.preview && project.preview !== "#"
@@ -128,7 +128,7 @@ export default function ConnectTerminalSection() {
               className="mx-0 w-full max-w-none px-0"
               welcomeLines={[
                 "Type 'help' to see available commands.",
-                "Tip: try 'projects' or 'cd ai'.",
+                "Tip: try 'cd ai'.",
               ]}
               commandResponses={{
                 whoami: ["rishabh-gokhe"],

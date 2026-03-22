@@ -4,7 +4,7 @@ import { Playfair_Display } from "next/font/google";
 import { GridBackground } from "@/components/ui/grid-background";
 import SectionTag from "@/components/elements/SectionTag";
 import ExpandableCardDemo from "@/components/ui/expandable-card";
-import CodeSquareIcon from "@/public/svg/icons/CodeSquareIcon";
+import GithubIcon from "@/public/svg/icons/GithubIcon";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -43,11 +43,32 @@ export default function Projects() {
           description: project.description,
           category: project.category ?? "Other",
           src: imageSrc,
-          ctaText: <CodeSquareIcon className="h-3.9 w-3.9" />,
-          ctaLink: project.link ?? "#",
-          previewText: project.preview && project.preview !== "#" ? "Preview" : undefined,
-          previewLink: project.preview && project.preview !== "#" ? project.preview : undefined,
-          content: project.description,
+          ctaText: <GithubIcon className="h-2.6 w-2.6" />,
+          ctaLink: project.github ?? "#",
+          previewText:
+            project.preview && project.preview !== "#" ? "Preview" : undefined,
+          previewLink:
+            project.preview && project.preview !== "#" ? project.preview : undefined,
+          content:
+            project.features && project.features.length > 0 ? (
+              <div className="space-y-2">
+                <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-200/80">
+                  Features
+                </span>
+                <ul className="space-y-1 text-xs text-zinc-300 md:text-sm">
+                  {project.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300/80" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className="text-xs text-zinc-300 md:text-sm">
+                Highlights coming soon.
+              </div>
+            ),
         };
       }),
     [filteredProjects],

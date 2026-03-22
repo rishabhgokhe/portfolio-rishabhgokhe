@@ -8,25 +8,6 @@ export default function BackgroundAudio() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const lottieRef = useRef<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  useEffect(() => {
-    const handleFirstInteraction = () => {
-      setHasInteracted(true);
-    };
-    window.addEventListener("pointerdown", handleFirstInteraction, {
-      once: true,
-    });
-    return () => window.removeEventListener("pointerdown", handleFirstInteraction);
-  }, []);
-
-  useEffect(() => {
-    if (!hasInteracted || !audioRef.current) return;
-    audioRef.current
-      .play()
-      .then(() => setIsPlaying(true))
-      .catch(() => setIsPlaying(false));
-  }, [hasInteracted]);
 
   useEffect(() => {
     if (!lottieRef.current) return;

@@ -221,134 +221,240 @@ export const TechStackSkillGroups = [
 import TaskFlow from "@/public/images/Screenshots/TaskFlow.png";
 import SkillWave from "@/public/images/Screenshots/SkillWave.png";
 import Animease from "@/public/images/Screenshots/Animease.png";
-
-import LaptopPhoneSyncIcon from "@/public/svg/icons/Features/LaptopPhoneSyncIcon";
-import UserSharingIcon from "@/public/svg/icons/Features/UserSharingIcon";
-import ArtificialIntelligence04Icon from "@/public/svg/icons/Features/ArtificialIntelligence04Icon";
-import DarkModeIcon from "@/public/svg/icons/Features/DarkModeIcon";
-import TagsIcon from "@/public/svg/icons/Features/TagsIcon";
-import TimeScheduleIcon from "@/public/svg/icons/Features/TimeScheduleIcon";
-import Mortarboard02Icon from "@/public/svg/icons/Features/Mortarboard02Icon";
-import SaveMoneyDollarIcon from "@/public/svg/icons/Features/SaveMoneyDollarIcon";
-import Quiz05Icon from "@/public/svg/icons/Features/Quiz05Icon";
-import AiGenerativeIcon from "@/public/svg/icons/Features/AiGenerativeIcon";
-import ChartBarLineIcon from "@/public/svg/icons/Features/ChartBarLineIcon";
-import Rocket02Icon from "@/public/svg/icons/Features/Rocket02Icon";
-import FlashIcon from "@/public/svg/icons/Features/FlashIcon";
-import ThumbsUpIcon from "@/public/svg/icons/Features/ThumbsUpIcon";
-import Settings05Icon from "@/public/svg/icons/Features/Settings05Icon";
-import BookOpen02Icon from "@/public/svg/icons/Features/BookOpen02Icon";
-import SourceCodeSquareIcon from "@/public/svg/icons/Features/SourceCodeSquareIcon";
+import AntiIndia from "@/public/images/Screenshots/Anti-India Threat Detection System.png";
+import HuntSecrets from "@/public/images/Screenshots/HuntSecrets.png";
+import StatePropagationEngine from "@/public/images/Screenshots/State Propogation Engine.png";
+import upsurge2k25 from "@/public/images/Screenshots/upsurge2k25.png";
+import READMESync from "@/public/images/Screenshots/README-Sync.png";
+import CareMitra from "@/public/images/Screenshots/CareMitra.png";
+import CrewNotification from "@/public/images/Screenshots/Crew Notification.png";
 
 export const projectData = [
   {
-    title: "ChainVote",
-    category: "Blockchain",
+    title: "CareMitra",
+    category: "AI/ML",
+    type: "Product",
     description:
-      "Tamper-proof voting prototype with wallet auth and verifiable result proofs.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
+      "A SaaS platform that integrates with hospital systems to securely manage patient records using a Blockchain-powered Health Wallet.",
+    github: "https://github.com/rishabhgokhe/CareMitra",
+    preview: "https://care-mitra.vercel.app/",
+    tech: ["React", "Node.js", "MongoDB", "Blockchain", "Firebase"],
+    features: [
+      "Secure medical record storage",
+      "Blockchain-based data integrity",
+      "Access control for healthcare providers",
+      "EMR system integration",
+      "AI-based health recommendations",
+    ],
+    images: {
+      image: CareMitra,
+      alt: "CareMitra HomePage",
+    },
   },
   {
-    title: "VaultPay",
-    category: "Blockchain",
+    title: "Marine Regimes Detection Using HMM",
+    category: "AI/ML",
+    type: "Research",
     description:
-      "Smart-contract based escrow flow with multi-sig releases and audit trail.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
+      "Detects hidden regimes in marine time-series data using unsupervised learning, enabling analysis of dynamic ocean patterns without labeled data.",
+    github:
+      "https://github.com/rishabhgokhe/Unsupervised-Marine-Latent-Detection",
+    preview:
+      "https://github.com/rishabhgokhe/Unsupervised-Marine-Latent-Detection",
+    tech: ["Python", "NumPy", "Scikit-learn", "HMM"],
+    features: [
+      "Multivariate time-series analysis",
+      "Temporal feature extraction",
+      "Probabilistic modeling with HMM",
+      "Handles non-stationary data",
+      "Pattern visualization",
+    ],
+    images: {
+      image: TaskFlow,
+      alt: "Marine Detection Visualization",
+    },
   },
   {
-    title: "CampusConnect",
-    category: "Web",
+    title: "Anti-India Threat Detection System",
+    category: "AI/ML",
+    type: "Research",
     description:
-      "Event and club management portal with RSVP, ticketing, and announcements.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
+      "An intelligent system to detect propaganda, sentiment, and engagement patterns using NLP and Machine Learning.",
+    github: "https://github.com/rishabhgokhe/anti-india-detection",
+    preview: "https://anti-india-detection.streamlit.app",
+    tech: ["Python", "NLP", "Scikit-learn", "Streamlit"],
+    features: [
+      "Sentiment classification",
+      "Propaganda detection",
+      "Narrative tracking",
+      "Influencer analysis",
+    ],
+    images: {
+      image: AntiIndia,
+      alt: "Anti-India Detection System",
+    },
   },
   {
-    title: "RouteSnap",
-    category: "Mobile",
+    title: "Task Scheduler with OpenCV",
+    category: "AI/ML",
+    type: "Product",
     description:
-      "Android app for GPS + camera tracking with Firebase sync and live route history.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
+      "A real-time system that detects spills and garbage using computer vision and assigns cleaning tasks automatically.",
+    github: "https://github.com/rishabhgokhe/Crew-Notification",
+    preview: "https://github.com/rishabhgokhe/Crew-Notification",
+    tech: ["Python", "OpenCV", "Deep Learning", "Firebase", "MERN"],
+    features: [
+      "Real-time object detection",
+      "Automated task assignment",
+      "Live monitoring dashboard",
+      "Firebase integration",
+      "Scalable architecture",
+    ],
+    images: {
+      image: CrewNotification,
+      alt: "Crew Notification System",
+    },
   },
   {
-    title: "SecureDocs",
-    category: "Security",
+    title: "State Propagation Engine",
+    category: "Systems / Research",
+    type: "Research",
     description:
-      "Document sharing with zero-trust access, expiring links, and watermarking.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
+      "A research-driven engine to study deterministic state updates and dependency resolution in reactive systems.",
+    github: "https://github.com/rishabhgokhe/State-propagation-engine",
+    preview: "https://github.com/rishabhgokhe/State-propagation-engine",
+    tech: ["JavaScript", "Data Structures", "Reactive Systems"],
+    features: [
+      "Signal-based state updates",
+      "Dependency graph modeling",
+      "Deterministic propagation",
+      "Real-time updates",
+      "Execution tracing",
+    ],
+    images: {
+      image: StatePropagationEngine,
+      alt: "State Propagation Engine",
+    },
+  },
+  {
+    title: "HuntSecrets",
+    category: "Web Development",
+    type: "Product",
+    description:
+      "A QR-based treasure hunt platform with real-time leaderboards and interactive gameplay.",
+    github: "https://github.com/rishabhgokhe/HuntSecrets",
+    preview: "https://upsurge-cipherchase.vercel.app/",
+    tech: ["React", "Node.js", "MongoDB"],
+    features: [
+      "QR-based gameplay",
+      "Leaderboard system",
+      "Penalty scoring logic",
+      "Event hosting support",
+    ],
+    images: {
+      image: HuntSecrets,
+      alt: "HuntSecrets HomePage",
+    },
+  },
+  {
+    title: "upsurge2k25",
+    category: "Web Development",
+    type: "Product",
+    description:
+      "A modern tech fest website built with animations and optimized performance for a smooth user experience.",
+    github: "https://github.com/rishabhgokhe/upsurge2k25",
+    preview: "https://upsurge2k25.tech/",
+    tech: ["Next.js", "GSAP", "React"],
+    features: [
+      "Dynamic event listings",
+      "Smooth animations",
+      "Mobile responsive design",
+      "Optimized performance",
+    ],
+    images: {
+      image: upsurge2k25,
+      alt: "Upsurge Website",
+    },
   },
   {
     title: "TaskFlow",
-    category: "Web",
+    category: "Web Development",
+    type: "Product",
     description:
-      "TaskFlow is a focused task manager with smart tagging, calendar views, and productivity analytics.",
-    link: "https://github.com/rishabhgokhe/TaskFlow#readme",
+      "A productivity-focused task manager with smart organization and analytics.",
+    github: "https://github.com/rishabhgokhe/TaskFlow#readme",
     preview: "https://taskflow20.vercel.app/",
-    features: [],
+    tech: ["React", "Node.js", "MongoDB"],
+    features: [
+      "Smart task tagging",
+      "Calendar planning",
+      "Productivity insights",
+      "Minimal UI design",
+    ],
     images: {
       image: TaskFlow,
-      alt: "TaskFlow HomePage",
+      alt: "TaskFlow App",
     },
   },
   {
     title: "SkillWave",
-    category: "Web",
+    category: "Web Development",
+    type: "Product",
     description:
-      "SkillWave is a learning platform with cohort journeys, quizzes, and progress insights.",
-    link: "https://github.com/rishabhgokhe/SkillWave#readme",
+      "An interactive learning platform with structured cohorts and progress tracking.",
+    github: "https://github.com/rishabhgokhe/SkillWave#readme",
     preview: "https://skillwave20.vercel.app/",
-    features: [],
+    tech: ["React", "Node.js", "MongoDB"],
+    features: [
+      "Cohort-based learning",
+      "Interactive quizzes",
+      "Progress tracking",
+      "User insights dashboard",
+    ],
     images: {
       image: SkillWave,
-      alt: "SkillWave HomePage",
+      alt: "SkillWave Platform",
+    },
+  },
+  {
+    title: "README-Sync",
+    category: "Developer Tool",
+    type: "Tool",
+    description:
+      "A script to automate README updates across repositories using reusable content blocks.",
+    github: "https://github.com/rishabhgokhe/README-Sync",
+    preview: "https://github.com/rishabhgokhe/README-Sync",
+    tech: ["Python", "Git"],
+    features: [
+      "Automated README updates",
+      "Reusable content blocks",
+      "Change detection system",
+      "Smart commit messages",
+    ],
+    images: {
+      image: READMESync,
+      alt: "README Sync Tool",
     },
   },
   {
     title: "Animease",
-    category: "Library",
+    category: "Open Source / Library",
+    type: "Library",
     description:
-      "Animease is a lightweight React animation helper with presets and composable transitions.",
-    link: "https://www.npmjs.com/package/animease",
+      "A lightweight React animation library with pre-built transitions and composable APIs.",
+    github: "https://www.npmjs.com/package/animease",
     preview: "https://www.npmjs.com/package/animease",
-    features: [],
+    tech: ["React", "JavaScript", "Animation"],
+    features: [
+      "Predefined animation presets",
+      "Composable transitions",
+      "Lightweight package",
+      "Easy integration",
+    ],
     images: {
       image: Animease,
-      alt: "Animease npm HomePage",
+      alt: "Animease Library",
     },
-  },
-  {
-    title: "PulseBoard",
-    category: "AI",
-    description:
-      "Real-time ops dashboard that flags anomalies and summarizes incidents using NLP.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
-  },
-  {
-    title: "CallSense",
-    category: "AI",
-    description:
-      "Call analytics suite with sentiment, key-topic extraction, and action item detection.",
-    link: "#",
-    preview: "#",
-    features: [],
-    images: [],
   },
 ];
 
