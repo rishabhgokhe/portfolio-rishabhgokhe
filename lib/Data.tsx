@@ -259,8 +259,7 @@ export const projectData = [
       "Detects hidden regimes in marine time-series data using unsupervised learning, enabling analysis of dynamic ocean patterns without labeled data.",
     github:
       "https://github.com/rishabhgokhe/Unsupervised-Marine-Latent-Detection",
-    preview:
-      "https://github.com/rishabhgokhe/Unsupervised-Marine-Latent-Detection",
+    preview: "#",
     tech: ["Python", "NumPy", "Scikit-learn", "HMM"],
     features: [
       "Multivariate time-series analysis",
@@ -301,7 +300,7 @@ export const projectData = [
     description:
       "A real-time system that detects spills and garbage using computer vision and assigns cleaning tasks automatically.",
     github: "https://github.com/rishabhgokhe/Crew-Notification",
-    preview: "https://github.com/rishabhgokhe/Crew-Notification",
+    preview: "#",
     tech: ["Python", "OpenCV", "Deep Learning", "Firebase", "MERN"],
     features: [
       "Real-time object detection",
@@ -322,7 +321,7 @@ export const projectData = [
     description:
       "A research-driven engine to study deterministic state updates and dependency resolution in reactive systems.",
     github: "https://github.com/rishabhgokhe/State-propagation-engine",
-    preview: "https://github.com/rishabhgokhe/State-propagation-engine",
+    preview: "#",
     tech: ["JavaScript", "Data Structures", "Reactive Systems"],
     features: [
       "Signal-based state updates",
@@ -423,7 +422,7 @@ export const projectData = [
     description:
       "A script to automate README updates across repositories using reusable content blocks.",
     github: "https://github.com/rishabhgokhe/README-Sync",
-    preview: "https://github.com/rishabhgokhe/README-Sync",
+    preview: "#",
     tech: ["Python", "Git"],
     features: [
       "Automated README updates",
@@ -442,7 +441,7 @@ export const projectData = [
     type: "Library",
     description:
       "A lightweight React animation library with pre-built transitions and composable APIs.",
-    github: "https://www.npmjs.com/package/animease",
+    github: "https://github.com/rishabhgokhe/animease",
     preview: "https://www.npmjs.com/package/animease",
     tech: ["React", "JavaScript", "Animation"],
     features: [

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { projectData } from "@/lib/Data";
+import { projectData, TechStackSkillGroups } from "@/lib/Data";
 import { Playfair_Display } from "next/font/google";
 import { GridBackground } from "@/components/ui/grid-background";
 import SectionTag from "@/components/elements/SectionTag";
@@ -13,6 +13,15 @@ const playfairDisplay = Playfair_Display({
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const techIconMap = useMemo(() => {
+    const map = new Map<string, React.ReactNode>();
+    TechStackSkillGroups.forEach((group) => {
+      group.items.forEach((item) => {
+        map.set(item.name, item.icon);
+      });
+    });
+    return map;
+  }, []);
 
   const categories = useMemo(() => {
     const unique = new Set(
@@ -38,6 +47,18 @@ export default function Projects() {
         const imageSrc =
           typeof imageValue === "string" ? imageValue : imageValue?.src ?? "";
 
+        const rawPreview = project.preview ?? "";
+        const hasPreview = rawPreview !== "";
+        const isGithubPreview =
+          typeof rawPreview === "string" &&
+          rawPreview.toLowerCase().includes("github.com");
+        const techItems = (project.tech ?? []).map((tech) => ({
+          name: tech,
+          icon: techIconMap.get(tech),
+        }));
+        const hasFeatures = project.features && project.features.length > 0;
+        const hasTech = techItems.length > 0;
+
         return {
           title: project.title,
           description: project.description,
@@ -45,24 +66,57 @@ export default function Projects() {
           src: imageSrc,
           ctaText: <GithubIcon className="h-2.6 w-2.6" />,
           ctaLink: project.github ?? "#",
-          previewText:
-            project.preview && project.preview !== "#" ? "Preview" : undefined,
+          previewText: hasPreview ? "Preview" : undefined,
           previewLink:
-            project.preview && project.preview !== "#" ? project.preview : undefined,
+            hasPreview && rawPreview !== "#" && !isGithubPreview
+              ? rawPreview
+              : undefined,
           content:
-            project.features && project.features.length > 0 ? (
-              <div className="space-y-2">
-                <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-200/80">
-                  Features
-                </span>
-                <ul className="space-y-1 text-xs text-zinc-300 md:text-sm">
-                  {project.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300/80" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+            hasTech || hasFeatures ? (
+              <div className="space-y-4">
+                {hasTech ? (
+                  <div className="space-y-2">
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-200/80">
+                      Tech Stack
+                    </span>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-emerald-100/80">
+                      {techItems.map((item, index) => (
+                        <React.Fragment key={item.name}>
+                          <span className="inline-flex items-center gap-1.5">
+                            {React.isValidElement(item.icon)
+                              ? React.cloneElement(item.icon, {
+                                  className: "h-3.5 w-3.5",
+                                })
+                              : null}
+                            <span>{item.name}</span>
+                          </span>
+                          {index < techItems.length - 1 ? (
+                            <span className="text-emerald-300/60">•</span>
+                          ) : null}
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+                {hasFeatures ? (
+                  <div className="space-y-2">
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-200/80">
+                      Features
+                    </span>
+                    <ul className="space-y-1 text-xs text-zinc-300 md:text-sm">
+                      {project.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300/80" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <div className="text-xs text-zinc-300 md:text-sm">
+                    Highlights coming soon.
+                  </div>
+                )}
               </div>
             ) : (
               <div className="text-xs text-zinc-300 md:text-sm">
@@ -71,7 +125,7 @@ export default function Projects() {
             ),
         };
       }),
-    [filteredProjects],
+    [filteredProjects, techIconMap],
   );
 
   return (

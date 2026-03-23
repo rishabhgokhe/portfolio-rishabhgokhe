@@ -136,7 +136,6 @@ export default function ConnectTerminalSection() {
                   ...terminalProjectTitles,
                   "Tip: use `cd taskflow` or `cd skillwave` for details.",
                 ],
-                loves: ["Kshitija Urmale"],
                 "projects --top": [
                   "Top picks:",
                   "Not yet Added.. Working on it",
