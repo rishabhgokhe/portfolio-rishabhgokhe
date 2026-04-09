@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
 import { AnimatePresence, motion, MotionProps } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -41,6 +41,7 @@ export function HyperText({
   startOnView = false,
   animateOnHover = true,
   characterSet = DEFAULT_CHARACTER_SET,
+  onMouseEnter,
   ...props
 }: HyperTextProps) {
   const MotionComponent = motion.create(Component, {
@@ -53,12 +54,24 @@ export function HyperText({
   const [isAnimating, setIsAnimating] = useState(false)
   const iterationCount = useRef(0)
   const elementRef = useRef<HTMLElement>(null)
+  const glitchAudioRef = useRef<HTMLAudioElement | null>(null)
+  const enableHoverSound = false
 
-  const handleAnimationTrigger = () => {
+  const handleAnimationTrigger = (event: MouseEvent<HTMLElement>) => {
     if (animateOnHover && !isAnimating) {
       iterationCount.current = 0
       setIsAnimating(true)
     }
+
+    if (enableHoverSound) {
+      const glitchAudio = glitchAudioRef.current
+      if (glitchAudio) {
+        glitchAudio.currentTime = 0
+        glitchAudio.play().catch(() => {})
+      }
+    }
+
+    onMouseEnter?.(event)
   }
 
   // Handle animation start based on view or delay
@@ -88,6 +101,23 @@ export function HyperText({
 
     return () => observer.disconnect()
   }, [delay, startOnView])
+
+  useEffect(() => {
+    if (!enableHoverSound) return
+    if (typeof Audio === "undefined") return
+
+    const audio = new Audio("/sounds/effects/SFX-%20Glitch1.mp3")
+    audio.preload = "auto"
+    audio.volume = 0.7
+    glitchAudioRef.current = audio
+
+    return () => {
+      audio.pause()
+      audio.src = ""
+      audio.load()
+      glitchAudioRef.current = null
+    }
+  }, [])
 
   // Handle scramble animation
   useEffect(() => {

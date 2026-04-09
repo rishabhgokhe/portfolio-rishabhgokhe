@@ -6,7 +6,7 @@ import { Playfair_Display } from "next/font/google";
 import { GridBackground } from "@/components/ui/grid-background";
 import { navIcons } from "@/lib/Data";
 import SectionTag from "@/components/elements/SectionTag";
-import profilePhoto from "@/public/images/profile_photo.jpeg";
+// import profilePhoto from "@/public/images/profile_photo.jpeg";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const playfairDisplay = Playfair_Display({
@@ -182,7 +182,7 @@ function IntroSec() {
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-center justify-center">
         {/* for mobile phones */}
-        <div className="relative h-[70vh] right-8 w-[100vw] scale-150 sm:hidden">
+        {/* <div className="relative h-[70vh] right-8 w-[100vw] scale-150 sm:hidden">
           <div className="absolute bottom-6 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full bg-emerald-400/25 blur-3xl" />
           <Image
             src={profilePhoto}
@@ -191,10 +191,10 @@ function IntroSec() {
             fill
             className="object-contain drop-shadow-[0_28px_60px_rgba(16,185,129,0.36)]"
           />
-        </div>
+        </div> */}
 
         {/* for desktop */}
-        <div className="relative hidden w-[50vw] md:w-[48vw] sm:block">
+        {/* <div className="relative hidden w-[50vw] md:w-[48vw] sm:block">
           <div className="absolute bottom-6 left-1/2 h-40 w-80 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl md:h-52 md:w-96" />
           <Image
             src={profilePhoto}
@@ -202,7 +202,7 @@ function IntroSec() {
             priority
             className="relative w-full object-contain drop-shadow-[0_28px_60px_rgba(16,185,129,0.36)]"
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="pointer-events-none absolute left-4 right-4 top-[152vh] z-30 flex flex-col items-start gap-2 sm:left-8 sm:right-8 md:left-auto md:right-20 md:top-auto md:bottom-20 md:items-center">

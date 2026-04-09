@@ -10,7 +10,7 @@ import Services from "./Services/Services";
 import LandingIntro from "./LandingIntro";
 import FloatingAIBotButton from "../elements/FloatingAIBotButton";
 import Achievements from "./Achievements/Achievements";
-import BackgroundAudio from "@/components/elements/BackgroundAudio";
+// import BackgroundAudio from "@/components/elements/BackgroundAudio";
 import ConnectTerminalSection from "@/components/Home/ConnectTerminalSection/ConnectTerminalSection";
 import { AIBotProvider } from "@/components/elements/AIBotContext";
 
@@ -30,7 +30,7 @@ export default function HomePage() {
         </div>
         <Footer />
         <FloatingAIBotButton />
-        <BackgroundAudio />
+        {/* <BackgroundAudio /> */}
       </div>
     </AIBotProvider>
   );
