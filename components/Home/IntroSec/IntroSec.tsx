@@ -222,7 +222,7 @@ function IntroSec() {
         </div>
         <div className="pointer-events-auto mt-2 w-full md:w-auto">
           <a
-            href="/downloads/PortFolioRishabh.pdf"
+            href="/downloads/rishabh_resume.pdf"
             download
             className="inline-flex w-full md:w-auto"
           >
