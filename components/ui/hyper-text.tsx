@@ -24,6 +24,8 @@ interface HyperTextProps extends MotionProps {
   animateOnHover?: boolean
   /** Custom character set for scramble effect. Defaults to uppercase alphabet */
   characterSet?: CharacterSet
+  /** Optional onMouseEnter handler */
+  onMouseEnter?: (event: MouseEvent<HTMLElement>) => void
 }
 
 const DEFAULT_CHARACTER_SET = Object.freeze(
@@ -117,7 +119,7 @@ export function HyperText({
       audio.load()
       glitchAudioRef.current = null
     }
-  }, [])
+  }, [enableHoverSound])
 
   // Handle scramble animation
   useEffect(() => {

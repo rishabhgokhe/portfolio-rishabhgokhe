@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -117,7 +118,7 @@ export function ImagesBadge({
           return (
             <motion.div
               key={index}
-              className="absolute top-0.5 left-1/2 origin-bottom overflow-hidden rounded-[3px] bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-800 dark:shadow-white/10 dark:ring-white/10"
+              className="absolute top-0.5 left-1/2 origin-bottom overflow-hidden rounded-[3px] bg-white shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-800 dark:shadow-white/10 dark:ring-white/10 relative"
               animate={{
                 x: `calc(-50% + ${isHovered ? hoverX : 0}px)`,
                 y: isHovered ? hoverY : teaseY,
@@ -137,10 +138,12 @@ export function ImagesBadge({
                 zIndex: 10 + index,
               }}
             >
-              <img
+              <Image
                 src={image}
                 alt={`Preview ${index + 1}`}
-                className="h-full w-full object-cover"
+                fill
+                sizes="96px"
+                className="object-cover"
               />
             </motion.div>
           );
