@@ -486,6 +486,43 @@ export const servicesData = [
   },
 ];
 
+// Articles Section
+// -------------------------------------------------------------------------------------------
+export const articlesData = [
+  {
+    slug: "protein-folding-using-ai",
+    title: "Protein Folding using AI",
+    meta: "Artificial Intelligence",
+    description:
+      "How AI models like deep learning are revolutionizing protein structure prediction and accelerating breakthroughs in medicine and biology.",
+    link: "#",
+  },
+  {
+    slug: "self-driving-car-economy-effect",
+    title: "Self-driving Car Economy Effect",
+    meta: "Technology & Economy",
+    description:
+      "Exploring how autonomous vehicles could reshape industries, jobs, transportation costs, and the global economy.",
+    link: "#",
+  },
+  {
+    slug: "edna-deep-sea-creatures-discovery",
+    title: "eDNA in Deep Sea Creatures Discovery",
+    meta: "Marine Science",
+    description:
+      "How environmental DNA (eDNA) is helping scientists discover and study unknown deep-sea species without direct observation.",
+    link: "#",
+  },
+  {
+    slug: "transformers-in-llm",
+    title: "Transformers in LLM",
+    meta: "AI & Machine Learning",
+    description:
+      "Understanding the transformer architecture behind large language models and how it powers modern AI like chatbots and text generation.",
+    link: "#",
+  },
+];
+
 // Achievements & Leadership Section
 import CIIS1 from "@/public/images/hackathon/CIIS_1.jpeg";
 import CIIS2 from "@/public/images/hackathon/CIIS_2.jpeg";

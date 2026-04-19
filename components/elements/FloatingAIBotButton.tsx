@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AIBotPanel from "@/components/elements/AIBotPanel";
 
 export default function FloatingAIBotButton() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const openAI = () => setIsOpen(true);
+
+    window.addEventListener("rishu-ai:open", openAI);
+    return () => window.removeEventListener("rishu-ai:open", openAI);
+  }, []);
 
   return (
     <div className="pointer-events-none fixed bottom-5 left-5 z-[120] sm:bottom-8 sm:right-8">

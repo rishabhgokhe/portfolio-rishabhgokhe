@@ -65,7 +65,7 @@ function IntroSec() {
   return (
     <section
       id="introSec"
-      className="relative flex min-h-[165vh] items-center justify-center overflow-hidden bg-black md:min-h-screen sm:px-6"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black sm:px-6"
     >
       <GridBackground color="#16b981" />
 
@@ -97,7 +97,7 @@ function IntroSec() {
         <div className="mt-2 h-2 w-64 rounded-full bg-emerald-400/30 blur-md md:w-96" />
       </div>
 
-      <div className="pointer-events-none absolute left-4 right-4 top-[98vh] z-30 flex flex-col gap-3 sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:w-[360px] md:left-[4vw]">
+      <div className="pointer-events-none absolute left-4 right-4 top-[42vh] z-30 flex flex-col gap-3 sm:left-8 sm:right-8 md:right-auto md:top-[34vh] md:w-[360px] md:left-[4vw]">
         <div className="rounded-xl border border-emerald-500/25 bg-black/35 p-4 text-left">
           <p className="font-mono text-[12px] leading-relaxed text-zinc-300 md:text-sm">
             <span className="text-emerald-300">{">_ "}</span>
@@ -205,7 +205,7 @@ function IntroSec() {
         </div> */}
       </div>
 
-      <div className="pointer-events-none absolute left-4 right-4 top-[152vh] z-30 flex flex-col items-start gap-2 sm:left-8 sm:right-8 md:left-auto md:right-20 md:top-auto md:bottom-20 md:items-center">
+      <div className="pointer-events-none absolute bottom-6 left-4 right-4 z-30 flex flex-col items-start gap-2 sm:left-8 sm:right-8 md:left-auto md:right-20 md:bottom-20 md:items-center">
         <div className="pointer-events-auto flex items-center gap-2">
           {socialLinks.map((item) => (
             <a
