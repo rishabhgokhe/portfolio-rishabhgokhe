@@ -3,7 +3,7 @@ import { projectData, TechStackSkillGroups } from "@/lib/Data";
 import { Playfair_Display } from "next/font/google";
 import { GridBackground } from "@/components/ui/grid-background";
 import SectionTag from "@/components/elements/SectionTag";
-import ExpandableCardDemo from "@/components/ui/expandable-card";
+import ExpandableCard from "@/components/ui/expandable-card";
 import GithubIcon from "@/public/svg/icons/GithubIcon";
 
 const playfairDisplay = Playfair_Display({
@@ -173,7 +173,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <ExpandableCardDemo cards={cards} />
+        <ExpandableCard cards={cards} />
       </div>
     </section>
   );

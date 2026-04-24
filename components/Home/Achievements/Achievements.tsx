@@ -48,11 +48,11 @@ export default function Achievements() {
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-orange-300/80">
               hackathon.wins.ts
             </p>
-            <div className="space-y-3">
+            <div>
               {hackathonWinsData.map((item, index) => (
                 <div
                   key={`${item.event}-${index}`}
-                  className="rounded-lg border border-orange-500/15 bg-zinc-950/60 p-4"
+                  className="border border-yellow-500/15 bg-zinc-950/60 px-4 py-3.5 hover:bg-yellow-800/20 transition"
                 >
                   <div className="mb-2 flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
@@ -88,11 +88,11 @@ export default function Achievements() {
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-yellow-300/80">
               impact.metrics.ts
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
               {achievementHighlightsData.map((item, index) => (
                 <div
                   key={`${item.title}-${index}`}
-                  className="rounded-lg border border-yellow-500/15 bg-zinc-950/60 p-3"
+                  className="border border-yellow-500/15 bg-zinc-950/60 p-3 hover:bg-yellow-800/20 transition"
                 >
                   <p className="font-mono text-lg font-semibold text-yellow-200">
                     {item.value}

@@ -10,7 +10,7 @@ const playfairDisplay = Playfair_Display({
   weight: ["400"],
 });
 
-export default function ArticlesBlogsPanel() {
+export default function Articles() {
   const openRishuAI = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -31,7 +31,7 @@ export default function ArticlesBlogsPanel() {
         Articles
       </h2>
       <p className="mb-6 font-mono text-[12px] leading-relaxed text-zinc-400 sm:text-sm">
-        Crazzzy things are happening around and we have to get our hands on it.. (Comming Soon Stay Tuned)
+        Crazzzy things are happening around and we have to get our hands on it..
       </p>
 
       <div className="relative max-h-[420px] overflow-y-auto border border-cyan-500/20 bg-zinc-950/65 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

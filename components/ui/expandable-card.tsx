@@ -16,7 +16,7 @@ export type ExpandableCardItem = {
   content?: React.ReactNode | (() => React.ReactNode);
 };
 
-export default function ExpandableCardDemo({
+export default function ExpandableCard({
   cards,
 }: {
   cards: ExpandableCardItem[];

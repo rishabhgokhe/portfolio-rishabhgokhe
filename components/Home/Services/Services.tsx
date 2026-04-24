@@ -231,11 +231,11 @@ export const Services = () => {
                 services.index.ts
               </p>
 
-              <div className="services-cards-grid grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <div className="services-cards-grid grid grid-cols-1 sm:grid-cols-2">
                 {servicesData.map((service, index) => (
                   <div
                     key={index}
-                    className="services-card relative rounded-lg border border-teal-500/20 bg-black/45 p-3 transition hover:border-teal-300/45 hover:bg-black/60"
+                    className={`services-card relative border border-teal-500/20 ${index%2==0 ? "border-r-0": ""} bg-black/45 p-8 hover:border-teal-600/30 hover:bg-teal-800/10 transition`}
                   >
                     <div className="mb-2 flex items-start justify-between gap-2">
                       <span className="text-lg">{service.icon}</span>
@@ -262,7 +262,6 @@ export const Services = () => {
                       )}
                     </div>
                     <p className="font-mono text-[11px] leading-relaxed text-zinc-400">
-                      <span className="text-teal-300">{">_ "}</span>
                       {service.description}
                     </p>
                   </div>

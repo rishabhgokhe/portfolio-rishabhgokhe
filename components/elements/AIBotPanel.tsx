@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useAIBot } from "@/components/elements/AIBotContext";
 import { Playfair_Display } from "next/font/google";
+import { LoaderFive, LoaderFour } from "../ui/loader";
 
 
 const playfairDisplay = Playfair_Display({
@@ -120,16 +121,11 @@ export default function AIBotPanel({
           </div>
         ))}
         {loading ? (
-          <div className="max-w-[85%] rounded-2xl border border-zinc-700/60 bg-zinc-900/70 px-3 py-2.5 text-zinc-400">
-            <span className="inline-flex items-center gap-2">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-300/80" />
-              Typing…
-            </span>
-          </div>
+          <LoaderFive text="thinking..."/>
         ) : null}
       </div>
 
-      <div className="relative mt-4 pt-3">
+      <div className="relative mt-2 rounded-2xl pt-1 bg-transparent backdrop-blur-md">
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-[10px] uppercase tracking-[0.18em] text-emerald-300/60">
           <button
             type="button"

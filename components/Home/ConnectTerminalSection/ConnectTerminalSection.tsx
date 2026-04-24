@@ -6,7 +6,7 @@ import SectionTag from "@/components/elements/SectionTag";
 import { GridBackground } from "@/components/ui/grid-background";
 import { Terminal } from "@/components/ui/terminal";
 import { projectData } from "@/lib/Data";
-import ArticlesBlogsPanel from "./ArticlesBlogsPanel";
+import Articles from "./ArticlesSection";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -85,7 +85,7 @@ export default function ConnectTerminalSection() {
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
-          <ArticlesBlogsPanel />
+          <Articles />
 
           <div className="services-right-column order-1 p-4 sm:p-6 md:order-1">
             <SectionTag

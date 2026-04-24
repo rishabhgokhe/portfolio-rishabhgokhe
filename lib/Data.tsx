@@ -490,12 +490,12 @@ export const servicesData = [
 // -------------------------------------------------------------------------------------------
 export const articlesData = [
   {
-    slug: "protein-folding-using-ai",
-    title: "Protein Folding using AI",
+    slug: "how-ai-finally-solved-protein-folding",
+    title: "How AI Finally Solved Protein Folding..?",
     meta: "Artificial Intelligence",
     description:
       "How AI models like deep learning are revolutionizing protein structure prediction and accelerating breakthroughs in medicine and biology.",
-    link: "#",
+    link: "https://medium.com/@rishabhgokhe/how-ai-finally-solved-protein-folding-005fe6040cba",
   },
   {
     slug: "self-driving-car-economy-effect",
